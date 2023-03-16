@@ -25,7 +25,7 @@ body.addEventListener("click", (e) => {
 });
 // End of Navigation Bar
 
-//Sort
+// Sort
 const dropdowns = document.querySelectorAll(".dropdown-categories");
 
 dropdowns.forEach((dropdown) => {
@@ -47,10 +47,10 @@ dropdowns.forEach((dropdown) => {
             caret.classList.remove("caret-categories-rotate");
             menu.classList.remove("menu-categories-open");
             options.forEach((option) => {
-                option.classList.remove("active");
+                option.classList.remove("active-dropdown");
             });
-            option.classList.add("active");
+            option.classList.add("active-dropdown");
         });
     });
 });
-//End of Sort
+// End of Sort
