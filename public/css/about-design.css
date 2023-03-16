@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+nav .navbar {
+    position: relative;
+    height: 100%;
+    max-width: 1250px;
+    width: 100%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav .navbar .side-open {
+    color: black;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .navbar .logo {
+    margin-right: auto;
+}
+
+nav .navbar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.navbar .navlink {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navlink li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.navlink li a {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navlink li a:hover {
+    color: rgb(127, 127, 127);
+}
+
+.searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.searchToggle i {
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox {
+    position: relative;
+}
+
+.searchBox .searchField {
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 1px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .searchField {
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchField::before {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.searchField input {
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+}
+
+.searchField i {
+    position: absolute;
+    color: black;
+    right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* End of Navigation Bar */
+
+hr {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.about {
+    position: absolute;
+
+    padding: 0rem 10% 0rem 10%;
+}
+.row1,
+.row2,
+.row3,
+.row4 {
+    font-size: 1.5rem;
+    margin-bottom: 10rem;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.about-img,
+.about-img1,
+.about-img4 {
+    position: relative;
+}
+
+.about-img3 img {
+    position: relative;
+    width: 1030px;
+    height: 400px;
+    margin-left: 85px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.foto1,
+.foto2,
+.foto4 {
+    position: absolute;
+    z-index: 1;
+    width: 275px;
+    height: 350px;
+    top: 0;
+    left: 100;
+    border-radius: 10px;
+}
+
+.foto1a,
+.foto2b {
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+    right: 85%;
+    top: 70px;
+    border-radius: 10px;
+}
+
+.about .row1 .about-img .foto1a {
+    left: 100px;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.about .row1,
+.row2,
+.row4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about .row1 .about-img,
+.about .row4 .about-img4 {
+    flex: 0 0 60rem;
+    margin-top: 5rem;
+}
+
+.about .row3 {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.about .row2 .about-img1 {
+    flex: 0 0 60rem;
+    margin-top: 0rem;
+    margin-left: 50rem;
+}
+
+.about .row1 .about-img img,
+.about .row2 .about-img1 img,
+.about .row4 .about-img4 img {
+    position: absolute;
+    width: 275px;
+    height: 350px;
+    margin-top: 4rem;
+    object-position: center;
+    object-fit: cover;
+}
+
+.about .row3 {
+    width: 50%;
+    height: 25rem;
+    margin-top: 4rem;
+}
+
+.about .row1 .content,
+.about .row4 .content {
+    flex: 1 1 60rem;
+    padding: 1 1rem;
+    margin-right: 50px;
+}
+.about .row3 .content {
+    flex: 1 1 60rem;
+    padding: 1 1rem;
+    margin-right: 50px;
+}
+
+.about .row2 .content {
+    flex: 1 1 60rem;
+    padding: 50 1rem;
+    margin-left: 50px;
+}
+
+.about .row1 .content h3 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 28rem;
+}
+
+.about .row2 .content h3 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 0.2rem;
+}
+.about .row3 .content h3 {
+    font-size: 2.5rem;
+    padding-bottom: 50px;
+    margin: 10px;
+    margin-left: 5rem;
+}
+
+.about .row4 .content h3 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 22rem;
+}
+
+.about .row1 .content p {
+    position: relative;
+    margin-left: 450px;
+
+    margin-bottom: 20rem;
+    max-width: 30rem;
+    font-size: 1rem;
+    font-weight: 1;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.about .row2 .content p {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 420px;
+    margin-bottom: 20rem;
+    max-width: 30rem;
+    font-size: 1rem;
+    font-weight: 1;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.about .row3 .content p {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 1px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 1;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.about .row4 .content p {
+    position: relative;
+    margin-left: 350px;
+
+    margin-bottom: 20rem;
+    max-width: 30rem;
+    font-size: 1rem;
+    font-weight: 1;
+    line-height: 1.5;
+    text-align: justify;
+}
