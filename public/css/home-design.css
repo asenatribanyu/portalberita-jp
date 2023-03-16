@@ -1,0 +1,606 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    /* border: 1px solid yellow; */
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.main-container {
+    width: 1250px;
+    margin: auto;
+}
+/* End of General */
+
+/* Break Point */
+.break-point-horizontal {
+    margin: auto;
+    width: 1030px;
+}
+
+.break-point-horizontal hr {
+    margin: 50px auto;
+    height: 0.1px;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+/* End of Breakpoint */
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+nav .navbar {
+    position: relative;
+    height: 100%;
+    max-width: 1250px;
+    width: 100%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav .navbar .side-open {
+    color: black;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .navbar .logo {
+    margin-right: auto;
+}
+
+nav .navbar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.navbar .navlink {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navlink li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.navlink li a {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navlink li a:hover {
+    color: rgb(127, 127, 127);
+}
+
+.searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.searchToggle i {
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox {
+    position: relative;
+}
+
+.searchBox .searchField {
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 1px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .searchField {
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchField::before {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.searchField input {
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+}
+
+.searchField i {
+    position: absolute;
+    color: black;
+    right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* End of Navigation Bar */
+
+/* Carousel */
+.carousel {
+    margin-top: 95px;
+    position: relative;
+}
+
+.carousel-slides {
+    margin: auto;
+    position: relative;
+    width: 1030px;
+    height: 325px;
+    display: none;
+}
+
+.carousel-slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-selected {
+    display: block;
+}
+
+.carousel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1030px;
+    height: 112px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 10px 10px;
+    color: white;
+    padding: 20px 50px 0 50px;
+}
+
+.carousel-button {
+    position: relative;
+    cursor: pointer;
+}
+
+.carousel-button .carousel-nav-left,
+.carousel-nav-right {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+}
+
+.carousel-button .carousel-nav-left {
+    bottom: 140px;
+    left: 10px;
+}
+
+.carousel-button .carousel-nav-right {
+    bottom: 140px;
+    right: 10px;
+}
+/* End of Carousel */
+
+/* Card */
+.card-wrapper {
+    width: 1030px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-block: 25px;
+}
+
+.card {
+    position: relative;
+    width: 311px;
+    height: 277px;
+}
+
+.card-image {
+    width: 100%;
+    height: 175px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card .card-info {
+    width: 100%;
+    height: 102px;
+}
+
+.card .card-info span {
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+    width: 45px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    text-align: justify;
+    font-weight: 600;
+}
+
+.card-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.card-footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-footer small {
+    margin-top: 2.5px;
+    font-size: 10px;
+}
+/* End of Card */
+
+/* Latest Articles */
+.header-articles {
+    display: flex;
+    margin: auto;
+    width: 1030px;
+}
+
+.header-articles h1 {
+    border-right: 1px solid rgba(0, 0, 0, 0.35);
+    padding-right: 15px;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.header-articles a {
+    text-decoration: none;
+    color: black;
+    margin: auto 0 auto 15px;
+    border-bottom: 1px solid black;
+}
+/* End of Latest Articles */
+
+/* Card With Description */
+.card-wrapper-latest {
+    margin-block: 50px;
+    padding-bottom: 65px;
+}
+
+.card-wrapper-all-articles,
+.card-wrapper-videos {
+    margin-block: 50px;
+}
+
+.card-desc {
+    text-align: justify;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 65px;
+}
+
+/* End of Card With Description */
+
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    height: 450px;
+}
+
+.hero-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-info {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.hero-desc {
+    width: 1250px;
+    margin: auto;
+}
+
+.hero-desc p {
+    width: 800px;
+    height: 100px;
+    font-size: 24px;
+    color: white;
+}
+
+.hero-desc a {
+    display: flex;
+    justify-content: center;
+    padding-top: 12.5px;
+    width: 175px;
+    height: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+}
+/* End of Hero Image */
+.image-gallery-wrapper {
+    width: 1030px;
+    height: 300px;
+    display: grid;
+    grid-template-areas:
+        "img1 img2 img3 img3 img4 img4 img5"
+        "img1 img6 img3 img3 img7 img8 img9";
+    grid-template-rows: auto;
+    grid-template-columns: 150px 1fr;
+    margin: auto;
+    margin-block: 50px;
+}
+
+.image-gallery-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-1 {
+    width: 150px;
+    height: 300px;
+    background-color: white;
+    grid-area: img1;
+}
+
+.image-2 {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    grid-area: img2;
+}
+
+.image-3 {
+    width: 280px;
+    height: 300px;
+    background-color: gray;
+    grid-area: img3;
+}
+
+.image-4 {
+    width: 300px;
+    height: 150px;
+    background-color: gold;
+    grid-area: img4;
+}
+
+.image-5 {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    grid-area: img5;
+}
+
+.image-6 {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    grid-area: img6;
+}
+
+.image-7 {
+    width: 150px;
+    height: 150px;
+    background-color: skyblue;
+    grid-area: img7;
+}
+
+.image-8 {
+    width: 150px;
+    height: 150px;
+    background-color: darkslategrey;
+    grid-area: img8;
+}
+
+.image-9 {
+    width: 150px;
+    height: 150px;
+    background-color: yellowgreen;
+    grid-area: img9;
+}
+/* Image Gallery */
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+.footer-container {
+    width: 1250px;
+    margin: auto;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bxs-heart {
+    color: red;
+}
+/* End of Footer */
+
+/* End of Image Gallery */
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav .navbar {
+        justify-content: space-between;
+    }
+
+    nav .navbar .logo {
+        margin-right: 0;
+    }
+
+    nav .navbar .side-open {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: white;
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu {
+        left: -0%;
+    }
+
+    nav.active .navbar .navLogo a {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .logo-toggle .side-close {
+        color: black;
+        font-size: 24px;
+    }
+
+    .navbar .navlink {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .navlink li a {
+        display: block;
+        margin: 20px;
+    }
+}
+/* End of Responsive */
