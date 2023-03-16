@@ -24,6 +24,7 @@
         <title>Heiwa</title>
     </head>
     <body>
+        <!-- Navigation Bar -->
         <nav>
             <div class="navbar">
                 <i class="bx bx-menu side-open"></i>
@@ -61,14 +62,21 @@
                 </div>
             </div>
         </nav>
+        <!-- End of Navigation Bar -->
 
         <div class="main-container">
+            <!-- Carousel -->
             <div class="carousel">
                 <div class="carousel-slides">
-                    <img src="img/img-slider-1.jpg" alt="" />
+                    <img src="img/slider-1.jpg" alt="" />
                     <div class="carousel-info">
                         <span>Tag</span>
-                        <h2>Lorem ipsum dolor sit amet. 1</h2>
+                        <a href="/"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.</a
+                        >
                         <small>DD/MM/YYYY</small>
                     </div>
                     <div class="carousel-button">
@@ -77,10 +85,15 @@
                     </div>
                 </div>
                 <div class="carousel-slides">
-                    <img src="img/img-slider-2.jpg" alt="" />
+                    <img src="img/slider-2.jpg" alt="" />
                     <div class="carousel-info">
                         <span>Tag</span>
-                        <h2>Lorem ipsum dolor sit amet. 2</h2>
+                        <a href="/"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.</a
+                        >
                         <small>DD/MM/YYYY</small>
                     </div>
                     <div class="carousel-button">
@@ -89,10 +102,15 @@
                     </div>
                 </div>
                 <div class="carousel-slides">
-                    <img src="img/img-slider-3.jpg" alt="" />
+                    <img src="img/slider-3.jpg" alt="" />
                     <div class="carousel-info">
                         <span>Tag</span>
-                        <h2>Lorem ipsum dolor sit amet. 3</h2>
+                        <a href="/"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.</a
+                        >
                         <small>DD/MM/YYYY</small>
                     </div>
                     <div class="carousel-button">
@@ -101,73 +119,165 @@
                     </div>
                 </div>
             </div>
+            <!-- End of Carousel -->
 
-            <div class="card-wrapper">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="img/2.jpg" alt="" />
+            <!-- Featured Card -->
+            <div class="card-home-wrapper">
+                <div class="card-home">
+                    <div class="card-home-image">
+                        <img src="img/thumbnail.jpg" alt="" />
                     </div>
-                    <div class="card-info">
+                    <div class="card-home-info">
                         <span>Tag</span>
-                        <div class="card-title">
-                            <a href="/"
-                                >Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</a
+                        <a href="/" class="card-home-title"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod.</a
+                        >
+
+                        <div class="card-home-footer">
+                            <a href="/" class="card-home-nav"
+                                >Read More &#8594;</a
                             >
+                            <small>DD/MM/YYYY</small>
                         </div>
-                        <div class="card-footer">
-                            <a href="/">Read More &#8594;</a>
-                            <small>DD/MM/YY</small>
+                    </div>
+                </div>
+                <div class="card-home">
+                    <div class="card-home-image">
+                        <img src="img/thumbnail.jpg" alt="" />
+                    </div>
+                    <div class="card-home-info">
+                        <span>Tag</span>
+                        <a href="/" class="card-home-title"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod.</a
+                        >
+
+                        <div class="card-home-footer">
+                            <a href="/" class="card-home-nav"
+                                >Read More &#8594;</a
+                            >
+                            <small>DD/MM/YYYY</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-home">
+                    <div class="card-home-image">
+                        <img src="img/thumbnail.jpg" alt="" />
+                    </div>
+                    <div class="card-home-info">
+                        <span>Tag</span>
+                        <a href="/" class="card-home-title"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod.</a
+                        >
+
+                        <div class="card-home-footer">
+                            <a href="/" class="card-home-nav"
+                                >Read More &#8594;</a
+                            >
+                            <small>DD/MM/YYYY</small>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End of Featured Card -->
 
             <div class="break-point-horizontal">
                 <hr />
             </div>
 
-            <div class="header-articles">
+            <div class="header">
                 <h1>LATEST ARTICLES</h1>
                 <a href="/">View All Articles &#8594;</a>
             </div>
 
-            <div class="card-wrapper card-wrapper-latest">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="img/2b.jpg" alt="" />
+            <!-- Latest Articles Card -->
+            <div class="card-home-wrapper">
+                <div class="card-home">
+                    <div class="card-home-image">
+                        <img src="img/thumbnail.jpg" alt="" />
                     </div>
-                    <div class="card-info">
+                    <div class="card-home-info">
                         <span>Tag</span>
-                        <div class="card-title">
-                            <a href="/"
-                                >Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</a
-                            >
-                        </div>
-                        <div class="card-desc">
+                        <a href="/" class="card-home-title"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod.</a
+                        >
+                        <div class="card-home-desc">
                             Facilisis volutpat est velit egestas dui id ornare.
                             Scelerisque felis imperdiet proin fermentum leo vel
                             orci porta. In hac habitasse platea dictumst quisque
                             sagittis.
                         </div>
-                        <div class="card-footer">
-                            <a href="/">Read More &#8594;</a>
-                            <small>DD/MM/YY</small>
+                        <div class="card-home-footer">
+                            <a href="/" class="card-home-nav"
+                                >Read More &#8594;</a
+                            >
+                            <small>DD/MM/YYYY</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-home">
+                    <div class="card-home-image">
+                        <img src="img/thumbnail.jpg" alt="" />
+                    </div>
+                    <div class="card-home-info">
+                        <span>Tag</span>
+                        <a href="/" class="card-home-title"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod.</a
+                        >
+                        <div class="card-home-desc">
+                            Facilisis volutpat est velit egestas dui id ornare.
+                            Scelerisque felis imperdiet proin fermentum leo vel
+                            orci porta. In hac habitasse platea dictumst quisque
+                            sagittis.
+                        </div>
+                        <div class="card-home-footer">
+                            <a href="/" class="card-home-nav"
+                                >Read More &#8594;</a
+                            >
+                            <small>DD/MM/YYYY</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-home">
+                    <div class="card-home-image">
+                        <img src="img/thumbnail.jpg" alt="" />
+                    </div>
+                    <div class="card-home-info">
+                        <span>Tag</span>
+                        <a href="/" class="card-home-title"
+                            >Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod.</a
+                        >
+                        <div class="card-home-desc">
+                            Facilisis volutpat est velit egestas dui id ornare.
+                            Scelerisque felis imperdiet proin fermentum leo vel
+                            orci porta. In hac habitasse platea dictumst quisque
+                            sagittis.
+                        </div>
+                        <div class="card-home-footer">
+                            <a href="/" class="card-home-nav"
+                                >Read More &#8594;</a
+                            >
+                            <small>DD/MM/YYYY</small>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End of Latest Articles Card -->
+
             <div class="break-point-horizontal">
                 <hr />
             </div>
         </div>
 
+        <!-- Hero -->
         <div class="hero-image">
             <div class="hero-wrapper">
-                <img src="img/img-slider-1.jpg" alt="" />
+                <img src="img/hero.jpg" alt="" />
                 <div class="hero-info">
                     <div class="hero-desc">
                         <p>
@@ -181,91 +291,237 @@
                 </div>
             </div>
         </div>
+        <!-- End of Hero -->
 
         <div class="main-container">
-            <div class="break-point-horizontal">
-                <hr />
-            </div>
+            <div class="break-point-horizontal"">
+            <hr />
+        </div>
 
-            <div class="header-articles">
-                <h1>ARTICLES</h1>
-                <a href="/">View All Articles &#8594;</a>
-            </div>
+        <div class="header">
+            <h1>ARTICLES</h1>
+            <a href="/">View All Articles &#8594;</a>
+        </div>
 
-            <div class="card-wrapper card-wrapper-all-articles">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="img/1.jpg" alt="" />
+        <!-- Articles Card -->
+        <div class="card-home-wrapper">
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
                     </div>
-                    <div class="card-info">
-                        <span>Tag</span>
-                        <div class="card-title">
-                            <a href="/"
-                                >Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</a
-                            >
-                        </div>
-                        <div class="card-footer">
-                            <a href="/">Read More &#8594;</a>
-                            <small>DD/MM/YY</small>
-                        </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
                     </div>
                 </div>
             </div>
-
-            <div class="break-point-horizontal">
-                <hr />
-            </div>
-
-            <div class="header-articles">
-                <h1>VIDEOS</h1>
-                <a href="/">View All Videos &#8594;</a>
-            </div>
-
-            <div class="card-wrapper card-wrapper-videos">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="img/4.jpg" alt="" />
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
                     </div>
-                    <div class="card-info">
-                        <span>Tag</span>
-                        <div class="card-title">
-                            <a href="/"
-                                >Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</a
-                            >
-                        </div>
-                        <div class="card-footer">
-                            <a href="/">Read More &#8594;</a>
-                            <small>DD/MM/YY</small>
-                        </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
                     </div>
                 </div>
             </div>
-
-            <div class="break-point-horizontal">
-                <hr />
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
+                    </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
             </div>
-
-            <div class="header-articles">
-                <h1>PHOTOS</h1>
-                <a href="/">View All Photos &#8594;</a>
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
+                    </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
             </div>
-
-            <div class="image-gallery-wrapper">
-                <div class="image-1"><img src="" alt="" /></div>
-                <div class="image-2"><img src="" alt="" /></div>
-                <div class="image-3"><img src="" alt="" /></div>
-                <div class="image-4"><img src="" alt="" /></div>
-                <div class="image-5"><img src="" alt="" /></div>
-                <div class="image-6"><img src="" alt="" /></div>
-                <div class="image-7"><img src="" alt="" /></div>
-                <div class="image-8"><img src="" alt="" /></div>
-                <div class="image-9"><img src=""" alt="" /></div>
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
+                    </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- End of Articles Card -->
+
+        <div class="break-point-horizontal">
+            <hr />
+        </div>
+
+        <div class="header">
+            <h1>VIDEOS</h1>
+            <a href="/">View All Videos &#8594;</a>
+        </div>
+
+        <!-- Videos Card -->
+        <div class="card-home-wrapper">
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
+                    </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
+                    </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card-home">
+                <div class="card-home-image">
+                    <img src="img/thumbnail.jpg" alt="" />
+                </div>
+                <div class="card-home-info">
+                    <span>Tag</span>
+                    <a href="/" class="card-home-title"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod.</a
+                    >
+                    <div class="card-home-desc">
+                        Facilisis volutpat est velit egestas dui id ornare.
+                        Scelerisque felis imperdiet proin fermentum leo vel orci
+                        porta. In hac habitasse platea dictumst quisque
+                        sagittis.
+                    </div>
+                    <div class="card-home-footer">
+                        <a href="/" class="card-home-nav">Read More &#8594;</a>
+                        <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Videos Card -->
+
+        <div class="break-point-horizontal">
+            <hr />
+        </div>
+
+        <div class="header">
+            <h1>PHOTOS</h1>
+            <a href="/">View All Photos &#8594;</a>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery-wrapper">
+            <div class="image-1"><img src="" alt="" /></div>
+            <div class="image-2"><img src="" alt="" /></div>
+            <div class="image-3"><img src="" alt="" /></div>
+            <div class="image-4"><img src="" alt="" /></div>
+            <div class="image-5"><img src="" alt="" /></div>
+            <div class="image-6"><img src="" alt="" /></div>
+            <div class="image-7"><img src="" alt="" /></div>
+            <div class="image-8"><img src="" alt="" /></div>
+            <div class="image-9"><img src="" alt="" /></div>
+        </div>
+        <!-- End of Image Gallery -->
+
+        <!-- Footer -->
         <footer>
             <div class="footer-container">
                 <div class="footer-info">
@@ -274,6 +530,7 @@
                 </div>
             </div>
         </footer>
+        <!-- End of Footer -->
 
         <script src="js/home-script.js"></script>
     </body>
