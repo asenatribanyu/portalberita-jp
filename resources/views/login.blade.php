@@ -11,6 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/login-design.css">
+
+    <!-- Box Icons -->
+    <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
 </head>
 <body>
 
@@ -87,6 +94,7 @@
             </div>
         </footer>
         <!-- End of Footer -->
-
+    
+    <script src="js/login-script.js"></script>
 </body>
 </html>
