@@ -1,0 +1,254 @@
+/* * {
+  border: 1px solid yellow;
+} */
+ 
+hr  {
+    margin: 50px auto auto auto;
+  }
+   
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+   
+  body {  
+    font-family: 'Quicksand', sans-serif;
+    background-color: #ddd;
+  }
+   
+  .article-header-img {
+    width: 100%;
+    height: 425px;
+    /* padding: 20px; */
+  }
+   
+  .article-header-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+   
+  .container {
+    width: 1250px;
+    margin: 50px auto;
+    background-color: white;
+    box-sizing: border-box;
+    /* padding-left: 100px;
+    padding-right: 100px; */
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .article {
+    width: 870.47px;
+    position: relative;
+    border-right: 1px solid rgba(0,0,0,0.3 );
+    padding-right: 34px;
+  }
+   
+  .article-header {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+   
+  .article-header h1{
+    padding: 5px auto;
+  }
+   
+  .article-header .tag-blue {
+    margin: 32px 0 0 0;
+  }
+   
+  .wraper {
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .wraper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+   
+  .wraper .article-img1{
+    width: 430px;
+    height: 230px;
+  }
+   
+  .wraper .article-img2{
+    width: 430px;
+    height: 230px;
+  }
+   
+  .wraper2 {
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .wraper2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+   
+  .wraper2 .article-img3 {
+    width: 555px;
+    height: 200px;
+  }
+   
+  .wraper2 .article-img4 {
+    width: 300px;
+    height: 200px;
+  }
+   
+  h5 {
+    font-size: 10px;
+  }
+   
+  .article p {
+    font-size: 20px;
+    text-indent: 50px;
+  }
+   
+  .tag {
+    align-self: flex-start;
+    padding: 0.25em 0.75em;
+    border-radius: 1em;
+    font-size: 0.75rem;
+  }
+   
+  .tag-blue {
+   
+    background: #d6d6d6;
+    color: #000000;
+  }
+   
+  .article-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+   
+  .artcle-footer h1 {
+    border-right: 1px solid rgba(0,0,0,0.3 );
+  }
+   
+  /* Card */
+  .card-wrapper {
+    width: 1030px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-block: 25px;
+  }
+   
+  .card {
+    position: relative;
+    width: 311px;
+    height: 277px;
+  }
+   
+  .card-image {
+    width: 100%;
+    height: 175px;
+  }
+   
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+   
+  .card .card-info {
+    width: 100%;
+    height: 102px;
+  }
+   
+  .card .card-info span {
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+    width: 45px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    font-size: 12px;
+    margin-top: 7px;
+  }
+   
+  .card .card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .card-title {
+    font-weight: bold;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 45px;
+  }
+   
+  .card-title a {
+    color: black;
+    text-decoration: none;
+  }
+   
+  .card-footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+  }
+   
+  .card-footer small {
+    margin-top: 2.5px;
+    font-size: 10px;
+  }
+  /* End of Card */
+   
+   
+  /* sidebar */
+  .sidebar {
+    width: 270px;
+    /* background-color: pink; */
+  }
+   
+  .sidebar p {
+    font-size: 24px;
+  }
+   
+  .sidebar .card {
+    /* position: relative; */
+    /* border: 5px solid yellow; */
+   
+    display: flex;
+    flex-wrap: wrap;
+    width: 270px;
+    height: 277px;
+    font-size: 19px;
+  }
+   
+  .sidebar .card-image {
+    width: 100%;
+    height: 150px;
+  }
+  /* end of sidebar */
+   
+   
+    
+  /* Footer */
+  .footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+  }
+  /* end of footer */
