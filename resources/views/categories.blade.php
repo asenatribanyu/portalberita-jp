@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+        <!-- CSS Link -->
         <link rel="stylesheet" href="css/categories-design.css" />
 
         <!-- Google Fonts -->
@@ -112,6 +113,7 @@
 
             <!-- Categories Card -->
             <div class="card-home-wrapper">
+                @for($i = 1; $i <= 15; $i++)
                 <div class="card-home">
                     <div class="card-home-image">
                         <img src="img/thumbnail-categories.jpg" alt="" />
@@ -136,174 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-home">
-                    <div class="card-home-image">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
-                    <div class="card-home-info">
-                        <span>Tag</span>
-                        <a href="/" class="card-home-title"
-                            >Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a
-                        >
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav"
-                                >Read More &#8594;</a
-                            >
-                            <small>DD/MM/YYYY</small>
-                        </div>
-                    </div>
-                </div>
+                @endfor
             </div>
             <!-- End of Categories Card -->
         </div>
