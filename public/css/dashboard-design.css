@@ -1,0 +1,132 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+/* End of General */
+
+body {
+    background: #fafafa;
+}
+
+.main-container {
+    width: 100%;
+    margin: auto;
+    padding-top: 8px;
+    background-color: white;
+}
+
+/* Navigation Bar */
+nav .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 260px;
+    background-color: white;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar-logo {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.sidebar-logo .menu-icon {
+    font-size: 24px;
+    margin-right: 14px;
+    color: black;
+}
+
+.sidebar-logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+.menu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+
+.menu .navlink {
+    margin-top: 20px;
+    margin-left: -12px;
+}
+
+.navlink li {
+    list-style: none;
+}
+
+.navlink .nav-item,
+.nav-logout {
+    width: 220px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-left: 50px;
+}
+
+.nav-item span,
+.nav-logout span {
+    margin-left: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+
+.nav-item .navlink-icon,
+.nav-logout .navlink-icon {
+    font-size: 20px;
+    color: black;
+}
+
+.navlink .nav-item:hover {
+    background-color: #4070f4;
+}
+.navlink .nav-logout:hover {
+    background-color: red;
+}
+
+.nav-item:hover i,
+.nav-item:hover span,
+.nav-logout:hover i,
+.nav-logout:hover span {
+    color: white;
+}
+
+.nav-active {
+    background-color: #4070f4;
+}
+
+.nav-active .navlink-icon,
+.nav-active span {
+    color: white;
+}
+/* End of Navigation Bar */
+
+/* Form */
+.main-form {
+    width: 70%;
+    margin: auto auto auto 23.5%;
+    padding: 20px;
+}
+
+trix-editor {
+    height: 275px;
+}
+/* End of Form */
