@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard/view');
+});
+
+Route::get('/dashboard/input', function () {
+    return view('dashboard/input');
+});
+
+Route::get('/dashboard/edit', function () {
+    return view('dashboard/edit');
+});
+
+Route::get('/dashboard/edit/content', function () {
+    return view('dashboard/edit-content');
 });
