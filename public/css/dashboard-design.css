@@ -15,7 +15,6 @@ body {
     width: 100%;
     margin: auto;
     padding-top: 8px;
-    background-color: white;
 }
 
 /* Navigation Bar */
@@ -124,9 +123,5 @@ nav .sidebar {
     width: 70%;
     margin: auto auto auto 23.5%;
     padding: 20px;
-}
-
-trix-editor {
-    height: 275px;
 }
 /* End of Form */
