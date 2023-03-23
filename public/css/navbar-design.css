@@ -1,0 +1,233 @@
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navlink .nav-active {
+    border-bottom: 3px solid black;
+}
+
+.navlink .nav-active:hover {
+    color: black;
+}
+
+nav .navbar {
+    position: relative;
+    height: 100%;
+    max-width: 1250px;
+    width: 100%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav .navbar .side-open {
+    color: black;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .navbar .logo {
+    margin-right: auto;
+}
+
+nav .navbar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.navbar .navlink {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navlink li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.navlink li a {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navlink li a:hover {
+    color: rgb(127, 127, 127);
+}
+
+.searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.searchToggle i {
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox {
+    position: relative;
+}
+
+.searchBox .searchField {
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 1px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .searchField {
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchField::before {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.searchField input {
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+}
+
+.searchField i {
+    position: absolute;
+    color: black;
+    right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* End of Navigation Bar */
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav .navbar {
+        justify-content: space-between;
+    }
+
+    nav .navbar .logo {
+        margin-right: 0;
+    }
+
+    nav .navbar .side-open {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: white;
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu {
+        left: -0%;
+    }
+
+    nav.active .navbar .navLogo a {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .logo-toggle .side-close {
+        color: black;
+        font-size: 24px;
+    }
+
+    .navbar .navlink {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .navlink li a {
+        display: block;
+        margin: 20px;
+    }
+}
+/* End of Responsive */

@@ -32,7 +32,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
 
-    <title>Dashboard</title>
+    <title>Heiwa | {{ $title }}</title>
 </head>
 
 <body>
@@ -47,25 +47,25 @@
             <div class="menu">
                 <ul class="navlink">
                     <li>
-                        <a href="/" class="nav-item">
+                        <a href="/" class="nav-item {{ $title === 'Home' ? 'nav-active' : '' }}">
                             <i class="bx bx-home-alt navlink-icon"></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard" class="nav-item">
+                        <a href="/dashboard" class="nav-item {{ $title === 'Dashboard' ? 'nav-active' : '' }}">
                             <i class="bx bxs-dashboard navlink-icon"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/input" class="nav-item">
+                        <a href="/dashboard/input" class="nav-item {{ $title === 'Add Content' ? 'nav-active' : '' }}">
                             <i class="bx bx-plus-circle navlink-icon"></i>
                             <span>Add Content</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/edit" class="nav-item">
+                        <a href="/dashboard/edit" class="nav-item {{ $title === 'Edit Content' ? 'nav-active' : '' }}">
                             <i class="bx bxs-edit navlink-icon"></i>
                             <span>Edit Content</span>
                         </a>
@@ -74,10 +74,10 @@
 
                 <ul class="navlink">
                     <li>
-                        <a href="/" class="nav-logout">
+                        <button class="nav-logout">
                             <i class="bx bx-log-out navlink-icon"></i>
                             <span>Sign Out</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>

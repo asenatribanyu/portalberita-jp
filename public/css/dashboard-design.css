@@ -66,8 +66,22 @@ nav .sidebar {
     list-style: none;
 }
 
-.navlink .nav-item,
-.nav-logout {
+.navlink .nav-logout {
+    width: 220px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-left: 50px;
+    border: none;
+    background-color: white;
+}
+
+.navlink .nav-item {
     width: 220px;
     height: 50px;
     display: flex;
@@ -97,6 +111,7 @@ nav .sidebar {
 .navlink .nav-item:hover {
     background-color: #4070f4;
 }
+
 .navlink .nav-logout:hover {
     background-color: red;
 }
@@ -108,14 +123,15 @@ nav .sidebar {
     color: white;
 }
 
-.nav-active {
-    background-color: #4070f4;
-}
-
 .nav-active .navlink-icon,
 .nav-active span {
     color: white;
 }
+
+.nav-active {
+    background-color: #4070f4;
+}
+
 /* End of Navigation Bar */
 
 /* Dashboard Input */
@@ -125,7 +141,3 @@ nav .sidebar {
     padding: 20px;
 }
 /* End of Dashboard Input */
-
-/* Dashboard View */
-
-/* End of Dashboard View */

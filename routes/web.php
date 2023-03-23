@@ -13,43 +13,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
 Route::get('/', function () {
-    return view('home');
+    return view('home/home', [
+        "title" => "Home"
+    ]);
   });
-  
+
 Route::get('/login', function () {
-    return view('login');
+    return view('login/login', [
+        "title" => "Sign In"
+    ]);
 });
 
 Route::get('/preview', function () {
-    return view('preview');
+    return view('article/preview', [
+        "title" => "Preview"
+    ]);
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard/view');
+    return view('dashboard/view', [
+        "title" => "Dashboard"
+    ]);
  });
 
  Route::get('/dashboard/input', function () {
-    return view('dashboard/input');
+    return view('dashboard/input', [
+        "title" => "Add Content"
+    ]);
 });
 
 Route::get('/dashboard/edit', function () {
-    return view('dashboard/edit');
+    return view('dashboard/edit', [
+        "title" => "Edit Content"
+    ]);
 });
 
 Route::get('/dashboard/edit/content', function () {
-    return view('dashboard/edit-content');
+    return view('dashboard/edit-content', [
+        "title" => "Edit Content"
+    ]);
 });
 
 Route::get('/categories', function () {
-    return view('categories');
+    return view('category/categories', [
+        "title" => "Categories"
+    ]);
 });
-  
-Route::get('/about', function () {
-    return view('about');
 
+Route::get('/about', function () {
+    return view('about/about', [
+        "title" => "About"
+    ]);
 });
 
