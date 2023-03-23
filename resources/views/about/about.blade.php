@@ -90,14 +90,10 @@
         </div>
 
         <div class="hero">
-            <img src="img/hero-about.jpg" alt="" />
-            <div class="hero-info">
-                <h1>See Our Videos</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod
-                </p>
-            </div>
+            <iframe width="1030" height="400" src="https://www.youtube.com/embed/4MoRLTAJY_0?autoplay=0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
 
         <div class="break-point-horizontal">

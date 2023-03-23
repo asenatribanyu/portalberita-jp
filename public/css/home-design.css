@@ -1,11 +1,4 @@
 /* General */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-}
-
 body {
     background-color: #fafafa;
 }
@@ -374,31 +367,6 @@ body {
     grid-area: img9;
 }
 /* End of Image Gallery */
-
-/* Footer */
-footer {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    width: 100%;
-    height: 60px;
-    background-color: white;
-}
-
-.footer-container {
-    width: 1250px;
-    margin: auto;
-}
-
-.footer-info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.bxs-heart {
-    color: red;
-}
-/* End of Footer */
 
 /* Responsive */
 /* End of Responsive */

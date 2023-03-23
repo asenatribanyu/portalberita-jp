@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/navbar-design.css">
+    <link rel="stylesheet" href="css/main-design.css">
     @stack('style')
 
     <title>Heiwa | {{ $title }}</title>
@@ -39,7 +39,8 @@
                     <li><a class="{{ $title === 'About' ? 'nav-active' : '' }}" href="/about">About</a></li>
                     <li><a class="{{ $title === 'Categories' ? 'nav-active' : '' }}" href="/categories">Categories</a>
                     </li>
-                    <li><a class="" href="/">Language</a></li>
+                    <li><a href="/">Language</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
                     <li><a class="{{ $title === 'Sign In' ? 'nav-active' : '' }}" href="/login">Sign in</a></li>
                 </ul>
             </div>

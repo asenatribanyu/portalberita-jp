@@ -13,14 +13,14 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor
                 </h1>
-                <span>Tag</span>
+                <a class="tag" href="/categories">Tag</a>
                 <small>By Admin - DD/MM/YYYY</small>
             </div>
 
             <div class="content-thumbnail">
                 <!-- <div class="image-thumbnail">
                                         <img src="img/thumbnail-preview.jpg" alt="" />
-                                    </div> -->
+                                        </div> -->
 
                 <iframe width="840" height="425" src="https://www.youtube.com/embed/4MoRLTAJY_0?autoplay=0"
                     title="YouTube video player" frameborder="0"
@@ -139,16 +139,16 @@
 
             <!-- Other Articles & Card -->
             <div class="header">
-                <h1>LATEST ARTICLES</h1>
+                <h1>OTHER ARTICLES</h1>
                 <a href="/">View All Articles &#8594;</a>
             </div>
 
             <div class="card-wrapper">
                 @for ($i = 1; $i <= 2; $i++)
                     <div class="card">
-                        <div class="card-image">
+                        <a class="card-image" href="/preview">
                             <img src="img/thumbnail-preview.jpg" alt="" />
-                        </div>
+                        </a>
                         <div class="card-info">
                             <span>Tag</span>
                             <a href="/" class="card-title">Lorem ipsum dolor sit amet, consectetur
@@ -180,9 +180,9 @@
                 <div class="sidebar-card-wrapper">
                     @for ($i = 1; $i <= 5; $i++)
                         <div class="sidebar-card">
-                            <div class="sidebar-card-img">
+                            <a class="sidebar-card-img" href="/preview">
                                 <img src="img/thumbnail-preview.jpg" alt="" />
-                            </div>
+                            </a>
                             <a href="/" class="sidebar-card-title">Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit, sed do eiusmod.</a>
                         </div>

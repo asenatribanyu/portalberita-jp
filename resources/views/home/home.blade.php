@@ -32,9 +32,9 @@
         <div class="card-home-wrapper">
             @for ($i = 1; $i <= 3; $i++)
                 <div class="card-home">
-                    <div class="card-home-image">
+                    <a class="card-home-image" href="/preview">
                         <img src="img/thumbnail.jpg" alt="" />
-                    </div>
+                    </a>
                     <div class="card-home-info">
                         <a class="tag" href="/categories">Tag</a>
                         <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -63,9 +63,9 @@
         <div class="card-home-wrapper">
             @for ($i = 1; $i <= 3; $i++)
                 <div class="card-home">
-                    <div class="card-home-image">
+                    <a class="card-home-image" href="/preview">
                         <img src="img/thumbnail.jpg" alt="" />
-                    </div>
+                    </a>
                     <div class="card-home-info">
                         <a class="tag" href="/categories">Tag</a>
                         <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -124,9 +124,9 @@
         <div class="card-home-wrapper">
             @for ($i = 1; $i <= 9; $i++)
                 <div class="card-home">
-                    <div class="card-home-image">
+                    <a class="card-home-image" href="/preview">
                         <img src="img/thumbnail.jpg" alt="" />
-                    </div>
+                    </a>
                     <div class="card-home-info">
                         <a class="tag" href="/categories">Tag</a>
                         <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -160,9 +160,9 @@
         <div class="card-home-wrapper">
             @for ($i = 1; $i <= 3; $i++)
                 <div class="card-home">
-                    <div class="card-home-image">
+                    <a class="card-home-image" href="/preview">
                         <img src="img/thumbnail.jpg" alt="" />
-                    </div>
+                    </a>
                     <div class="card-home-info">
                         <a class="tag" href="/categories">Tag</a>
                         <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur

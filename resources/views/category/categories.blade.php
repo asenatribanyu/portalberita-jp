@@ -55,9 +55,9 @@
         <div class="card-wrapper">
             @for ($i = 1; $i <= 15; $i++)
                 <div class="card">
-                    <div class="card-image">
+                    <a class="card-image" href="/preview">
                         <img src="img/thumbnail-categories.jpg" alt="" />
-                    </div>
+                    </a>
                     <div class="card-info">
                         <a class="tag" href="/categories">Tag</a>
                         <a href="/" class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing

@@ -112,6 +112,10 @@ nav .sidebar {
     background-color: #4070f4;
 }
 
+.navlink .nav-home:hover {
+    background-color: #198754;
+}
+
 .navlink .nav-logout:hover {
     background-color: red;
 }
@@ -130,6 +134,10 @@ nav .sidebar {
 
 .nav-active {
     background-color: #4070f4;
+}
+
+.navhome:hover {
+    background-color: #198754;
 }
 
 /* End of Navigation Bar */

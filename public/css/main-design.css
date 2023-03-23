@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
 /* Navigation Bar */
 nav {
     position: fixed;
@@ -170,6 +177,31 @@ nav .navbar .logo a {
     cursor: pointer;
 }
 /* End of Navigation Bar */
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+.footer-container {
+    width: 1250px;
+    margin: auto;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bxs-heart {
+    color: red;
+}
+/* End of Footer */
 
 /* Responsive */
 @media screen and (max-width: 768px) {

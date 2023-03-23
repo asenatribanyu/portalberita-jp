@@ -47,7 +47,7 @@
             <div class="menu">
                 <ul class="navlink">
                     <li>
-                        <a href="/" class="nav-item {{ $title === 'Home' ? 'nav-active' : '' }}">
+                        <a href="/" class="nav-item nav-home">
                             <i class="bx bx-home-alt navlink-icon"></i>
                             <span>Home</span>
                         </a>
