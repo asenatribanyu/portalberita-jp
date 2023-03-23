@@ -74,10 +74,13 @@
 
                 <ul class="navlink">
                     <li>
-                        <a href="/" class="nav-logout">
-                            <i class="bx bx-log-out navlink-icon"></i>
-                            <span>Sign Out</span>
-                        </a>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="nav-logout">
+                                <i class="bx bx-log-out navlink-icon"></i>
+                                <span>Sign Out</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>

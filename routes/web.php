@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('home');
   });
   
-Route::get('/login',[LoginController::class,'index']);
+Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'authen']);
 Route::post('/logout',[LoginController::class,'logout']);
 
@@ -30,7 +30,7 @@ Route::get('/preview', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard/view');
- });
+ })->middleware('auth');
 
  Route::get('/dashboard/input', function () {
     return view('dashboard/input');
