@@ -9,10 +9,58 @@
                 id="title" />
         </div>
 
-        <div class="form-tag w-25 mt-3">
-            <label for="category">Category:</label>
-            <input class="form-control mt-1" type="text" aria-label="Tag" placeholder="Content Category"
-                id="category" />
+        <div x-data="{ isOpen: false }" class="form-tag w-100 mt-3">
+            <label for="checkbox">Category:</label>
+            <div class="d-flex">
+                <div class="mt-1">
+                    @for ($i = 1; $i <= 10; $i++)
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                            <label class="form-check-label" for="inlineCheckbox1">{{ $i }}</label>
+                        </div>
+                    @endfor
+                </div>
+                <div>
+                    <button x-on:click="isOpen = !isOpen" type="button" class="btn btn-sm btn-success">
+                        <i class="bx bx-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTag">
+                        <i class="bx bx-x"></i>
+                    </button>
+
+                    <div class="modal fade" id="deleteTag" tabindex="-1" aria-labelledby="deleteTagLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteTagLabel">
+                                        Deletion Confirmation
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure want to Delete the Tag?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tag-control mt-1 d-flex">
+                <input x-show="isOpen" class="form-control w-25" type="text" placeholder="Input Tag"
+                    aria-label="Title Input" id="title" />
+                <input x-show="isOpen" x-on:click="isOpen = false" class="btn btn-success ms-1" type="submit"
+                    value="Submit" />
+            </div>
         </div>
 
         <div class="form-thumbnail-photo w-50 mt-3">
@@ -59,7 +107,8 @@
                 <a class="btn btn-secondary mt-3" href="/dashboard" role="button">Cancel</a>
             </div>
             <div class="delete">
-                <button type="button" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#delete-alert">
+                <button type="button" class="btn btn-danger mt-3" data-bs-toggle="modal"
+                    data-bs-target="#delete-alert">
                     Delete
                 </button>
 

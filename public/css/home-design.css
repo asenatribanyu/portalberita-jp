@@ -58,6 +58,10 @@ body {
     padding: 11px 40px 12px 40px;
 }
 
+.carousel-info .tag-wrapper {
+    display: flex;
+}
+
 .carousel-info a {
     width: 950px;
     height: 50px;
@@ -84,6 +88,7 @@ body {
     font-size: 12px;
     font-weight: 400;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .carousel-info small {
@@ -141,6 +146,10 @@ body {
     margin-block: 10px;
 }
 
+.card-home-info .tag-wrapper {
+    display: flex;
+}
+
 .card-home-info .tag {
     display: flex;
     justify-content: center;
@@ -154,6 +163,7 @@ body {
     font-size: 12px;
     font-weight: 400;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .card-home-image img {

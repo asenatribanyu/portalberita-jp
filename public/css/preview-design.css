@@ -76,6 +76,10 @@ body {
     text-align: justify;
 }
 
+.content-title .tag-wrapper {
+    display: flex;
+}
+
 .content-title .tag {
     display: flex;
     justify-content: center;
@@ -89,6 +93,7 @@ body {
     font-size: 12px;
     margin: 5px 0;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .content-title small {
@@ -176,14 +181,11 @@ body {
     margin-block: 10px;
 }
 
-.card-image img {
-    width: 100%;
-    height: 175px;
-    object-fit: cover;
-    border-radius: 10px;
+.card-info .tag-wrapper {
+    display: flex;
 }
 
-.card span {
+.card-info .tag {
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -194,6 +196,15 @@ body {
     background-color: #d9d9d9;
     border-radius: 10px;
     font-size: 12px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .card-title {
@@ -260,6 +271,25 @@ body {
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.sidebar-card .tag-wrapper {
+    display: flex;
+}
+
+.sidebar-card .tag {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 45px;
+    height: 20px;
+    color: black;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    font-size: 12px;
+    text-decoration: none;
+    margin-right: 5px;
 }
 
 .sidebar-card-title {
