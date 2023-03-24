@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category__articles', function (Blueprint $table) {
-            $table->foreignId('type_id');
+        Schema::create('category_articles', function (Blueprint $table) {
+            $table->foreignId('category_id');
             $table->foreignId('article_id');
             $table->timestamps();
         });
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category__articles');
+        Schema::dropIfExists('category_articles');
     }
 };

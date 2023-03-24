@@ -15,15 +15,18 @@
                 </tr>
             </thead>
             <tbody>
-                @for ($i = 1; $i <= 100; $i++)
+                @foreach ($articles as $article)
                     <tr>
-                        <td>{{ $i }}</td>
-                        <td>Title goes here</td>
-                        <td>Date goes here</td>
-                        <td>Category goes here</td>
-                        <td>Views goes here</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $article->title }}</td>
+                        <td>{{ $article->created_at }}</td>
+                        @foreach ($article->categories as $category)
+                            <td>{{ $category->category_name }}</td>
+                        @endforeach
+                        <td>{{ $article->counts }}</td>
                     </tr>
-                @endfor
+                @endforeach
+
             </tbody>
         </table>
     </div>

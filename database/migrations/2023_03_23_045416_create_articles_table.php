@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('slug',255)->unique();
             $table->string('title',255)->unique();
-            $table->text('video-link')->nullable();
+            $table->text('video_link')->nullable();
             $table->text('thumbnail')->nullable();
             $table->text('excerpt');
             $table->text('content');
