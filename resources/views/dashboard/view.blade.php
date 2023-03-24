@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="main-form">

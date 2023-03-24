@@ -1,28 +1,78 @@
-@extends('dashboard')
+@extends('layouts.dashboard')
 
 @section('content')
-    <div x-data="{ open: false, selectedOption: 'default' }" class="main-form">
+    <div x-data="{ isOpen: false, selectedOption: 'default' }" class="main-form">
         <h1>Add Content</h1>
-        <select x-model="selectedOption" x-on:change="selectedOption !== 'default' ? open = true : open = false"
+        <select x-model="selectedOption" x-on:change="selectedOption !== 'default' ? isOpen = true : isOpen = false"
             class="form-select w-25 mt-3" aria-label="Type Select">
-            <option value="default" selected>
-                Choose Content Type
-            </option>
+            <option value="default" selected>Choose Content Type</option>
             <option value="photos">Photos</option>
             <option value="videos">Videos</option>
         </select>
 
-        <div x-show="open">
+        <div x-show="isOpen">
             <div class="form-title w-75 mt-3">
                 <label for="title">Title:</label>
                 <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
                     id="title" />
             </div>
 
-            <div class="form-tag w-25 mt-3">
-                <label for="category">Category:</label>
-                <input class="form-control mt-1" type="text" aria-label="Tag" placeholder="Content Category"
-                    id="category" />
+            <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
+                <label for="checkbox">Category:</label>
+                <div class="d-flex">
+                    <div class="mt-1">
+                        @for ($i = 1; $i <= 10; $i++)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                                <label class="form-check-label" for="inlineCheckbox1">{{ $i }}</label>
+                            </div>
+                        @endfor
+                    </div>
+                    <div>
+                        <button x-on:click="isOpen2 = !isOpen2" type="button" class="btn btn-sm btn-success">
+                            <i class="bx bx-plus"></i>
+                        </button>
+                        <!-- <button type="button" class="btn btn-sm btn-danger">
+                                    
+                                </button> -->
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteTag">
+                            <i class="bx bx-x"></i>
+                        </button>
+
+                        <div class="modal fade" id="deleteTag" tabindex="-1" aria-labelledby="deleteTagLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteTagLabel">
+                                            Deletion Confirmation
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure want to Delete the Tag?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button type="button" class="btn btn-danger">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag-control mt-1 d-flex">
+                    <input x-show="isOpen2" class="form-control w-25" type="text" placeholder="Input Tag"
+                        aria-label="Title Input" id="title" />
+                    <input x-show="isOpen2" x-on:click="isOpen2 = false" class="btn btn-success ms-1" type="submit"
+                        value="Submit" />
+                </div>
             </div>
 
             <div x-bind:class="{ 'active-thumbnail': selectedOption === 'photos' }" class="form-thumbnail-photo w-50 mt-3">
@@ -52,7 +102,9 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="input-submitLabel">Submit Confirmation</h5>
+                                <h5 class="modal-title" id="input-submitLabel">
+                                    Submit Confirmation
+                                </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -60,17 +112,19 @@
                                 Are you sure want to Submit this Content?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                    Submit
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
                 <a class="btn btn-secondary mt-3" href="/dashboard" role="button">Cancel</a>
             </div>
         </div>
-
     </div>
 @endsection
