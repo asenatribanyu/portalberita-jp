@@ -20,7 +20,7 @@
             <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
                 <label for="checkbox">Category:</label>
                 <div class="d-flex">
-                    <div class="mt-1">
+                    <div class="checkbox-limit mt-1" data-max-checks="3">
                         @for ($i = 1; $i <= 10; $i++)
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
@@ -32,9 +32,6 @@
                         <button x-on:click="isOpen2 = !isOpen2" type="button" class="btn btn-sm btn-success">
                             <i class="bx bx-plus"></i>
                         </button>
-                        <!-- <button type="button" class="btn btn-sm btn-danger">
-                                    
-                                </button> -->
                         <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                             data-bs-target="#deleteTag">
                             <i class="bx bx-x"></i>

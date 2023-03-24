@@ -150,6 +150,10 @@ body {
     border-radius: 10px;
 }
 
+.card-info .tag-wrapper {
+    display: flex;
+}
+
 .card .tag {
     display: flex;
     justify-content: center;
@@ -163,6 +167,7 @@ body {
     font-size: 12px;
     font-weight: 400;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .card-title {

@@ -13,19 +13,22 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor
                 </h1>
-                <a class="tag" href="/categories">Tag</a>
+                <div class="tag-wrapper">
+                    <a class="tag" href="/categories">Tag</a>
+                </div>
                 <small>By Admin - DD/MM/YYYY</small>
             </div>
 
             <div class="content-thumbnail">
-                <!-- <div class="image-thumbnail">
-                                        <img src="img/thumbnail-preview.jpg" alt="" />
-                                        </div> -->
+                {{-- <div class="image-thumbnail">
+                    <img src="img/thumbnail-preview.jpg" alt="" />
+                </div> --}}
 
                 <iframe width="840" height="425" src="https://www.youtube.com/embed/4MoRLTAJY_0?autoplay=0"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+                    allowfullscreen>
+                </iframe>
             </div>
 
             <div class="content-body">
@@ -150,8 +153,10 @@
                             <img src="img/thumbnail-preview.jpg" alt="" />
                         </a>
                         <div class="card-info">
-                            <span>Tag</span>
-                            <a href="/" class="card-title">Lorem ipsum dolor sit amet, consectetur
+                            <div class="tag-wrapper">
+                                <a class="tag" href="/categories">Tag</a>
+                            </div>
+                            <a href="/preview" class="card-title">Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit, sed do eiusmod.</a>
                             <div class="card-desc">
                                 Facilisis volutpat est velit egestas dui id
@@ -183,7 +188,10 @@
                             <a class="sidebar-card-img" href="/preview">
                                 <img src="img/thumbnail-preview.jpg" alt="" />
                             </a>
-                            <a href="/" class="sidebar-card-title">Lorem ipsum dolor sit amet, consectetur
+                            <div class="tag-wrapper">
+                                <a class="tag" href="/categories">Tag</a>
+                            </div>
+                            <a href="/preview" class="sidebar-card-title">Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit, sed do eiusmod.</a>
                         </div>
                     @endfor

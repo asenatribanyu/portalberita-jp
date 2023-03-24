@@ -59,7 +59,9 @@
                         <img src="img/thumbnail-categories.jpg" alt="" />
                     </a>
                     <div class="card-info">
-                        <a class="tag" href="/categories">Tag</a>
+                        <div class="tag-wrapper">
+                            <a class="tag" href="/categories">Tag</a>
+                        </div>
                         <a href="/" class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod.</a>
                         <div class="card-desc">

@@ -12,7 +12,10 @@
                 <div class="carousel-slides">
                     <img src="img/slider-{{ $i }}.jpg" alt="" />
                     <div class="carousel-info">
-                        <a class="tag" href="/categories">Tag</a>
+                        <div class="tag-wrapper">
+                            <a class="tag" href="/categories">Tag</a>
+                        </div>
+
                         <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit Lorem ipsum dolor sit amet, consectetur
                             adipiscing elit Lorem ipsum dolor sit amet,
@@ -36,7 +39,9 @@
                         <img src="img/thumbnail.jpg" alt="" />
                     </a>
                     <div class="card-home-info">
-                        <a class="tag" href="/categories">Tag</a>
+                        <div class="tag-wrapper">
+                            <a class="tag" href="/categories">Tag</a>
+                        </div>
                         <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod.</a>
 
@@ -67,7 +72,9 @@
                         <img src="img/thumbnail.jpg" alt="" />
                     </a>
                     <div class="card-home-info">
-                        <a class="tag" href="/categories">Tag</a>
+                        <div class="tag-wrapper">
+                            <a class="tag" href="/categories">Tag</a>
+                        </div>
                         <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod.</a>
                         <div class="card-home-desc">
@@ -128,7 +135,9 @@
                         <img src="img/thumbnail.jpg" alt="" />
                     </a>
                     <div class="card-home-info">
-                        <a class="tag" href="/categories">Tag</a>
+                        <div class="tag-wrapper">
+                            <a class="tag" href="/categories">Tag</a>
+                        </div>
                         <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod.</a>
                         <div class="card-home-desc">
@@ -164,7 +173,9 @@
                         <img src="img/thumbnail.jpg" alt="" />
                     </a>
                     <div class="card-home-info">
-                        <a class="tag" href="/categories">Tag</a>
+                        <div class="tag-wrapper">
+                            <a class="tag" href="/categories">Tag</a>
+                        </div>
                         <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur
                             adipiscing
                             elit, sed do eiusmod.</a>
