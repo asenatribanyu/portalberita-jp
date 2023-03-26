@@ -1,6 +1,6 @@
 // Navigation Bar
 const nav = document.querySelector("nav");
-const body = document.querySelector("body");
+const close = document.querySelector(".side-close");
 const searchToggle = document.querySelector(".searchToggle");
 const sidebarC = document.querySelector(".side-close");
 const sidebarO = document.querySelector(".side-open");
@@ -13,7 +13,7 @@ sidebarO.addEventListener("click", () => {
     nav.classList.add("active");
 });
 
-body.addEventListener("click", (e) => {
+close.addEventListener("click", (e) => {
     let clicked = e.target;
 
     if (
@@ -55,7 +55,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
     slideInterval = setInterval(() => {
         carouselNext[2].click();
-    }, 3000);
+    }, 4000);
 
     carousel.addEventListener("mouseover", () => {
         clearInterval(slideInterval);
@@ -64,7 +64,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     carousel.addEventListener("mouseout", () => {
         slideInterval = setInterval(() => {
             carouselNext[2].click();
-        }, 3000);
+        }, 4000);
     });
 });
 // End of Carousel
