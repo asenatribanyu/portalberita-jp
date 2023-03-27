@@ -24,11 +24,11 @@
                     <img src="img/thumbnail-preview.jpg" alt="" />
                 </div> --}}
 
-                <iframe width="840" height="425" src="https://www.youtube.com/embed/4MoRLTAJY_0?autoplay=0"
-                    title="YouTube video player" frameborder="0"
+                <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
+
             </div>
 
             <div class="content-body">
@@ -141,32 +141,35 @@
             </div>
 
             <!-- Other Articles & Card -->
-            <div class="header">
+            <div class="header header-other">
                 <h1>OTHER ARTICLES</h1>
                 <a href="/">View All Articles &#8594;</a>
             </div>
 
             <div class="card-wrapper">
-                @for ($i = 1; $i <= 2; $i++)
+                @for ($i = 1; $i <= 5; $i++)
                     <div class="card">
-                        <a class="card-image" href="/preview">
-                            <img src="img/thumbnail-preview.jpg" alt="" />
-                        </a>
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                <a class="tag" href="/categories">Tag</a>
+                        <div class="detail-wrapper">
+                            <div class="card-image">
+                                <a href="/"> <img src="img/thumbnail-preview.jpg" alt="" /> </a>
+                                <div class="card-view"><small>&#128065;Views</small></div>
                             </div>
-                            <a href="/preview" class="card-title">Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod.</a>
-                            <div class="card-desc">
-                                Facilisis volutpat est velit egestas dui id
-                                ornare. Scelerisque felis imperdiet proin
-                                fermentum leo vel orci porta. In hac habitasse
-                                platea dictumst quisque sagittis.
-                            </div>
-                            <div class="card-footer">
-                                <a href="/" class="card-nav">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
+                            <div class="card-info">
+                                <div class="tag-wrapper">
+                                    <a href="/">Tag</a>
+                                </div>
+                                <div class="card-title">
+                                    <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod. </a>
+                                </div>
+                                <div class="card-desc">
+                                    <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
+                                        fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/">Read More &#8594;</a>
+                                    <small>DD/MM/YYYY</small>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,19 +183,29 @@
         <div class="sidebar-wrapper">
             <div class="sidebar">
                 <div class="sidebar-title">Read Also:</div>
-
                 <!-- Sidebar Card -->
                 <div class="sidebar-card-wrapper">
                     @for ($i = 1; $i <= 5; $i++)
                         <div class="sidebar-card">
-                            <a class="sidebar-card-img" href="/preview">
-                                <img src="img/thumbnail-preview.jpg" alt="" />
-                            </a>
-                            <div class="tag-wrapper">
-                                <a class="tag" href="/categories">Tag</a>
+                            <div class="sidebar-detail-wrapper">
+                                <div class="sidebar-card-image">
+                                    <a href="/"> <img src="img/thumbnail-preview.jpg" alt="" /> </a>
+                                    <div class="sidebar-card-view"><small>&#128065;Views</small></div>
+                                </div>
+                                <div class="sidebar-card-info">
+                                    <div class="sidebar-tag-wrapper">
+                                        <a href="/">Tag</a>
+                                    </div>
+                                    <div class="sidebar-card-title">
+                                        <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                                    </div>
+                                    <div class="sidebar-card-footer">
+                                        <a href="/">Read More &#8594;</a>
+                                        <small>DD/MM/YYYY</small>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="/preview" class="sidebar-card-title">Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod.</a>
                         </div>
                     @endfor
                 </div>

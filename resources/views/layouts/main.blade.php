@@ -76,6 +76,7 @@
     <!-- End of Footer -->
 
     @stack('script')
+    <script src="{{ asset('js/navbar-script.js') }}"></script>
 </body>
 
 </html>

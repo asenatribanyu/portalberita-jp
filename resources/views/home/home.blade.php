@@ -36,12 +36,12 @@
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
-                            <a href="/"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
                             <div class="card-view"><small>&#128065;Views</small></div>
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
-                                <a href="/">Tag</a>
+                                <a href="/categories">Tag</a>
                             </div>
                             <div class="card-title">
                                 <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -73,15 +73,15 @@
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
-                            <a href="/"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
                             <div class="card-view"><small>&#128065;Views</small></div>
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
-                                <a href="/">Tag</a>
+                                <a href="/categories">Tag</a>
                             </div>
                             <div class="card-title">
-                                <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod. </a>
                             </div>
                             <div class="card-desc">
@@ -89,7 +89,7 @@
                                     fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
                             </div>
                             <div class="card-footer">
-                                <a href="/">Read More &#8594;</a>
+                                <a href="/preview">Read More &#8594;</a>
                                 <small>DD/MM/YYYY</small>
                             </div>
                         </div>
@@ -139,15 +139,15 @@
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
-                            <a href="/"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
                             <div class="card-view"><small>&#128065;Views</small></div>
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
-                                <a href="/">Tag</a>
+                                <a href="/categories">Tag</a>
                             </div>
                             <div class="card-title">
-                                <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod. </a>
                             </div>
                             <div class="card-desc">
@@ -155,7 +155,7 @@
                                     fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
                             </div>
                             <div class="card-footer">
-                                <a href="/">Read More &#8594;</a>
+                                <a href="/preview">Read More &#8594;</a>
                                 <small>DD/MM/YYYY</small>
                             </div>
                         </div>
@@ -180,15 +180,15 @@
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
-                            <a href="/"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
                             <div class="card-view"><small>&#128065;Views</small></div>
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
-                                <a href="/">Tag</a>
+                                <a href="/categories">Tag</a>
                             </div>
                             <div class="card-title">
-                                <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod. </a>
                             </div>
                             <div class="card-desc">
@@ -196,7 +196,7 @@
                                     fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
                             </div>
                             <div class="card-footer">
-                                <a href="/">Read More &#8594;</a>
+                                <a href="/preview">Read More &#8594;</a>
                                 <small>DD/MM/YYYY</small>
                             </div>
                         </div>

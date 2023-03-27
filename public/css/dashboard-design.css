@@ -5,7 +5,6 @@
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
 }
-/* End of General */
 
 body {
     background: #fafafa;
@@ -16,15 +15,17 @@ body {
     margin: auto;
     padding-top: 8px;
 }
+/* End of General */
 
 /* Navigation Bar */
-nav .sidebar {
+.sidebar {
     position: fixed;
     top: 0;
     height: 100%;
     width: 260px;
     background-color: white;
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
 }
 
 .sidebar-logo {
@@ -149,3 +150,6 @@ nav .sidebar {
     padding: 20px;
 }
 /* End of Dashboard Input */
+
+/* Responsive */
+/* End of Responsive */

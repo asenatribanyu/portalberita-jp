@@ -18,7 +18,7 @@
             </div>
             <div class="about-info-wrapper">
                 <div class="about-info">
-                    <div class="title">ABOUT</div>
+                    <div class="title title-1">ABOUT</div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit, sed do eiusmod tempor incididunt ut labore et
@@ -46,10 +46,10 @@
         </div>
 
         <!-- About 2 -->
-        <div class="about">
+        <div class="about about-2">
             <div class="about-info-wrapper">
                 <div class="about-info">
-                    <div class="title">VISION</div>
+                    <div class="title title-2">VISION</div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit, sed do eiusmod tempor incididunt ut labore et
@@ -90,8 +90,7 @@
         </div>
 
         <div class="hero">
-            <iframe width="1030" height="400" src="https://www.youtube.com/embed/4MoRLTAJY_0?autoplay=0"
-                title="YouTube video player" frameborder="0"
+            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0?autoplay=0" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
         </div>
@@ -104,7 +103,7 @@
             <div class="photos-wrapper">
                 @for ($i = 1; $i <= 3; $i++)
                     <div class="photos-slider">
-                        <img src="img/thumbnail-about-{{ $i }}.jpg" alt="" />
+                        <img src="img/slider-{{ $i }}.jpg" alt="" />
                         <div class="photos-button">
                             <i class="bx bx-chevron-left photos-nav-left"></i>
                             <i class="bx bx-chevron-right photos-nav-right"></i>

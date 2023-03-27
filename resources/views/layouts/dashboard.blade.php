@@ -40,8 +40,9 @@
     <nav>
         <div class="sidebar">
             <div class="sidebar-logo">
-                <!-- <i class="bx bx-menu menu-icon"></i> -->
+                {{-- <i class="bx bx-menu menu-icon"></i> --}}
                 <a href="/">Logo.</a>
+                {{-- <i class="bx bx-x side-close"></i> --}}
             </div>
 
             <div class="menu">
