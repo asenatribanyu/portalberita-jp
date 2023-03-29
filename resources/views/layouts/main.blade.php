@@ -12,6 +12,7 @@
         rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/main-design.css">
+
     @stack('style')
 
     <title>Heiwa | {{ $title }}</title>
@@ -40,8 +41,13 @@
                     <li><a class="{{ $title === 'Categories' ? 'nav-active' : '' }}" href="/categories">Categories</a>
                     </li>
                     <li><a href="/">Language</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a class="{{ $title === 'Sign In' ? 'nav-active' : '' }}" href="/login">Sign in</a></li>
+                    @auth
+                        <li><a href="/dashboard">Dashboard</a></li>
+                    @else
+                        <li><a class="{{ $title === 'Sign In' ? 'nav-active' : '' }}" href="/login">Sign in</a></li>
+                    @endauth
+
+
                 </ul>
             </div>
 

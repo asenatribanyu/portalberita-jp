@@ -19,10 +19,10 @@
                         <div class="caret-categories"></div>
                     </div>
                     <ul class="menu-categories">
-                        <li>Categories 1</li>
-                        <li>Categories 2</li>
-                        <li>Categories 3</li>
-                        <li>Categories 4</li>
+                        @foreach ($categories as $category)
+                            <li>{{ $category->category_name }}</li>
+                        @endforeach
+
                     </ul>
                 </div>
                 <div class="dropdown-categories">
@@ -31,8 +31,10 @@
                         <div class="caret-categories"></div>
                     </div>
                     <ul class="menu-categories">
-                        <li>Photo</li>
-                        <li>Video</li>
+                        @foreach ($types as $type)
+                            <li>{{ $type->type_name }}</li>
+                        @endforeach
+
                     </ul>
                 </div>
                 <div class="dropdown-categories">
@@ -41,10 +43,8 @@
                         <div class="caret-categories"></div>
                     </div>
                     <ul class="menu-categories">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
+                        <li>Latest</li>
+                        <li>Oldest</li>
                     </ul>
                 </div>
             </div>
@@ -53,30 +53,34 @@
 
         <!-- Categories Card -->
         <div class="card-wrapper">
-            @for ($i = 1; $i <= 15; $i++)
+            @foreach ($articles as $article)
                 <div class="card">
-                    <a class="card-image" href="/preview">
-                        <img src="img/thumbnail-categories.jpg" alt="" />
+                    <a class="card-image" href="/{{ $article->slug }}">
+                        @if ($article->type_id == 1)
+                            <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="" />
+                        @else
+                            <iframe src="{{ $article->video_link }}" frameborder="0" height="175px" width="311px"></iframe>
+                        @endif
+
+
                     </a>
                     <div class="card-info">
                         <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+                            @foreach ($article->categories as $category)
+                                <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                            @endforeach
                         </div>
-                        <a href="/" class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
+                        <a href="/{{ $article->slug }}" class="card-title">{{ $article->title }}</a>
                         <div class="card-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
+                            {{ $article->content }}
                         </div>
                         <div class="card-footer">
-                            <a href="/" class="card-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+                            <a href="/{{ $article->slug }}" class="card-nav">Read More &#8594;</a>
+                            <small>{{ $article->created_at->format('j/F/Y') }}</small>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
         <!-- End of Categories Card -->
     </div>

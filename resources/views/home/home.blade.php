@@ -66,30 +66,32 @@
 
         <!-- Latest Articles Card -->
         <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 3; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
-                        </div>
-                        <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+            @foreach ($latest as $late)
+                @if ($late->type_id === 1)
+                    <div class="card-home">
+                        <a class="card-home-image" href="/{{ $late->slug }}">
+                            <img src={{ asset('storage/' . $late->thumbnail) }} alt="" />
+                        </a>
+                        <div class="card-home-info">
+                            <div class="tag-wrapper">
+                                @foreach ($late->categories as $category)
+                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                @endforeach
+                            </div>
+
+
+                            <a href="/{{ $late->slug }}" class="card-home-title">{{ $late->title }}</a>
+                            <div class="card-home-desc">
+                                {{ $late->excerpt }}
+                            </div>
+                            <div class="card-home-footer">
+                                <a href="/{{ $late->slug }}" class="card-home-nav">Read More &#8594;</a>
+                                <small>{{ $late->created_at->format('j/F/Y') }}</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endfor
+                @endif
+            @endforeach
         </div>
         <!-- End of Latest Articles Card -->
 
@@ -129,30 +131,32 @@
 
         <!-- Articles Card -->
         <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 9; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
-                        </div>
-                        <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+
+            @foreach ($articles as $article)
+                @if ($article->type_id == 1)
+                    <div class="card-home">
+                        <a class="card-home-image" href="/{{ $article->slug }}">
+                            <img src={{ asset('storage/' . $article->thumbnail) }} alt="" />
+                        </a>
+                        <div class="card-home-info">
+
+                            <div class="tag-wrapper">
+                                @foreach ($article->categories as $category)
+                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                @endforeach
+                            </div>
+                            <a href="/{{ $article->slug }}" class="card-home-title">{{ $article->title }}</a>
+                            <div class="card-home-desc">
+                                {{ $article->excerpt }}
+                            </div>
+                            <div class="card-home-footer">
+                                <a href="/{{ $article->slug }}" class="card-home-nav">Read More &#8594;</a>
+                                <small>{{ $article->created_at->format('j/F/Y') }}</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endfor
+                @endif
+            @endforeach
         </div>
         <!-- End of Articles Card -->
 
@@ -167,31 +171,31 @@
 
         <!-- Videos Card -->
         <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 3; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
-                        </div>
-                        <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur
-                            adipiscing
-                            elit, sed do eiusmod.</a>
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+            @foreach ($articles as $article)
+                @if ($article->type_id == 2)
+                    <div class="card-home">
+                        <a class="card-home-image" href="/{{ $article->slug }}">
+                            <iframe src="{{ $article->video_link }}" frameborder="0" height="175px"
+                                width="311px"></iframe>
+                        </a>
+                        <div class="card-home-info">
+                            <div class="tag-wrapper">
+                                @foreach ($article->categories as $category)
+                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                @endforeach
+                            </div>
+                            <a href="/{{ $article->slug }}" class="card-home-title">{{ $article->title }}</a>
+                            <div class="card-home-desc">
+                                {{ $article->excerpt }}
+                            </div>
+                            <div class="card-home-footer">
+                                <a href="/{{ $article->slug }}" class="card-home-nav">Read More &#8594;</a>
+                                <small>{{ $article->created_at->format('j-F-Y') }}</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endfor
+                @endif
+            @endforeach
         </div>
         <!-- End of Videos Card -->
 
