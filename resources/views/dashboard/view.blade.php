@@ -9,6 +9,7 @@
                 <tr>
                     <th>No</th>
                     <th>Title</th>
+                    <th>Type</th>
                     <th>Date</th>
                     <th>Category</th>
                     <th>Views</th>
@@ -19,6 +20,7 @@
                     <tr>
                         <td>{{ $i }}</td>
                         <td>Title goes here</td>
+                        <td>Type goes here</td>
                         <td>Date goes here</td>
                         <td>Category goes here</td>
                         <td>Views goes here</td>

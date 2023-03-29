@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main-design.css">
     @stack('style')
 
-    <title>Heiwa | {{ $title }}</title>
+    <title>Heiwa {{ $title }}</title>
 </head>
 
 <body>
@@ -35,13 +35,20 @@
                 </div>
 
                 <ul class="navlink">
-                    <li><a class="{{ $title === 'Home' ? 'nav-active' : '' }}" href="/">Home</a></li>
-                    <li><a class="{{ $title === 'About' ? 'nav-active' : '' }}" href="/about">About</a></li>
-                    <li><a class="{{ $title === 'Categories' ? 'nav-active' : '' }}" href="/categories">Categories</a>
+                    <li><a class="{{ $title === '' ? 'nav-active' : '' }}" href="/">Home</a></li>
+                    <li><a class="{{ $title === '| About' ? 'nav-active' : '' }}" href="/about">About</a></li>
+                    <li><a class="{{ $title === '| Categories' ? 'nav-active' : '' }}" href="/categories">Categories</a>
                     </li>
-                    <li><a href="/">Language</a></li>
+                    <li class="menu-lang">
+                        <a href="/">Languages</a>
+                        <ul>
+                            <li><a class="" href="#">日本語</a></li>
+                            <li><a class="lang-active" href="#">English</a></li>
+                            <li><a class="" href="#">Indonesia</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a class="{{ $title === 'Sign In' ? 'nav-active' : '' }}" href="/login">Sign in</a></li>
+                    <li><a class="{{ $title === '| Sign In' ? 'nav-active' : '' }}" href="/login">Sign in</a></li>
                 </ul>
             </div>
 

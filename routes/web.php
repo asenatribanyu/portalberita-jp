@@ -15,55 +15,55 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home/home', [
-        "title" => "Home"
+        "title" => ""
     ]);
   });
 
 Route::get('/login', function () {
     return view('login/login', [
-        "title" => "Sign In"
+        "title" => "| Sign In"
     ]);
 });
 
 Route::get('/preview', function () {
     return view('article/preview', [
-        "title" => "Preview"
+        "title" => "| Preview"
     ]);
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard/view', [
-        "title" => "Dashboard"
+        "title" => "| Dashboard"
     ]);
  });
 
  Route::get('/dashboard/input', function () {
     return view('dashboard/input', [
-        "title" => "Add Content"
+        "title" => "| Add Content"
     ]);
 });
 
 Route::get('/dashboard/edit', function () {
     return view('dashboard/edit', [
-        "title" => "Edit Content"
+        "title" => "| Edit Content"
     ]);
 });
 
 Route::get('/dashboard/edit/content', function () {
     return view('dashboard/edit-content', [
-        "title" => "Edit Content"
+        "title" => "| Edit Content"
     ]);
 });
 
 Route::get('/categories', function () {
     return view('category/categories', [
-        "title" => "Categories"
+        "title" => "| Categories"
     ]);
 });
 
 Route::get('/about', function () {
     return view('about/about', [
-        "title" => "About"
+        "title" => "| About"
     ]);
 });
 

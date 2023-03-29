@@ -17,8 +17,56 @@ nav {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+.navlink .menu-lang {
+    position: relative;
+}
+
+.navlink .menu-lang:hover > ul {
+    display: block;
+    opacity: 1;
+}
+
+.navlink .menu-lang ul {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    display: none;
+    opacity: 0;
+}
+
+.navlink .menu-lang ul li {
+    position: relative;
+    height: 30px;
+    background-color: #e6e6e6;
+}
+
+.navlink .menu-lang ul li a {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.navlink .menu-lang ul li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.navlink .lang-active {
+    background-color: black;
+    color: white;
+}
+
+.navlink .menu-lang ul li a.lang-active:hover {
+    background-color: rgb(83, 83, 83);
+    color: white;
+}
+
 .navlink .nav-active {
-    border-bottom: 3px solid black;
+    border-bottom: 2.5px solid black;
+    transition: all 0.2s ease-in;
 }
 
 .navlink .nav-active:hover {
@@ -73,12 +121,14 @@ nav .navbar .logo a {
 }
 
 .navlink li a {
+    height: 100%;
     position: relative;
     font-size: 15px;
     font-weight: 500;
     color: black;
     padding: 10px;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 
 .navlink li a:hover {
@@ -99,7 +149,11 @@ nav .navbar .logo a {
     color: black;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-in-out;
+}
+
+.searchToggle i:hover {
+    color: #3b71ca;
 }
 
 .searchToggle i.cancel {

@@ -11,7 +11,7 @@
             <div class="login-form-wrapper">
                 <div class="login-form">
                     <h1>WELCOME</h1>
-                    <small>Please Sign In to your Account</small>
+                    <small>Please sign into your account</small>
 
                     <form>
                         <label class="label" for="username">Username</label>

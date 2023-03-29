@@ -93,6 +93,11 @@ body {
     border-radius: 50px;
     margin-top: 10px;
     padding-left: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navlink .nav-logout {
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-item span,
