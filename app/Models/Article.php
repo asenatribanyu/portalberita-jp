@@ -49,5 +49,19 @@ class Article extends Model
     {
     return 'slug';
     }
+    public function hasViewed($ip)
+    {
+        return $this->views()->where('ip_address', $ip)->exists();
+    }
     
+    public function recordView($ip)
+    {
+        $this->increment('counts');
+        $this->views()->create(['ip_address' => $ip]);
+    }
+
+    public function views()
+    {
+    return $this->hasMany(View::class);
+    }
 }

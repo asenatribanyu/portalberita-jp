@@ -50,18 +50,21 @@
 
                 </ul>
             </div>
+            <form method="GET" action="{{ route('categories.index') }}">
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class="bx bx-x cancel"></i>
+                        <i class="bx bx-search search"></i>
+                    </div>
 
-            <div class="searchBox">
-                <div class="searchToggle">
-                    <i class="bx bx-x cancel"></i>
-                    <i class="bx bx-search search"></i>
+                    <div class="searchField">
+                        <input type="text" name="search" value="{{ request()->input('search') }}"
+                            placeholder="Search...">
+                        {{-- <input type="text" placeholder="Search..." /> --}}
+                        <i class="bx bx-search search"></i>
+                    </div>
                 </div>
-
-                <div class="searchField">
-                    <input type="text" placeholder="Search..." />
-                    <i class="bx bx-search search"></i>
-                </div>
-            </div>
+            </form>
         </div>
     </nav>
     <!-- End of Navigation Bar -->
@@ -82,6 +85,7 @@
     <!-- End of Footer -->
 
     @stack('script')
+    <script src="{{ asset('js/main-script.js') }}"></script>
 </body>
 
 </html>

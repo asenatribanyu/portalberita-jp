@@ -33,25 +33,29 @@
 
         <!-- Featured Card -->
         <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 3; $i++)
+            @foreach ($views as $view)
                 <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
+                    <a class="card-home-image" href="/{{ $view->slug }}">
+                        @if ($view->type_id == 1)
+                            <img src="{{ asset('storage/' . $view->thumbnail) }}" alt="" />
+                        @else
+                            <iframe src="{{ $view->video_link }}" frameborder="0" height="175px" width="311px"></iframe>
+                        @endif
                     </a>
                     <div class="card-home-info">
                         <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+                            @foreach ($view->categories as $category)
+                                <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                            @endforeach
                         </div>
-                        <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
-
+                        <a href="/{{ $view->slug }}" class="card-home-title">{{ $view->title }}</a>
                         <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+                            <a href="/{{ $view->slug }}" class="card-home-nav">Read More &#8594;</a>
+                            <small>{{ $view->created_at->format('j/F/Y') }}</small>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
         <!-- End of Featured Card -->
 
@@ -67,30 +71,32 @@
         <!-- Latest Articles Card -->
         <div class="card-home-wrapper">
             @foreach ($latest as $late)
-                @if ($late->type_id === 1)
-                    <div class="card-home">
-                        <a class="card-home-image" href="/{{ $late->slug }}">
-                            <img src={{ asset('storage/' . $late->thumbnail) }} alt="" />
-                        </a>
-                        <div class="card-home-info">
-                            <div class="tag-wrapper">
-                                @foreach ($late->categories as $category)
-                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
-                                @endforeach
-                            </div>
+                <div class="card-home">
+                    <a class="card-home-image" href="/{{ $late->slug }}">
+                        @if ($late->type_id == 1)
+                            <img src="{{ asset('storage/' . $late->thumbnail) }}" alt="" />
+                        @else
+                            <iframe src="{{ $late->video_link }}" frameborder="0" height="175px" width="311px"></iframe>
+                        @endif
+                    </a>
+                    <div class="card-home-info">
+                        <div class="tag-wrapper">
+                            @foreach ($late->categories as $category)
+                                <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                            @endforeach
+                        </div>
 
 
-                            <a href="/{{ $late->slug }}" class="card-home-title">{{ $late->title }}</a>
-                            <div class="card-home-desc">
-                                {{ $late->excerpt }}
-                            </div>
-                            <div class="card-home-footer">
-                                <a href="/{{ $late->slug }}" class="card-home-nav">Read More &#8594;</a>
-                                <small>{{ $late->created_at->format('j/F/Y') }}</small>
-                            </div>
+                        <a href="/{{ $late->slug }}" class="card-home-title">{{ $late->title }}</a>
+                        <div class="card-home-desc">
+                            {{ $late->excerpt }}
+                        </div>
+                        <div class="card-home-footer">
+                            <a href="/{{ $late->slug }}" class="card-home-nav">Read More &#8594;</a>
+                            <small>{{ $late->created_at->format('j/F/Y') }}</small>
                         </div>
                     </div>
-                @endif
+                </div>
             @endforeach
         </div>
         <!-- End of Latest Articles Card -->
@@ -190,7 +196,7 @@
                             </div>
                             <div class="card-home-footer">
                                 <a href="/{{ $article->slug }}" class="card-home-nav">Read More &#8594;</a>
-                                <small>{{ $article->created_at->format('j-F-Y') }}</small>
+                                <small>{{ $article->created_at->format('j/F/Y') }}</small>
                             </div>
                         </div>
                     </div>

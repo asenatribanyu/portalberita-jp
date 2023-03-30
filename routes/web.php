@@ -23,19 +23,13 @@ use App\Models\Type;
 Route::get('/', function () {
     return view('home/home', [
         "title" => "Home",
-        'latest' => Article::with(['categories'])->latest()->take(4)->get(),
-        'articles'=>Article::with(['categories'])->get(),
+        'views'=>Article::with(['categories'])->withCount('views')->orderByDesc('counts')->take(3)->get(),
+        'latest' => Article::with(['categories'])->latest()->take(3)->get(),
+        'articles'=>Article::with(['categories'])->paginate(3),
     ]);
   });
-Route::get('/categories', function () {
-    return view('category/categories', [
-        "title" => "Categories",
-        'categories'=>Category::all(),
-        'articles'=>Article::all(),
-        'types'=>Type::all()
-    ]);
-});
 
+Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
 Route::get('/about', function () {
     return view('about/about', [
         "title" => "About"
