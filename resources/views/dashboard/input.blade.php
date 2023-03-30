@@ -19,11 +19,14 @@
 
             <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
                 <label for="checkbox">Category:</label>
-                <div class="d-flex">
-                    <div class="checkbox-limit mt-1" data-max-checks="3">
+                <div x-data="{ checkedCount: 0 }" class="d-flex">
+                    <div class="checkbox-limit mt-1">
                         @for ($i = 1; $i <= 10; $i++)
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $i }}"
+                                    value="option{{ $i }}"
+                                    x-on:click="checkedCount = $event.target.checked ? checkedCount + 1 : checkedCount - 1"
+                                    x-bind:disabled="checkedCount >= 3 && !$event.target.checked" />
                                 <label class="form-check-label" for="inlineCheckbox1">{{ $i }}</label>
                             </div>
                         @endfor
@@ -125,3 +128,7 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script src="{{ asset('js/dashboard-script.js') }}"></script>
+@endpush
