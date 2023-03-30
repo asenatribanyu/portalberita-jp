@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardArticleController;
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Type;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,55 +22,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home/home', [
-        "title" => ""
+        "title" => "",
+        'views'=>Article::with(['categories'])->withCount('views')->orderByDesc('counts')->take(3)->get(),
+        'latest' => Article::with(['categories'])->latest()->take(3)->get(),
+        'articles'=>Article::with(['categories'])->paginate(3),
     ]);
   });
 
-Route::get('/login', function () {
-    return view('login/login', [
-        "title" => "| Sign In"
-    ]);
-});
-
-Route::get('/preview', function () {
-    return view('article/preview', [
-        "title" => "| Preview"
-    ]);
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard/view', [
-        "title" => "| Dashboard"
-    ]);
- });
-
- Route::get('/dashboard/input', function () {
-    return view('dashboard/input', [
-        "title" => "| Add Content"
-    ]);
-});
-
-Route::get('/dashboard/edit', function () {
-    return view('dashboard/edit', [
-        "title" => "| Edit Content"
-    ]);
-});
-
-Route::get('/dashboard/edit/content', function () {
-    return view('dashboard/edit-content', [
-        "title" => "| Edit Content"
-    ]);
-});
-
-Route::get('/categories', function () {
-    return view('category/categories', [
-        "title" => "| Categories"
-    ]);
-});
-
+Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
 Route::get('/about', function () {
     return view('about/about', [
         "title" => "| About"
     ]);
 });
+
+Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class,'authen']);
+Route::post('/logout',[LoginController::class,'logout']);
+Route::post('/newcategory',[CategoryController::class,'newcategory']);
+Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix']);
+Route::get('/dashboard', function () {
+    return view('dashboard/view',['articles'=>Article::all(),"title" => "| Dashboard"]);
+ })->middleware('auth');
+
+Route::resource('/dashboard/article',DashboardArticleController::class);
+
+
+Route::get('/{article}',[ArticleController::class,'show']);
 

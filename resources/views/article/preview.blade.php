@@ -10,135 +10,39 @@
         <div class="content">
             <div class="content-title">
                 <h1>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor
+                    {{ $articles->title }}
                 </h1>
                 <div class="tag-wrapper">
-                    <a class="tag" href="/categories">Tokyo</a>
-                    <a class="tag" href="/categories">Yokohama</a>
-                    <a class="tag" href="/categories">Kyoto</a>
+                    @foreach ($articles->categories as $category)
+                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                    @endforeach
                 </div>
+
                 <div class="author">
-                    <small>By Admin - DD/MM/YYYY</small>
-                    <small>&#128065; Views</small>
+                    <small>By{{ $articles->user->name }} - {{ $articles->created_at->format('j/F/Y') }}
+                    </small>
+                    <small>&#128065; {{ $articles->counts }}</small>
                 </div>
             </div>
 
             <div class="content-thumbnail">
-                {{-- <div class="image-thumbnail">
-                    <img src="img/thumbnail-preview.jpg" alt="" />
-                </div> --}}
+                @if ($articles->thumbnail)
+                    <div class="image-thumbnail">
+                        <img src="{{ asset('storage/' . $articles->thumbnail) }}" alt="" />
+                    </div>
+                @else
+                    <iframe src="{{ $articles->video_link }}" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                @endif
 
-                <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+
 
             </div>
 
             <div class="content-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Vestibulum lectus mauris ultrices eros in
-                    cursus turpis massa. Odio ut sem nulla pharetra diam.
-                    Nisi porta lorem mollis aliquam ut porttitor. Enim sit
-                    amet venenatis urna cursus eget nunc scelerisque
-                    viverra. Tortor aliquam nulla facilisi cras fermentum.
-                    Enim ut sem viverra aliquet eget sit amet. Diam sit amet
-                    nisl suscipit adipiscing bibendum est. Amet luctus
-                    venenatis lectus magna fringilla urna porttitor rhoncus
-                    dolor. Diam sollicitudin tempor id eu nisl nunc. Erat
-                    imperdiet sed euismod nisi porta lorem. Lectus proin
-                    nibh nisl condimentum id venenatis. Et netus et
-                    malesuada fames ac turpis egestas sed. Phasellus
-                    vestibulum lorem sed risus ultricies tristique nulla.
-                    Suspendisse sed nisi lacus sed viverra tellus in.
-                    Vestibulum rhoncus est pellentesque elit ullamcorper.
-                    Aliquet bibendum enim facilisis gravida neque convallis.
-                    Vitae justo eget magna fermentum iaculis.
-                </p>
-                <p>
-                    Ac ut consequat semper viverra nam libero. Urna nec
-                    tincidunt praesent semper feugiat nibh. Sed augue lacus
-                    viverra vitae congue eu. Porttitor massa id neque
-                    aliquam vestibulum. Vel pretium lectus quam id leo in
-                    vitae turpis. Tristique risus nec feugiat in fermentum
-                    posuere urna. Dictumst quisque sagittis purus sit amet
-                    volutpat. Scelerisque eleifend donec pretium vulputate
-                    sapien nec sagittis. Adipiscing elit duis tristique
-                    sollicitudin nibh sit amet. Nulla pharetra diam sit amet
-                    nisl suscipit adipiscing bibendum. Euismod in
-                    pellentesque massa placerat duis ultricies. Interdum
-                    velit euismod in pellentesque massa. Risus feugiat in
-                    ante metus dictum at tempor. Id consectetur purus ut
-                    faucibus. Diam phasellus vestibulum lorem sed risus
-                    ultricies tristique nulla. Commodo odio aenean sed
-                    adipiscing diam donec adipiscing. Vel facilisis volutpat
-                    est velit egestas dui id ornare arcu.
-                </p>
-
-                <div class="content-body-attachment">
-                    <div class="attachment attach-1">
-                        <img src="img/thumbnail-preview.jpg" alt="" />
-                    </div>
-                    <div class="attachment attach-2">
-                        <img src="img/thumbnail-preview.jpg" alt="" />
-                    </div>
-                </div>
-
-                <p>
-                    Aliquet porttitor lacus luctus accumsan tortor posuere
-                    ac. Vel elit scelerisque mauris pellentesque pulvinar.
-                    Tristique nulla aliquet enim tortor at auctor urna.
-                    Condimentum mattis pellentesque id nibh tortor id.
-                    Habitant morbi tristique senectus et netus et malesuada
-                    fames. Eget est lorem ipsum dolor sit amet. Sed egestas
-                    egestas fringilla phasellus faucibus. Urna cursus eget
-                    nunc scelerisque viverra mauris in aliquam sem. Molestie
-                    a iaculis at erat pellentesque adipiscing commodo elit
-                    at. Viverra accumsan in nisl nisi. Cursus mattis
-                    molestie a iaculis at erat pellentesque adipiscing
-                    commodo. Gravida quis blandit turpis cursus. Quam nulla
-                    porttitor massa id. Tellus in metus vulputate eu
-                    scelerisque felis imperdiet. Nulla facilisi nullam
-                    vehicula ipsum. Fames ac turpis egestas sed. Porttitor
-                    lacus luctus accumsan tortor posuere ac ut consequat.
-                    Sapien faucibus et molestie ac feugiat sed lectus.
-                    Turpis cursus in hac habitasse platea dictumst quisque
-                    sagittis purus. Fringilla phasellus faucibus scelerisque
-                    eleifend donec pretium vulputate sapien. Tempus urna et
-                    pharetra pharetra massa massa ultricies. Curabitur
-                    gravida arcu ac tortor dignissim convallis aenean et
-                    tortor. Tellus molestie nunc non blandit. Sit amet
-                    dictum sit amet justo donec enim diam. Mattis
-                    ullamcorper velit sed ullamcorper morbi tincidunt.
-                    Maecenas accumsan lacus vel facilisis volutpat. Enim
-                    praesent elementum facilisis leo vel. Pulvinar
-                    pellentesque habitant morbi tristique senectus et netus
-                    et malesuada. Ullamcorper a lacus vestibulum sed. Rutrum
-                    tellus pellentesque eu tincidunt tortor aliquam nulla
-                    facilisi. Vitae proin sagittis nisl rhoncus mattis
-                    rhoncus. Vitae proin sagittis nisl rhoncus mattis
-                    rhoncus urna neque. Pulvinar etiam non quam lacus
-                    suspendisse faucibus interdum posuere. Nisl vel pretium
-                    lectus quam id. Maecenas pharetra convallis posuere
-                    morbi leo. Porta nibh venenatis cras sed. Purus viverra
-                    accumsan in nisl. Dui id ornare arcu odio ut sem nulla.
-                    Pellentesque habitant morbi tristique senectus et netus
-                    et. Vulputate sapien nec sagittis aliquam malesuada
-                    bibendum arcu vitae elementum. Nibh ipsum consequat nisl
-                    vel pretium lectus quam.
-                </p>
-
-                <div class="content-body-attachment">
-                    <div class="attachment attach-3">
-                        <img src="img/thumbnail-preview.jpg" alt="" />
-                    </div>
-                    <div class="attachment attach-4">
-                        <img src="img/thumbnail-preview.jpg" alt="" />
-                    </div>
-                </div>
+                {!! $articles->content !!}
             </div>
 
             <div class="break-point-horizontal">
@@ -148,72 +52,45 @@
             <!-- Other Articles & Card -->
             <div class="header header-other">
                 <h1>OTHER ARTICLES</h1>
-                <a href="/">View All Articles &#8594;</a>
+                <a href="/categories">View All Articles &#8594;</a>
             </div>
 
             <div class="card-wrapper">
-                @for ($i = 1; $i <= 2; $i++)
+                @foreach ($random_articles as $random)
                     <div class="card">
                         <div class="detail-wrapper">
                             <div class="card-image">
-                                <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
-                                <div class="card-view"><small>&#128065; Views</small></div>
+                                @if ($random->type_id == 1)
+                                    <a href="/{{ $random->slug }}">
+                                        <img src="{{ asset('storage/' . $random->thumbnail) }}" alt="" />
+                                    </a>
+                                    <div class="card-view"><small>&#128065; {{ $random->counts }}</small></div>
+                                @else
+                                    <iframe src="{{ $random->video_link }}" frameborder="0" height="175px"
+                                        width="311px"></iframe>
+                                    <div class="card-view"><small>&#128065; {{ $random->counts }}</small></div>
+                                @endif
                             </div>
                             <div class="card-info">
                                 <div class="tag-wrapper">
-                                    <a href="/categories">Tokyo</a>
-                                    <a href="/categories">Yokohama</a>
-                                    <a href="/categories">Kyoto</a>
+                                    @foreach ($random->categories as $category)
+                                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                    @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod. </a>
+                                    <a href="/{{ $random->slug }}">{{ $random->title }}</a>
                                 </div>
                                 <div class="card-desc">
-                                    <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                        fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                                    <p>{{ $random->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="/preview">Read More &#8594;</a>
-                                    <small>DD/MM/YYYY</small>
+                                    <a href="/{{ $random->slug }}">Read More &#8594;</a>
+                                    <small>{{ $articles->created_at->format('j/F/Y') }}</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endfor
-
-                @for ($i = 1; $i <= 2; $i++)
-                    <div class="card">
-                        <div class="detail-wrapper">
-                            <div class="card-image">
-                                <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                                <div class="card-view"><small>&#128065; Views</small></div>
-                            </div>
-                            <div class="card-info">
-                                <div class="tag-wrapper">
-                                    <a href="/categories">Tokyo</a>
-                                    <a href="/categories">Yokohama</a>
-                                    <a href="/categories">Kyoto</a>
-                                </div>
-                                <div class="card-title">
-                                    <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod. </a>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                        fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="/preview">Read More &#8594;</a>
-                                    <small>DD/MM/YYYY</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endfor
+                @endforeach
             </div>
             <!-- End of Other Articles & Card -->
         </div>
@@ -225,60 +102,39 @@
                 <div class="sidebar-title">Read Also:</div>
                 <!-- Sidebar Card -->
                 <div class="sidebar-card-wrapper">
-                    @for ($i = 1; $i <= 2; $i++)
+                    @foreach ($related_articles as $related)
                         <div class="sidebar-card">
                             <div class="sidebar-detail-wrapper">
                                 <div class="sidebar-card-image">
-                                    <a href="/"> <img src="img/thumbnail-preview.jpg" alt="" /> </a>
-                                    <div class="sidebar-card-view"><small>&#128065; Views</small></div>
+                                    @if ($related->type_id == 1)
+                                        <a href="/{{ $related->slug }}">
+                                            <img src="{{ asset('storage/' . $related->thumbnail) }}" alt="" />
+                                        </a>
+                                        <div class="sidebar-card-view"><small>&#128065; {{ $related->counts }}</small>
+                                        </div>
+                                    @else
+                                        <iframe src="{{ $related->video_link }}" frameborder="0"></iframe>
+                                        <div class="sidebar-card-view"><small>&#128065; {{ $related->counts }}</small>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="sidebar-card-info">
                                     <div class="sidebar-tag-wrapper">
-                                        <a href="/categories">Tokyo</a>
-                                        <a href="/categories">Yokohama</a>
-                                        <a href="/categories">Kyoto</a>
+                                        @foreach ($related->categories as $category)
+                                            <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                        @endforeach
                                     </div>
                                     <div class="sidebar-card-title">
-                                        <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                                        <a href="/{{ $related->slug }}">{{ $related->title }}</a>
                                     </div>
                                     <div class="sidebar-card-footer">
-                                        <a href="/">Read More &#8594;</a>
-                                        <small>DD/MM/YYYY</small>
+                                        <a href="/{{ $related->slug }}">Read More &#8594;</a>
+                                        <small>{{ $related->created_at->format('j/F/Y') }}</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endfor
-
-                    @for ($i = 1; $i <= 2; $i++)
-                        <div class="sidebar-card">
-                            <div class="sidebar-detail-wrapper">
-                                <div class="sidebar-card-image">
-                                    <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen></iframe>
-                                    <div class="sidebar-card-view"><small>&#128065; Views</small></div>
-                                </div>
-                                <div class="sidebar-card-info">
-                                    <div class="sidebar-tag-wrapper">
-                                        <a href="/categories">Tokyo</a>
-                                        <a href="/categories">Yokohama</a>
-                                        <a href="/categories">Kyoto</a>
-                                    </div>
-                                    <div class="sidebar-card-title">
-                                        <a href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
-                                    </div>
-                                    <div class="sidebar-card-footer">
-                                        <a href="/">Read More &#8594;</a>
-                                        <small>DD/MM/YYYY</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <!-- End of Sidebar Card -->
             </div>

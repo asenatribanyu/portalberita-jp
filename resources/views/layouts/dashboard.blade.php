@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -60,14 +62,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/input"
+                        <a href="/dashboard/article/create"
                             class="nav-item {{ $title === '| Add Content' ? 'nav-active' : '' }}">
                             <i class="bx bx-plus-circle navlink-icon"></i>
                             <span>Add Content</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/edit"
+                        <a href="/dashboard/article/show"
                             class="nav-item {{ $title === '| Edit Content' ? 'nav-active' : '' }}">
                             <i class="bx bxs-edit navlink-icon"></i>
                             <span>Edit Content</span>
@@ -77,10 +79,13 @@
 
                 <ul class="navlink">
                     <li>
-                        <button class="nav-logout">
-                            <i class="bx bx-log-out navlink-icon"></i>
-                            <span>Sign Out</span>
-                        </button>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="nav-logout">
+                                <i class="bx bx-log-out navlink-icon"></i>
+                                <span>Sign Out</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>

@@ -34,60 +34,38 @@
 
         <!-- Featured Card -->
         <div class="card-wrapper">
-            @for ($i = 1; $i <= 2; $i++)
+            @foreach ($views as $view)
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
-                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
-                            <div class="card-view"><small>&#128065; Views</small></div>
+                            @if ($view->type_id == 1)
+                                <a href="/{{ $view->slug }}">
+                                    <img src="{{ asset('storage/' . $view->thumbnail) }}" alt="" />
+                                </a>
+                                <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
+                            @else
+                                <iframe src="{{ $view->video_link }}" frameborder="0"></iframe>
+                                <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
+                            @endif
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
+                                @foreach ($view->categories as $category)
+                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                @endforeach
                             </div>
                             <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
+                                <a href="/{{ $view->slug }}">{{ $view->title }}</a>
                             </div>
                             <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
+                                <a href="/{{ $view->slug }}">Read More &#8594;</a>
+                                <small>{{ $view->created_at->format('j/F/Y') }}</small>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
 
-            @for ($i = 1; $i <= 1; $i++)
-                <div class="card">
-                    <div class="detail-wrapper">
-                        <div class="card-image">
-                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            <div class="card-view"><small>&#128065; Views</small></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
-                            </div>
-                            <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
-                            </div>
-                            <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endfor
         </div>
         <!-- End of Featured Card -->
 
@@ -102,68 +80,40 @@
 
         <!-- Latest Articles Card -->
         <div class="card-wrapper">
-            @for ($i = 1; $i <= 2; $i++)
+            @foreach ($latest as $late)
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
-                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
-                            <div class="card-view"><small>&#128065; Views</small></div>
+                            @if ($late->type_id == 1)
+                                <a href="/{{ $late->slug }}">
+                                    <img src="{{ asset('storage/' . $late->thumbnail) }}" alt="" />
+                                </a>
+                                <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
+                            @else
+                                <iframe src="{{ $late->video_link }}" frameborder="0"></iframe>
+                                <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
+                            @endif
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
+                                @foreach ($late->categories as $category)
+                                    <a href="/categories">{{ $category->category_name }}</a>
+                                @endforeach
                             </div>
                             <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
+                                <a href="/{{ $late->slug }}">{{ $late->title }}</a>
                             </div>
                             <div class="card-desc">
-                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                                <p>{{ $late->excerpt }}</p>
                             </div>
                             <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
+                                <a href="/{{ $late->slug }}">Read More &#8594;</a>
+                                <small>{{ $late->created_at->format('j/F/Y') }}</small>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endfor
-
-            @for ($i = 1; $i <= 1; $i++)
-                <div class="card">
-                    <div class="detail-wrapper">
-                        <div class="card-image">
-                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            <div class="card-view"><small>&#128065; Views</small></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
-                            </div>
-                            <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
-                            </div>
-                            <div class="card-desc">
-                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endfor
+            @endforeach
         </div>
         <!-- End of Latest Articles Card -->
 
@@ -203,68 +153,36 @@
 
         <!-- Articles Card -->
         <div class="card-wrapper">
-            @for ($i = 1; $i <= 8; $i++)
-                <div class="card">
-                    <div class="detail-wrapper">
-                        <div class="card-image">
-                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
-                            <div class="card-view"><small>&#128065; Views</small></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
+            @foreach ($articles as $article)
+                @if ($article->type_id == 1)
+                    <div class="card">
+                        <div class="detail-wrapper">
+                            <div class="card-image">
+                                <a href="/{{ $article->slug }}"> <img src={{ asset('storage/' . $article->thumbnail) }}
+                                        alt="" /> </a>
+                                <div class="card-view"><small>&#128065; {{ $article->counts }}</small></div>
                             </div>
-                            <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
-                            </div>
-                            <div class="card-desc">
-                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endfor
-
-            @for ($i = 1; $i <= 1; $i++)
-                <div class="card">
-                    <div class="detail-wrapper">
-                        <div class="card-image">
-                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            <div class="card-view"><small>&#128065; Views</small></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
-                            </div>
-                            <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
-                            </div>
-                            <div class="card-desc">
-                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
+                            <div class="card-info">
+                                <div class="tag-wrapper">
+                                    @foreach ($article->categories as $category)
+                                        <a href="/categories">{{ $category->category_name }}</a>
+                                    @endforeach
+                                </div>
+                                <div class="card-title">
+                                    <a href="/{{ $article->slug }}" class="card-home-title">{{ $article->title }}</a>
+                                </div>
+                                <div class="card-desc">
+                                    <p>{{ $article->excerpt }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/{{ $article->slug }}">Read More &#8594;</a>
+                                    <small>{{ $article->created_at->format('j/F/Y') }}</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endfor
+                @endif
+            @endforeach
         </div>
         <!-- End of Articles Card -->
 
@@ -279,38 +197,37 @@
 
         <!-- Videos Card -->
         <div class="card-wrapper">
-            @for ($i = 1; $i <= 3; $i++)
-                <div class="card">
-                    <div class="detail-wrapper">
-                        <div class="card-image">
-                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            <div class="card-view"><small>&#128065; Views</small></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                <a href="/categories">Tokyo</a>
-                                <a href="/categories">Yokohama</a>
-                                <a href="/categories">Kyoto</a>
+            @foreach ($articles as $article)
+                @if ($article->type_id == 2)
+                    <div class="card">
+                        <div class="detail-wrapper">
+                            <div class="card-image">
+                                <iframe src="{{ $article->video_link }}" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <div class="card-view"><small>&#128065; {{ $article->counts }}</small></div>
                             </div>
-                            <div class="card-title">
-                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod. </a>
-                            </div>
-                            <div class="card-desc">
-                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
-                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="/preview">Read More &#8594;</a>
-                                <small>DD/MM/YYYY</small>
+                            <div class="card-info">
+                                <div class="tag-wrapper">
+                                    @foreach ($article->categories as $category)
+                                        <a href="/categories">{{ $category->category_name }}</a>
+                                    @endforeach
+                                </div>
+                                <div class="card-title">
+                                    <a href="/{{ $article->slug }}">{{ $article->title }} </a>
+                                </div>
+                                <div class="card-desc">
+                                    <p>{{ $article->excerpt }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/{{ $article->slug }}">Read More &#8594;</a>
+                                    <small>{{ $article->created_at->format('j/F/Y') }}</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endfor
+                @endif
+            @endforeach
         </div>
         <!-- End of Videos Card -->
 

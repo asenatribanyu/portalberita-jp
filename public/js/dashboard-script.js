@@ -1,3 +1,15 @@
+//old photo
+function PreviewImage() {
+    const image = document.querySelector('#formFile');
+    const imgpreview = document.querySelector('.img-preview');
+    imgPreview.style.display = 'block';
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+    oFReader.onload = function(oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+    }
+}
+
 // Checkbox
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxes = document.querySelectorAll(".form-check-input");
@@ -24,3 +36,68 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 //End of Checkbox
+
+//Trix
+(function() {
+    var HOST = "/dashboard/article/uploadtrix"; //pass the route
+
+    addEventListener("trix-attachment-add", function(event) {
+        if (event.attachment.file) {
+            uploadFileAttachment(event.attachment)
+        }
+    })
+
+    function uploadFileAttachment(attachment) {
+        uploadFile(attachment.file, setProgress, setAttributes)
+
+        function setProgress(progress) {
+            attachment.setUploadProgress(progress)
+        }
+
+        function setAttributes(attributes) {
+            attachment.setAttributes(attributes)
+        }
+    }
+
+    function uploadFile(file, progressCallback, successCallback) {
+        var formData = createFormData(file);
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("POST", HOST, true);
+        xhr.setRequestHeader('X-CSRF-TOKEN', getMeta('csrf-token'));
+
+        xhr.upload.addEventListener("progress", function(event) {
+            var progress = event.loaded / event.total * 100
+            progressCallback(progress)
+        })
+
+        xhr.addEventListener("load", function(event) {
+            var attributes = {
+                url: xhr.responseText,
+                href: xhr.responseText + "?content-disposition=attachment"
+            }
+            successCallback(attributes)
+        })
+
+        xhr.send(formData)
+    }
+
+    function createFormData(file) {
+        var data = new FormData()
+        data.append("Content-Type", file.type)
+        data.append("file", file)
+        return data
+    }
+
+    function getMeta(metaName) {
+        const metas = document.getElementsByTagName('meta');
+
+        for (let i = 0; i < metas.length; i++) {
+            if (metas[i].getAttribute('name') === metaName) {
+                return metas[i].getAttribute('content');
+            }
+        }
+
+        return '';
+    }
+})();

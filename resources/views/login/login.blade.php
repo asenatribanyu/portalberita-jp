@@ -13,10 +13,11 @@
                     <h1>WELCOME</h1>
                     <small>Please sign into your account</small>
 
-                    <form>
+                    <form action="/login" method="post">
+                        @csrf
                         <label class="label" for="username">Username</label>
-                        <input class="box" type="username" id="username" name="username" placeholder="Enter your username"
-                            required />
+                        <input class="box" type="username" id="username" name="username"
+                            placeholder="Enter your username" required />
 
                         <label class="label" for="password">Password</label>
                         <input class="box" type="password" id="password" name="password"
