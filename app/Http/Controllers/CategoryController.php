@@ -38,7 +38,7 @@ class CategoryController extends Controller
         $articles = $articles->where('title', 'LIKE', "%$search%");
     }
 
-    $title = "Categories";
+    $title = "| Categories";
     $categories = Category::all();
     $types = Type::all();
     $articles = $articles->paginate(9);

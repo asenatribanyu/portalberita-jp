@@ -42,7 +42,7 @@ Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/newcategory',[CategoryController::class,'newcategory']);
 Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix']);
 Route::get('/dashboard', function () {
-    return view('dashboard/view',['articles'=>Article::all(),"title" => "Dashboard"]);
+    return view('dashboard/view',['articles'=>Article::all(),"title" => "| Dashboard"]);
  })->middleware('auth');
 
 Route::resource('/dashboard/article',DashboardArticleController::class);

@@ -47,7 +47,6 @@
                             <li><a class="" href="#">Indonesia</a></li>
                         </ul>
                     </li>
-                    <li><a href="/">Language</a></li>
                     @auth
                         <li><a href="/dashboard">Dashboard</a></li>
                     @else

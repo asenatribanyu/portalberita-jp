@@ -62,6 +62,8 @@
                                 <small>{{ $view->created_at->format('j/F/Y') }}</small>
                             </div>
                         </div>
+                    </div>
+                </div>
             @endforeach
 
         </div>
@@ -111,14 +113,13 @@
                         </div>
                     </div>
                 </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
-    <!-- End of Latest Articles Card -->
+        <!-- End of Latest Articles Card -->
 
-    <div class="break-point-horizontal">
-        <hr />
-    </div>
+        <div class="break-point-horizontal">
+            <hr />
+        </div>
     </div>
 
     <!-- Hero -->

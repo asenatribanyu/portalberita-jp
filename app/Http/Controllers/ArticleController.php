@@ -34,7 +34,7 @@ class ArticleController extends Controller
     ->take(5)
     ->get();
         return view('article/preview', [
-            "title" => "Preview",
+            "title" => "| Preview",
             'articles'=> $article,
             'related_articles'=>$related_articles,
             'random_articles'=>$random_articles,

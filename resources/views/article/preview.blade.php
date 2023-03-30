@@ -88,6 +88,8 @@
                                     <small>{{ $articles->created_at->format('j/F/Y') }}</small>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                 @endforeach
             </div>
             <!-- End of Other Articles & Card -->
