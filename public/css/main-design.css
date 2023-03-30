@@ -5,6 +5,13 @@
     font-family: "Quicksand", sans-serif;
 }
 
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #fafafa;
+    padding-bottom: 95px;
+}
+
 /* Navigation Bar */
 nav {
     position: fixed;
@@ -238,6 +245,9 @@ nav .navbar .logo a {
 
 /* Footer */
 footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -322,6 +332,9 @@ footer {
 
     /* Footer */
     footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
         display: flex;
         justify-content: center;
         justify-items: center;
@@ -349,6 +362,9 @@ footer {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     /* Footer */
     footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
         display: flex;
         justify-content: center;
         justify-items: center;

@@ -1,8 +1,4 @@
 /* General */
-body {
-    background-color: #fafafa;
-}
-
 .main-container {
     width: 1250px;
     margin: auto;
@@ -386,7 +382,7 @@ body {
     grid-template-rows: auto;
     grid-template-columns: 150px 1fr;
     margin: auto;
-    margin-block: 28px;
+    margin-block-start: 28px;
 }
 
 .image-gallery-wrapper img {
@@ -843,7 +839,7 @@ body {
         grid-template-rows: auto;
         grid-template-columns: 50% 1fr;
         margin: auto;
-        margin-block: 28px;
+        margin-block-start: 28px;
     }
 
     .image-gallery-wrapper img {

@@ -1,11 +1,8 @@
 /* General */
-body {
-    background-color: #fafafa;
-}
-
 .main-container {
     width: 1250px;
-    margin: 95px auto auto auto;
+    margin: auto;
+    padding-top: 95px;
 }
 /* End of General */
 
@@ -132,7 +129,7 @@ body {
     flex-wrap: wrap;
     gap: 40px 48.5px;
     margin: auto;
-    margin-block: 28px;
+    margin-block-start: 28px;
 }
 
 .card {
@@ -275,7 +272,7 @@ body {
 @media screen and (max-width: 767px) {
     .main-container {
         width: 95%;
-        margin: 95px auto auto auto;
+        margin: auto;
     }
 
     /* Header */
@@ -554,7 +551,7 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .main-container {
         width: 95%;
-        margin: 95px auto auto auto;
+        margin: auto;
     }
 
     /* Header */

@@ -1,14 +1,9 @@
 /* General */
-body {
-    background-color: #fafafa;
-}
-
 .main-container {
     display: flex;
     justify-content: space-between;
     width: 1170px;
     margin: auto;
-    margin-block-end: 25px;
     padding-top: 95px;
 }
 /* End of General */
@@ -484,7 +479,6 @@ body {
         justify-content: space-between;
         width: 95%;
         margin: auto;
-        margin-block-end: 25px;
         padding-top: 95px;
     }
     /* End of General */
@@ -823,7 +817,6 @@ body {
         justify-content: space-between;
         width: 95%;
         margin: auto;
-        margin-block-end: 25px;
         padding-top: 95px;
     }
     /* End of General */

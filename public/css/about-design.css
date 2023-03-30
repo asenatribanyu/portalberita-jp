@@ -1,8 +1,4 @@
 /* General */
-body {
-    background-color: #f4f4f4;
-}
-
 .main-container {
     width: 1250px;
     margin: auto;
@@ -153,7 +149,6 @@ iframe:hover {
     justify-items: center;
     align-items: center;
     margin: auto;
-    margin-block-end: 50px;
 }
 
 .photos-wrapper {
@@ -392,7 +387,6 @@ iframe:hover {
         justify-items: center;
         align-items: center;
         margin: auto;
-        margin-block-end: 50px;
     }
 
     .photos-wrapper {
@@ -614,7 +608,6 @@ iframe:hover {
         justify-items: center;
         align-items: center;
         margin: auto;
-        margin-block-end: 50px;
     }
 
     .photos-wrapper {

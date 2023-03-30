@@ -56,12 +56,12 @@
 
         <!-- Categories Card -->
         <div class="card-wrapper">
-            @for ($i = 1; $i <= 10; $i++)
+            @for ($i = 1; $i <= 2; $i++)
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
                             <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
-                            <div class="card-view"><small>&#128065;Views</small></div>
+                            <div class="card-view"><small>&#128065; Views</small></div>
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
@@ -86,7 +86,7 @@
                 </div>
             @endfor
 
-            @for ($i = 1; $i <= 5; $i++)
+            @for ($i = 1; $i <= 1; $i++)
                 <div class="card">
                     <div class="detail-wrapper">
                         <div class="card-image">
@@ -94,7 +94,7 @@
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
-                            <div class="card-view"><small>&#128065;Views</small></div>
+                            <div class="card-view"><small>&#128065; Views</small></div>
                         </div>
                         <div class="card-info">
                             <div class="tag-wrapper">
