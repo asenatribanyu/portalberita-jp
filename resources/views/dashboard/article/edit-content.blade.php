@@ -15,12 +15,14 @@
 
             <div x-data="{ isOpen: false }" class="form-tag w-100 mt-3">
                 <label for="checkbox">Category:</label>
-                <div class="d-flex">
-                    <div class="mt-1">
+                <div x-data="{ checkedCount: 0 }" class="d-flex">
+                    <div class="checkbox-limit mt-1">
                         @foreach ($categories as $category)
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="category_id[]"
-                                    value="{{ $category->id }}"{{ in_array($category->id, old('category_id', $articles->categories->pluck('id')->toArray())) ? 'checked' : '' }} />
+                                    value="{{ $category->id }}"{{ in_array($category->id, old('category_id', $articles->categories->pluck('id')->toArray())) ? 'checked' : '' }}
+                                    x-on:click="checkedCount = $event.target.checked ? checkedCount + 1 : checkedCount - 1"
+                                    x-bind:disabled="checkedCount >= 3 && !$event.target.checked" />
                                 <label class="form-check-label" for="inlineCheckbox1">{{ $category->category_name }}</label>
                             </div>
                         @endforeach
@@ -163,16 +165,7 @@
     </div>
 
     </div>
-    <script>
-        function PreviewImage() {
-            const image = document.querySelector('#formFile');
-            const imgpreview = document.querySelector('.img-preview');
-            imgPreview.style.display = 'block';
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
-        }
-    </script>
 @endsection
+@push('script')
+    <script src="{{ asset('js/dashboard-script.js') }}"></script>
+@endpush

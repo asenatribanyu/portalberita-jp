@@ -9,6 +9,7 @@
                 <tr>
                     <th>No</th>
                     <th>Title</th>
+                    <th>Type</th>
                     <th>Date</th>
                     <th>Category</th>
                     <th>Views</th>
@@ -19,6 +20,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $article->title }}</td>
+                        <td>{{ $article->types->type_name }}</td>
                         <td>{{ $article->created_at }}</td>
 
                         <td>

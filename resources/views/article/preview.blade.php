@@ -18,8 +18,11 @@
                     @endforeach
                 </div>
 
-                <small>{{ $articles->user->name }} {{ $articles->created_at->format('j/F/Y') }} Views
-                    {{ $articles->counts }}</small>
+                <div class="author">
+                    <small>By{{ $articles->user->name }} - {{ $articles->created_at->format('j/F/Y') }}
+                    </small>
+                    <small>&#128065; {{ $articles->counts }}</small>
+                </div>
             </div>
 
             <div class="content-thumbnail">
@@ -28,8 +31,7 @@
                         <img src="{{ asset('storage/' . $articles->thumbnail) }}" alt="" />
                     </div>
                 @else
-                    <iframe width="840" height="425" src="{{ $articles->video_link }}" title="YouTube video player"
-                        frameborder="0"
+                    <iframe src="{{ $articles->video_link }}" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
@@ -48,7 +50,7 @@
             </div>
 
             <!-- Other Articles & Card -->
-            <div class="header">
+            <div class="header header-other">
                 <h1>OTHER ARTICLES</h1>
                 <a href="/categories">View All Articles &#8594;</a>
             </div>
@@ -56,29 +58,36 @@
             <div class="card-wrapper">
                 @foreach ($random_articles as $random)
                     <div class="card">
-                        @if ($random->type_id == 1)
-                            <a class="sidebar-card-img" href="/{{ $random->slug }}">
-                                <img src="{{ asset('storage/' . $random->thumbnail) }}" alt="" />
-                            </a>
-                        @else
-                            <iframe src="{{ $random->video_link }}" frameborder="0" height="175px" width="311px"></iframe>
-                        @endif
-                        <div class="card-info">
-                            <div class="tag-wrapper">
-                                @foreach ($random->categories as $category)
-                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
-                                @endforeach
+                        <div class="detail-wrapper">
+                            <div class="card-image">
+                                @if ($random->type_id == 1)
+                                    <a href="/{{ $random->slug }}">
+                                        <img src="{{ asset('storage/' . $random->thumbnail) }}" alt="" />
+                                    </a>
+                                    <div class="card-view"><small>&#128065; {{ $random->counts }}</small></div>
+                                @else
+                                    <iframe src="{{ $random->video_link }}" frameborder="0" height="175px"
+                                        width="311px"></iframe>
+                                    <div class="card-view"><small>&#128065; {{ $random->counts }}</small></div>
+                                @endif
                             </div>
-                            <a href="/{{ $random->slug }}" class="card-title">{{ $random->title }}</a>
-                            <div class="card-desc">
-                                {{ $random->excerpt }}
+                            <div class="card-info">
+                                <div class="tag-wrapper">
+                                    @foreach ($random->categories as $category)
+                                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                    @endforeach
+                                </div>
+                                <div class="card-title">
+                                    <a href="/{{ $random->slug }}">{{ $random->title }}</a>
+                                </div>
+                                <div class="card-desc">
+                                    <p>{{ $random->excerpt }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/{{ $random->slug }}">Read More &#8594;</a>
+                                    <small>{{ $articles->created_at->format('j/F/Y') }}</small>
+                                </div>
                             </div>
-                            <div class="card-footer">
-                                <a href="/{{ $random->slug }}" class="card-nav">Read More &#8594;</a>
-                                <small>{{ $articles->created_at->format('j/F/Y') }}</small>
-                            </div>
-                        </div>
-                    </div>
                 @endforeach
             </div>
             <!-- End of Other Articles & Card -->
@@ -89,26 +98,39 @@
         <div class="sidebar-wrapper">
             <div class="sidebar">
                 <div class="sidebar-title">Read Also:</div>
-
                 <!-- Sidebar Card -->
                 <div class="sidebar-card-wrapper">
                     @foreach ($related_articles as $related)
                         <div class="sidebar-card">
-                            @if ($related->type_id == 1)
-                                <a class="sidebar-card-img" href="/{{ $related->slug }}">
-                                    <img src="{{ asset('storage/' . $related->thumbnail) }}" alt="" />
-                                </a>
-                            @else
-                                <iframe src="{{ $related->video_link }}" frameborder="0" height="175px"
-                                    width="311px"></iframe>
-                            @endif
-                            <div class="tag-wrapper">
-                                @foreach ($related->categories as $category)
-                                    <a class="tag" href="/categories">{{ $category->category_name }}</a>
-                                @endforeach
-
+                            <div class="sidebar-detail-wrapper">
+                                <div class="sidebar-card-image">
+                                    @if ($related->type_id == 1)
+                                        <a href="/{{ $related->slug }}">
+                                            <img src="{{ asset('storage/' . $related->thumbnail) }}" alt="" />
+                                        </a>
+                                        <div class="sidebar-card-view"><small>&#128065; {{ $related->counts }}</small>
+                                        </div>
+                                    @else
+                                        <iframe src="{{ $related->video_link }}" frameborder="0"></iframe>
+                                        <div class="sidebar-card-view"><small>&#128065; {{ $related->counts }}</small>
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="sidebar-card-info">
+                                    <div class="sidebar-tag-wrapper">
+                                        @foreach ($related->categories as $category)
+                                            <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                        @endforeach
+                                    </div>
+                                    <div class="sidebar-card-title">
+                                        <a href="/{{ $related->slug }}">{{ $related->title }}</a>
+                                    </div>
+                                    <div class="sidebar-card-footer">
+                                        <a href="/{{ $related->slug }}">Read More &#8594;</a>
+                                        <small>{{ $related->created_at->format('j/F/Y') }}</small>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="/{{ $related->slug }}" class="sidebar-card-title">{{ $related->title }}</a>
                         </div>
                     @endforeach
                 </div>
