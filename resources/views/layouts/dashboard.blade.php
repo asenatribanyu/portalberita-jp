@@ -32,7 +32,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
 
-    <title>Heiwa | {{ $title }}</title>
+    <title>Heiwa {{ $title }}</title>
 </head>
 
 <body>
@@ -40,8 +40,9 @@
     <nav>
         <div class="sidebar">
             <div class="sidebar-logo">
-                <!-- <i class="bx bx-menu menu-icon"></i> -->
+                <i class="bx bx-menu menu-icon"></i>
                 <a href="/">Logo.</a>
+                {{-- <i class="bx bx-x side-close"></i> --}}
             </div>
 
             <div class="menu">
@@ -53,19 +54,21 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard" class="nav-item {{ $title === 'Dashboard' ? 'nav-active' : '' }}">
+                        <a href="/dashboard" class="nav-item {{ $title === '| Dashboard' ? 'nav-active' : '' }}">
                             <i class="bx bxs-dashboard navlink-icon"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/input" class="nav-item {{ $title === 'Add Content' ? 'nav-active' : '' }}">
+                        <a href="/dashboard/input"
+                            class="nav-item {{ $title === '| Add Content' ? 'nav-active' : '' }}">
                             <i class="bx bx-plus-circle navlink-icon"></i>
                             <span>Add Content</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/edit" class="nav-item {{ $title === 'Edit Content' ? 'nav-active' : '' }}">
+                        <a href="/dashboard/edit"
+                            class="nav-item {{ $title === '| Edit Content' ? 'nav-active' : '' }}">
                             <i class="bx bxs-edit navlink-icon"></i>
                             <span>Edit Content</span>
                         </a>
@@ -88,6 +91,8 @@
     <!-- Form -->
     <div class="main-container">@yield('content')</div>
     <!-- End of Form -->
+
+    @stack('script')
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

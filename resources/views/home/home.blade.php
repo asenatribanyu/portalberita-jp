@@ -13,10 +13,11 @@
                     <img src="img/slider-{{ $i }}.jpg" alt="" />
                     <div class="carousel-info">
                         <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+                            <a class="tag" href="/categories">Tokyo</a>
+                            <a class="tag" href="/categories">Yokohama</a>
+                            <a class="tag" href="/categories">Kyoto</a>
                         </div>
-
-                        <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        <a class="carousel-title" href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit Lorem ipsum dolor sit amet, consectetur
                             adipiscing elit Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit.</a>
@@ -32,22 +33,57 @@
         <!-- End of Carousel -->
 
         <!-- Featured Card -->
-        <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 3; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+        <div class="card-wrapper">
+            @for ($i = 1; $i <= 2; $i++)
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <div class="card-view"><small>&#128065; Views</small></div>
                         </div>
-                        <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endfor
 
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+            @for ($i = 1; $i <= 1; $i++)
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <div class="card-view"><small>&#128065; Views</small></div>
+                        </div>
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,33 +95,71 @@
             <hr />
         </div>
 
-        <div class="header">
+        <div class="header header-latest">
             <h1>LATEST ARTICLES</h1>
             <a href="/categories">View All Articles &#8594;</a>
         </div>
 
         <!-- Latest Articles Card -->
-        <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 3; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+        <div class="card-wrapper">
+            @for ($i = 1; $i <= 2; $i++)
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <div class="card-view"><small>&#128065; Views</small></div>
                         </div>
-                        <a href="/preview" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-desc">
+                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
+                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
                         </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
+            @endfor
+
+            @for ($i = 1; $i <= 1; $i++)
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <div class="card-view"><small>&#128065; Views</small></div>
+                        </div>
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-desc">
+                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
+                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,27 +202,65 @@
         </div>
 
         <!-- Articles Card -->
-        <div class="card-home-wrapper">
-            @for ($i = 1; $i <= 9; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+        <div class="card-wrapper">
+            @for ($i = 1; $i <= 8; $i++)
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <a href="/preview"> <img src="img/thumbnail.jpg" alt="" /> </a>
+                            <div class="card-view"><small>&#128065; Views</small></div>
                         </div>
-                        <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod.</a>
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-desc">
+                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
+                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
                         </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+                    </div>
+                </div>
+            @endfor
+
+            @for ($i = 1; $i <= 1; $i++)
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <div class="card-view"><small>&#128065; Views</small></div>
+                        </div>
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-desc">
+                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
+                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,28 +278,35 @@
         </div>
 
         <!-- Videos Card -->
-        <div class="card-home-wrapper">
+        <div class="card-wrapper">
             @for ($i = 1; $i <= 3; $i++)
-                <div class="card-home">
-                    <a class="card-home-image" href="/preview">
-                        <img src="img/thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="card-home-info">
-                        <div class="tag-wrapper">
-                            <a class="tag" href="/categories">Tag</a>
+                <div class="card">
+                    <div class="detail-wrapper">
+                        <div class="card-image">
+                            <iframe src="https://www.youtube.com/embed/4MoRLTAJY_0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <div class="card-view"><small>&#128065; Views</small></div>
                         </div>
-                        <a href="/" class="card-home-title">Lorem ipsum dolor sit amet, consectetur
-                            adipiscing
-                            elit, sed do eiusmod.</a>
-                        <div class="card-home-desc">
-                            Facilisis volutpat est velit egestas dui id ornare.
-                            Scelerisque felis imperdiet proin fermentum leo vel
-                            orci porta. In hac habitasse platea dictumst quisque
-                            sagittis.
-                        </div>
-                        <div class="card-home-footer">
-                            <a href="/" class="card-home-nav">Read More &#8594;</a>
-                            <small>DD/MM/YYYY</small>
+                        <div class="card-info">
+                            <div class="tag-wrapper">
+                                <a href="/categories">Tokyo</a>
+                                <a href="/categories">Yokohama</a>
+                                <a href="/categories">Kyoto</a>
+                            </div>
+                            <div class="card-title">
+                                <a href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod. </a>
+                            </div>
+                            <div class="card-desc">
+                                <p>Facilisis volutpat est velit egestas dui id ornare. Scelerisque felis imperdiet proin
+                                    fermentum leo vel orci porta. In hac habitasse platea dictumst quisque sagittis.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/preview">Read More &#8594;</a>
+                                <small>DD/MM/YYYY</small>
+                            </div>
                         </div>
                     </div>
                 </div>
