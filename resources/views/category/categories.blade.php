@@ -17,21 +17,21 @@
                     <div class="dropdown-categories">
                         <div class="select-categories">
                             <span class="selected-categories">
-                                Categories
+                                {{ $select_categories }}
                             </span>
                             <div class="caret-categories"></div>
                         </div>
                         <ul class="menu-categories">
                             @foreach ($categories as $category)
                                 <li><a
-                                        href="{{ route('categories.index', ['category' => $category->id, 'type' => request()->input('type'), 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">{{ $category->category_name }}</a>
+                                        href="{{ route('categories.index', ['category' => $category->category_name, 'type' => request()->input('type'), 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">{{ $category->category_name }}</a>
                                 </li>
                             @endforeach
                         </ul>
                     </div>
                     <div class="dropdown-categories">
                         <div class="select-categories">
-                            <span class="selected-categories"> Type </span>
+                            <span class="selected-categories"> {{ $select_type }} </span>
                             <div class="caret-categories"></div>
                         </div>
                         <ul class="menu-categories">
@@ -44,15 +44,15 @@
                     </div>
                     <div class="dropdown-categories">
                         <div class="select-categories">
-                            <span class="selected-categories"> Date </span>
+                            <span class="selected-categories"> {{ $select_date }} </span>
                             <div class="caret-categories"></div>
                         </div>
                         <ul class="menu-categories">
                             <li><a
-                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'latest', 'search' => request()->input('search')]) }}">Latest</a>
+                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Latest', 'search' => request()->input('search')]) }}">Latest</a>
                             </li>
                             <li><a
-                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'oldest', 'search' => request()->input('search')]) }}">Oldest</a>
+                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Oldest', 'search' => request()->input('search')]) }}">Oldest</a>
                             </li>
 
                         </ul>
@@ -110,6 +110,7 @@
         </div>
         <!-- End of Categories Card -->
     </div>
+
 
 @endsection
 

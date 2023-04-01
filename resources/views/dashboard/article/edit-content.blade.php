@@ -9,7 +9,8 @@
             <h1>Edit Content</h1>
             <div class="form-title w-75 mt-3">
                 <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="pin" value="1"
+                        id="flexCheckDefault"{{ $articles->pin ? 'checked' : '' }}>
                     <label class="form-check-label" for="flexCheckDefault">
                         Pin This Post
                     </label>

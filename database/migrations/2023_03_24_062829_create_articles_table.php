@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('type_id');
             $table->foreignId('user_id');
+            $table->string('pin')->nullable();
             $table->string('slug',255)->unique();
             $table->string('title',255)->unique();
             $table->text('video_link')->nullable();

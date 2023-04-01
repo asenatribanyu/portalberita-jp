@@ -49,6 +49,7 @@ class DashboardArticleController extends Controller
                 'type_id'=> 'required',
                 'category_id'=>'required|array',
                 'content'=> 'required',
+                'pin'   =>'nullable|string',
                 'video_link'=> 'nullable|string',
                 'thumbnail'=> 'nullable|image'
             ]);
@@ -70,9 +71,11 @@ class DashboardArticleController extends Controller
             }
             
             if ($request->has('video_link')) {
-                $article->video_link = $validatedData['video_link'];
+                $article->video_link = "https://www.youtube.com/embed/" .  $validatedData['video_link'];
             }
-            
+            if($request->has('pin')){
+                $article->pin = $validatedData['pin'];
+            }
             $article->save();
     
             foreach ($validatedData['category_id'] as $categoryId) {
@@ -137,6 +140,10 @@ class DashboardArticleController extends Controller
             ]);
             $validatedData['slug'] = SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]);
             $validatedData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
+            if ($request->has('video_link')) {
+                $validatedData['video_link'] = "https://www.youtube.com/embed/" . $validatedData['video_link'];;
+            }
+            
             
             if($request->hasFile('thumbnail')){
                 if($article->thumbnail){

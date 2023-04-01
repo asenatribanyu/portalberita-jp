@@ -24,9 +24,11 @@ Route::get('/', function () {
     $random_articles = Article::inRandomOrder()->where('type_id',1)->take(9)->get();
     return view('home/home', [
         "title" => "",
+        'pinned'=>Article::where('pin',"1")->latest()->get(),
         'views'=>Article::with(['categories'])->withCount('views')->orderByDesc('counts')->take(3)->get(),
         'latest' => Article::with(['categories'])->latest()->take(3)->get(),
-        'articles'=>Article::with(['categories'])->paginate(3),
+        'articles'=>Article::where('type_id',1)->paginate(3),
+        'videos'=>Article::where('type_id',2)->paginate(3),
         'random_articles'=>$random_articles,
     ]);
   });

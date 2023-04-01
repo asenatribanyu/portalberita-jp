@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         User::create([
-            'name' => 'Admin',
-            'username'=>'admin',
-            'password'=>bcrypt('admin'),
+            'name' => 'P0H',
+            'username'=>'poh',
+            'password'=>bcrypt('12345'),
         ]);
 
         Type::create([
@@ -35,11 +35,11 @@ class DatabaseSeeder extends Seeder
         Type::create([
             'type_name' => 'Videos',
         ]);
-        // Category::create([
-        //     'category_name' =>'Tokyo',
-        // ]);
-        // Category::create([
-        //     'category_name' =>'Kyoto',
-        // ]);
+        Category::create([
+            'category_name' =>'Tokyo',
+        ]);
+        Category::create([
+            'category_name' =>'Kyoto',
+        ]);
     }
 }
