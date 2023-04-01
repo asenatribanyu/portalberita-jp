@@ -19,7 +19,8 @@
                     <div class="carousel-info">
                         <div class="tag-wrapper">
                             @foreach ($pin->categories as $category)
-                                <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                <a class="tag"
+                                    href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                             @endforeach
                         </div>
                         <a class="carousel-title" href="/{{ $pin->slug }}">{{ $pin->title }}</a>
@@ -57,7 +58,8 @@
                             <div class="card-info">
                                 <div class="tag-wrapper">
                                     @foreach ($view->categories as $category)
-                                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                        <a class="tag"
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                     @endforeach
                                 </div>
                                 <div class="card-title">
@@ -83,7 +85,7 @@
 
         <div class="header header-latest">
             <h1>LATEST ARTICLES</h1>
-            <a href="/categories">View All Articles &#8594;</a>
+            <a href="/categories?date=Latest">View All Articles &#8594;</a>
         </div>
 
         <!-- Latest Articles Card -->
@@ -108,7 +110,8 @@
                             <div class="card-info">
                                 <div class="tag-wrapper">
                                     @foreach ($late->categories as $category)
-                                        <a href="/categories">{{ $category->category_name }}</a>
+                                        <a
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                     @endforeach
                                 </div>
                                 <div class="card-title">
@@ -161,7 +164,7 @@
 
         <div class="header">
             <h1>ARTICLES</h1>
-            <a href="/categories">View All Articles &#8594;</a>
+            <a href="/categories?type=1">View All Articles &#8594;</a>
         </div>
 
         <!-- Articles Card -->
@@ -180,7 +183,8 @@
                             <div class="card-info">
                                 <div class="tag-wrapper">
                                     @foreach ($article->categories as $category)
-                                        <a href="/categories">{{ $category->category_name }}</a>
+                                        <a
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                     @endforeach
                                 </div>
                                 <div class="card-title">
@@ -208,7 +212,7 @@
 
         <div class="header">
             <h1>VIDEOS</h1>
-            <a href="/categories">View All Videos &#8594;</a>
+            <a href="/categories?type=2">View All Videos &#8594;</a>
         </div>
 
         <!-- Videos Card -->
@@ -228,7 +232,8 @@
                             <div class="card-info">
                                 <div class="tag-wrapper">
                                     @foreach ($article->categories as $category)
-                                        <a href="/categories">{{ $category->category_name }}</a>
+                                        <a
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                     @endforeach
                                 </div>
                                 <div class="card-title">
