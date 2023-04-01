@@ -42,9 +42,8 @@
                     <li class="menu-lang">
                         <a href="/">Languages</a>
                         <ul>
+                            <li><a class="lang-active" href="#">Indonesia</a></li>
                             <li><a class="" href="#">日本語</a></li>
-                            <li><a class="lang-active" href="#">English</a></li>
-                            <li><a class="" href="#">Indonesia</a></li>
                         </ul>
                     </li>
                     @auth

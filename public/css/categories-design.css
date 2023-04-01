@@ -99,15 +99,22 @@
 }
 
 .menu-categories li {
+    width: 100%;
     padding: 0 0.5em;
     margin: 0.3em 0;
     border-radius: 5px;
     cursor: pointer;
 }
 
+.menu-categories li a {
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
 .menu-categories li:hover {
     border-radius: 5px;
-    background: black;
+    background: rgb(187, 187, 187);
     color: white;
 }
 
@@ -268,6 +275,17 @@
 }
 /* End of Card */
 
+/* No Data */
+.no-data {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+}
+/* End of No Data */
+
 /* Responsive */
 @media screen and (max-width: 767px) {
     .main-container {
@@ -355,7 +373,7 @@
     .menu-categories {
         list-style: none;
         padding: 0.2em 0em;
-        background: #e6e6e6;
+        background-color: #e6e6e6;
         box-shadow: 0 0.5em 1em rgba(75, 3, 3, 0.2);
         border-radius: 0.5em;
         color: rgb(0, 0, 0);
@@ -376,9 +394,15 @@
         cursor: pointer;
     }
 
+    .menu-categories li a {
+        width: 100%;
+        text-decoration: none;
+        color: black;
+    }
+
     .menu-categories li:hover {
         border-radius: 5px;
-        background: black;
+        background: rgb(187, 187, 187);
         color: white;
     }
 
@@ -657,9 +681,15 @@
         cursor: pointer;
     }
 
+    .menu-categories li a {
+        width: 100%;
+        text-decoration: none;
+        color: black;
+    }
+
     .menu-categories li:hover {
         border-radius: 5px;
-        background: black;
+        background: rgb(187, 187, 187);
         color: white;
     }
 
