@@ -8,6 +8,12 @@
         <div class="main-form">
             <h1>Edit Content</h1>
             <div class="form-title w-75 mt-3">
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Pin This Post
+                    </label>
+                </div>
                 <label for="title">Title:</label>
                 <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
                     id="title" name="title" value="{{ old('title', $articles->title) }}" />

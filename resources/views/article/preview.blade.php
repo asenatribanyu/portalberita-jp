@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="author">
-                    <small>By{{ $articles->user->name }} - {{ $articles->created_at->format('j/F/Y') }}
+                    <small>By {{ $articles->user->name }} - {{ $articles->created_at->format('j/F/Y') }}
                     </small>
                     <small>&#128065; {{ $articles->counts }}</small>
                 </div>
