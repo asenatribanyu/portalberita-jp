@@ -93,6 +93,7 @@
     @stack('script')
     <script src="{{ asset('js/main-script.js') }}"></script>
     <script src="{{ asset('js/navbar-script.js') }}"></script>
+
 </body>
 
 </html>

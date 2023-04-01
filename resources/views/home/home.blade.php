@@ -242,9 +242,10 @@
 
         <!-- Image Gallery -->
         <div class="image-gallery-wrapper">
-            @for ($i = 1; $i <= 9; $i++)
-                <div class="image-{{ $i }}"><img src="" alt="" /></div>
-            @endfor
+            @foreach ($random_articles as $random)
+                <div class="image-{{ $loop->iteration }}"><img src="{{ asset('storage/' . $random->thumbnail) }}"
+                        alt="" /></div>
+            @endforeach
         </div>
         <!-- End of Image Gallery -->
     </div>
