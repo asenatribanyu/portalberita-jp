@@ -65,7 +65,9 @@
         <!-- Categories Card -->
         <div class="card-wrapper">
             @if ($error)
-                <h1>Data not Found</h1>
+                <div class="no-data">
+                    Data not found
+                </div>
             @else
                 @foreach ($articles as $article)
                     <div class="card">

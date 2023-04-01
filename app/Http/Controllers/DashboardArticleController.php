@@ -24,7 +24,7 @@ class DashboardArticleController extends Controller
      */
     public function create()
     {
-         return view('dashboard/article/input',['types'=>Type::all(),'categories'=>Category::all() ,"title" => "Add Content"]);
+         return view('dashboard/article/input',['types'=>Type::all(),'categories'=>Category::all() ,"title" => "| Add Content"]);
          
 
     }
@@ -96,7 +96,7 @@ class DashboardArticleController extends Controller
     {
         return view('dashboard/article/edit', [
             'types'=>Type::all(),'categories'=>Category::all(),
-            "title" => "Edit Content",
+            "title" => "| Edit Content",
             'articles'=>Article::all(),
     ]);
     }
@@ -107,7 +107,7 @@ class DashboardArticleController extends Controller
     public function edit(Article $article)
     {
         return view('dashboard.article.edit-content', [
-            "title" => "Edit Content",
+            "title" => "| Edit Content",
             'categories'=>Category::all(),
             'articles' =>$article,
         ]);

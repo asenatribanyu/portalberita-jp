@@ -24,53 +24,6 @@ nav {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.navlink .menu-lang {
-    position: relative;
-}
-
-.navlink .menu-lang:hover > ul {
-    display: block;
-    opacity: 1;
-}
-
-.navlink .menu-lang ul {
-    position: absolute;
-    top: 30px;
-    width: 100%;
-    display: none;
-    opacity: 0;
-}
-
-.navlink .menu-lang ul li {
-    position: relative;
-    height: 30px;
-    background-color: #e6e6e6;
-}
-
-.navlink .menu-lang ul li a {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    transition: all 0.2s ease-in-out;
-}
-
-.navlink .menu-lang ul li a:hover {
-    background-color: black;
-    color: white;
-}
-
-.navlink .lang-active {
-    background-color: black;
-    color: white;
-}
-
-.navlink .menu-lang ul li a.lang-active:hover {
-    background-color: rgb(83, 83, 83);
-    color: white;
-}
-
 .navlink .nav-active {
     border-bottom: 2.5px solid black;
     transition: all 0.2s ease-in;
@@ -128,6 +81,10 @@ nav .navbar .logo a {
 }
 
 .navlink li a {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     height: 100%;
     position: relative;
     font-size: 15px;
@@ -271,6 +228,50 @@ footer {
 }
 /* End of Footer */
 
+/* Language */
+.navlink .menu-lang {
+    position: relative;
+}
+
+.navlink .menu-lang:hover > ul {
+    display: block;
+    opacity: 1;
+}
+
+.navlink .menu-lang ul {
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    display: none;
+    opacity: 0;
+}
+
+.navlink .menu-lang ul li {
+    position: relative;
+    height: 30px;
+    background-color: #e6e6e6;
+}
+
+.navlink .menu-lang ul li a {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.navlink .lang-active {
+    background-color: black;
+    color: white;
+}
+
+.navlink .menu-lang ul li a.lang-active:hover {
+    background-color: rgb(83, 83, 83);
+    color: white;
+}
+/* End of Language */
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     nav .navbar {
@@ -357,6 +358,63 @@ footer {
         color: red;
     }
     /* End of Footer */
+
+    /* Language */
+    .navlink .menu-lang {
+        position: static;
+    }
+
+    .navlink .menu-lang:hover > ul {
+        display: block;
+        opacity: 1;
+    }
+
+    .navlink .menu-lang ul {
+        position: static;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+
+    .navlink .menu-lang ul li {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        height: auto;
+        background-color: inherit;
+    }
+
+    .navlink .menu-lang ul li a {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .navlink .lang-active {
+        background-color: black;
+        color: white;
+    }
+
+    .navlink .menu-lang ul li a.lang-active:hover {
+        background-color: rgb(83, 83, 83);
+        color: white;
+    }
+
+    .navlink .nav-active {
+        border-bottom: 2.5px solid black;
+        transition: all 0.2s ease-in;
+    }
+
+    .navlink .nav-active:hover {
+        color: #3b71ca;
+    }
+    /* End of Language */
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -387,5 +445,49 @@ footer {
         color: red;
     }
     /* End of Footer */
+
+    /* Language */
+    .navlink .menu-lang {
+        position: relative;
+    }
+
+    .navlink .menu-lang:hover > ul {
+        display: block;
+        opacity: 1;
+    }
+
+    .navlink .menu-lang ul {
+        position: absolute;
+        top: 35px;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+
+    .navlink .menu-lang ul li {
+        position: relative;
+        height: 30px;
+        background-color: #e6e6e6;
+    }
+
+    .navlink .menu-lang ul li a {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .navlink .lang-active {
+        background-color: black;
+        color: white;
+    }
+
+    .navlink .menu-lang ul li a.lang-active:hover {
+        background-color: rgb(83, 83, 83);
+        color: white;
+    }
+    /* End of Language */
 }
 /* End of Responsive */
