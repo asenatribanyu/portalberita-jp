@@ -82,7 +82,13 @@
     <footer>
         <div class="footer-container">
             <div class="footer-info">
-                <small>2023 &#169; Name.</small>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/jepangs1_widyatama" target="_blank">
+                        <i class='bx bxl-instagram'></i></a>
+                    <a href="https://www.youtube.com/@s1bahasajepanguniversitasw895" target="_blank">
+                        <i class='bx bxl-youtube'></i></a>
+                </div>
+                <small>Copyright &#169; 2023 Bahasa Jepang Universitas Widyatama.</small>
                 <small>Crafted With <i class="bx bxs-heart"></i></small>
             </div>
         </div>

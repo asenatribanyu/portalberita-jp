@@ -106,7 +106,7 @@
     cursor: pointer;
 }
 
-.menu-categories li a {
+.menu-categories a {
     width: 100%;
     text-decoration: none;
     color: black;
