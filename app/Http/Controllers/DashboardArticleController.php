@@ -173,11 +173,12 @@ class DashboardArticleController extends Controller
             ]);
             $validatedData['slug'] = SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]);
             $validatedData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
+            
             if ($request->has('video_link')) {
                 $validatedData['video_link'] = $validatedData['video_link'];;
             }
             
-            $validatedData['thumbnail'] = null;
+            
             if($request->hasFile('thumbnail')){
                 if($article->thumbnail){
                     Storage::delete($article->thumbnail);
@@ -186,16 +187,7 @@ class DashboardArticleController extends Controller
             }
             $trans['excerpt-jp'] = Str::limit(strip_tags($request['content-jp']), 150, '...');
             // dd($validatedData);
-            $article->update([
-                'title' => $validatedData['title'],
-                'category_id' => $validatedData['category_id'],
-                'content' => $validatedData['content'],
-                'pin' => $validatedData['pin'],
-                'video_link' => $validatedData['video_link'],
-                'thumbnail' => $validatedData['thumbnail'],
-                'slug' => $validatedData['slug'],
-                'excerpt' => $validatedData['excerpt']
-            ]);
+            $article->update($validatedData);
 
             
             $articletrans->where('article_id', $article->id)->where('locale', 'id')->update([
