@@ -5,12 +5,13 @@
 @endpush
 
 @section('content')
+    {{ $local = session('locale') ?? ($local = config('app.locale')) }}
     <div class="main-container">
         <!-- Content -->
         <div class="content">
             <div class="content-title">
                 <h1>
-                    {{ $articles->title }}
+                    {{ $articles->translation($local)->title }}
                 </h1>
                 <div class="tag-wrapper">
                     @foreach ($articles->categories as $category)
@@ -31,7 +32,8 @@
                         <img src="{{ asset('storage/' . $articles->thumbnail) }}" alt="" />
                     </div>
                 @else
-                    <iframe src="{{ $articles->video_link }}" title="YouTube video player" frameborder="0"
+                    <iframe src="{{ 'https://www.youtube.com/embed/' . $articles->video_link }}"
+                        title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
@@ -42,7 +44,7 @@
             </div>
 
             <div class="content-body">
-                {!! $articles->content !!}
+                {!! $articles->translation($local)->content !!}
             </div>
 
             <div class="break-point-horizontal">
@@ -78,10 +80,10 @@
                                     @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/{{ $random->slug }}">{{ $random->title }}</a>
+                                    <a href="/{{ $random->slug }}">{{ $random->translation($local)->title }}</a>
                                 </div>
                                 <div class="card-desc">
-                                    <p>{{ $random->excerpt }}</p>
+                                    <p>{{ $random->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="/{{ $random->slug }}">Read More &#8594;</a>
@@ -125,7 +127,7 @@
                                         @endforeach
                                     </div>
                                     <div class="sidebar-card-title">
-                                        <a href="/{{ $related->slug }}">{{ $related->title }}</a>
+                                        <a href="/{{ $related->slug }}">{{ $related->translation($local)->title }}</a>
                                     </div>
                                     <div class="sidebar-card-footer">
                                         <a href="/{{ $related->slug }}">Read More &#8594;</a>

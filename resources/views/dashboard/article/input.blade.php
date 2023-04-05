@@ -16,14 +16,18 @@
             <div x-show="isOpen">
                 <div class="form-title w-75 mt-3">
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input type="hidden" name="pin" value="0">
+                        <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="pin">
                         <label class="form-check-label" for="flexCheckDefault">
                             Pin This Post
                         </label>
                     </div>
-                    <label for="title">Title:</label>
+                    <label for="title">Title ID:</label>
                     <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
                         id="title" name="title" />
+                    <label for="title">Title JP:</label>
+                    <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
+                        id="title" name="title-jp" />
                 </div>
 
                 <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
@@ -68,7 +72,7 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 Close
                                             </button>
-                                            <button type="button" class="btn btn-danger">
+                                            <button class="btn btn-danger">
                                                 Delete
                                             </button>
                                         </div>
@@ -78,14 +82,11 @@
                         </div>
                     </div>
                     <div class="tag-control mt-1 d-flex">
-                        {{-- <form action="/newcategory" method="post" id="form2">
-                            @csrf --}}
                         <input x-show="isOpen2" class="form-control w-25" type="text" placeholder="Input Tag"
                             aria-label="Title Input" id="title" name="tag" />
 
                         <input x-show="isOpen2" x-on:click="isOpen2 = false" class="btn btn-success ms-1" type="submit"
                             value="Submit" />
-                        {{-- </form> --}}
                     </div>
                 </div>
 
@@ -100,9 +101,13 @@
                     <input x-bind:disabled="selectedOption === '1'" class="form-control mt-1" type="text"
                         placeholder="https://youtu.be/URL" id="video-link" name="video_link" />
                 </div>
-                <div class="form-description mt-3">
+                <div class="form-description mt-3">ID
                     <input id="desc" type="hidden" name="content" />
                     <trix-editor input="desc" class="trix-content"></trix-editor>
+                </div>
+                <div class="form-description mt-3">JP
+                    <input id="descp" type="hidden" name="content-jp" />
+                    <trix-editor input="descp" class="trix-content"></trix-editor>
                 </div>
 
                 <div class="input-button">

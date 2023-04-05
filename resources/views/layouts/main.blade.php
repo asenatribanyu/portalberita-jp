@@ -41,9 +41,11 @@
                     </li>
                     <li class="menu-lang">
                         <a href="/">Languages</a>
-                        <ul>
-                            <li><a class="lang-active" href="#">Indonesia</a></li>
-                            <li><a class="" href="#">日本語</a></li>
+                        <ul {{ $local = session('locale') ?? ($local = config('app.locale')) }}>
+
+                            <li><a class=" {{ $local === 'id' ? 'lang-active' : '' }}" href="/switch/id">Indonesia</a>
+                            </li>
+                            <li><a class="{{ $local === 'jp' ? 'lang-active' : '' }}" href="/switch/jp">日本語</a></li>
                         </ul>
                     </li>
                     @auth
@@ -98,6 +100,7 @@
     @stack('script')
     <script src="{{ asset('js/main-script.js') }}"></script>
     <script src="{{ asset('js/navbar-script.js') }}"></script>
+
 </body>
 
 </html>
