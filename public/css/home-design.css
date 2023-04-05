@@ -66,6 +66,9 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 1030px;
     height: 112px;
     background-color: black;
@@ -76,7 +79,7 @@
         rgba(0, 0, 0, 1) 100%
     );
     border-radius: 0 0 10px 10px;
-    padding: 11px 40px 12px 40px;
+    padding: 0 25px;
 }
 
 .carousel-info .tag-wrapper {
@@ -84,8 +87,8 @@
 }
 
 .carousel-info .carousel-title {
-    width: 950px;
-    height: 50px;
+    max-width: 950px;
+    max-height: 50px;
     display: block;
     text-decoration: none;
     color: white;
@@ -538,8 +541,8 @@
     }
 
     .carousel-info .carousel-title {
-        width: 100%;
-        height: 41px;
+        max-width: 100%;
+        max-height: 41px;
         display: block;
         text-decoration: none;
         color: white;
@@ -981,8 +984,8 @@
     }
 
     .carousel-info .carousel-title {
-        width: 100%;
-        height: 41px;
+        max-width: 100%;
+        max-height: 41px;
         display: block;
         text-decoration: none;
         color: white;

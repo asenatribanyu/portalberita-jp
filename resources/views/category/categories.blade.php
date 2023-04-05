@@ -24,9 +24,12 @@
                         </div>
                         <ul class="menu-categories">
                             @foreach ($categories as $category)
-                                <li><a
-                                        href="{{ route('categories.index', ['category' => $category->category_name, 'type' => request()->input('type'), 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">{{ $category->category_name }}</a>
-                                </li>
+                                <a
+                                    href="{{ route('categories.index', ['category' => $category->category_name, 'type' => request()->input('type'), 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">
+                                    <li>
+                                        {{ $category->category_name }}
+                                    </li>
+                                </a>
                             @endforeach
                         </ul>
                     </div>
@@ -37,9 +40,12 @@
                         </div>
                         <ul class="menu-categories">
                             @foreach ($types as $type)
-                                <li><a
-                                        href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => $type->id, 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">{{ $type->type_name }}</a>
-                                </li>
+                                <a
+                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => $type->id, 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">
+                                    <li>
+                                        {{ $type->type_name }}
+                                    </li>
+                                </a>
                             @endforeach
                         </ul>
                     </div>
@@ -49,13 +55,14 @@
                             <div class="caret-categories"></div>
                         </div>
                         <ul class="menu-categories">
-                            <li><a
-                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Latest', 'search' => request()->input('search')]) }}">Latest</a>
-                            </li>
-                            <li><a
-                                    href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Oldest', 'search' => request()->input('search')]) }}">Oldest</a>
-                            </li>
-
+                            <a
+                                href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Latest', 'search' => request()->input('search')]) }}">
+                                <li>Latest</li>
+                            </a>
+                            <a
+                                href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Oldest', 'search' => request()->input('search')]) }}">
+                                <li>Oldest</li>
+                            </a>
                         </ul>
                     </div>
                 </div>
