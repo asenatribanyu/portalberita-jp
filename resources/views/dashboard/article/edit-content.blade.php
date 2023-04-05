@@ -9,6 +9,7 @@
             <h1>Edit Content</h1>
             <div class="form-title w-75 mt-3">
                 <div class="form-check mb-3">
+                    <input type="hidden" name="pin" value="0">
                     <input class="form-check-input" type="checkbox" name="pin" value="1"
                         id="flexCheckDefault"{{ $articles->pin ? 'checked' : '' }}>
                     <label class="form-check-label" for="flexCheckDefault">
@@ -18,6 +19,9 @@
                 <label for="title">Title:</label>
                 <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
                     id="title" name="title" value="{{ old('title', $articles->title) }}" />
+                <label for="title">Title:</label>
+                <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
+                    id="title" name="title-jp" value="{{ old('title', $articles->translation('jp')->title) }}" />
             </div>
 
             <div x-data="{ isOpen: false }" class="form-tag w-100 mt-3">
@@ -94,7 +98,8 @@
                 <div class="form-thumbnail-video w-25 mt-3">
 
                     <label for="video-link">Video Link:</label>
-                    <iframe src="{{ $articles->video_link }}" frameborder="0" class="mt-3"></iframe>
+                    <iframe src="{{ 'https://www.youtube.com/embed/' . $articles->video_link }}" frameborder="0"
+                        class="mt-3"></iframe>
                     <input class="form-control mt-1" type="text" placeholder="https://youtu.be/URL" id="video-link"
                         name="video_link" value="{{ old('video_link', $articles->video_link) }}" />
                 </div>
@@ -107,6 +112,11 @@
             <div class="form-description mt-3">
                 <input id="desc" type="hidden" name="content" value="{{ old('content', $articles->content) }}" />
                 <trix-editor input="desc"></trix-editor>
+            </div>
+            <div class="form-description mt-3">
+                <input id="descp" type="hidden" name="content-jp"
+                    value="{{ old('content', $articles->translation('jp')->content) }}" />
+                <trix-editor input="descp"></trix-editor>
             </div>
 
             <div class="edit-button d-flex justify-content-between">

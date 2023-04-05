@@ -5,6 +5,8 @@
 @endpush
 
 @section('content')
+
+    {{ $local = session('locale') ?? ($local = config('app.locale')) }}
     <div class="main-container">
         <!-- Carousel -->
         <div class="carousel">
@@ -12,20 +14,21 @@
                 <div class="carousel-slides">
                     @if ($pin->type_id == 1)
                         <img src="{{ asset('storage/' . $pin->thumbnail) }}" alt="" />
+                        <div class="carousel-info">
+                            <div class="tag-wrapper">
+                                @foreach ($pin->categories as $category)
+                                    <a class="tag"
+                                        href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
+                                @endforeach
+                            </div>
+                            <a class="carousel-title" href="/{{ $pin->slug }}">{{ $pin->translation($local)->title }}</a>
+                            <small>{{ $pin->created_at->format('j/F/Y') }}</small>
+                        </div>
                     @else
-                        <iframe src="{{ $pin->video_link }}" frameborder="0"></iframe>
+                        <iframe src="{{ 'https://www.youtube.com/embed/' . $pin->video_link }}" frameborder="0"></iframe>
                     @endif
 
-                    <div class="carousel-info">
-                        <div class="tag-wrapper">
-                            @foreach ($pin->categories as $category)
-                                <a class="tag"
-                                    href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
-                            @endforeach
-                        </div>
-                        <a class="carousel-title" href="/{{ $pin->slug }}">{{ $pin->title }}</a>
-                        <small>{{ $pin->created_at->format('j/F/Y') }}</small>
-                    </div>
+
                     <div class="carousel-button">
                         <i class="bx bx-chevron-left carousel-nav-left"></i>
                         <i class="bx bx-chevron-right carousel-nav-right"></i>
@@ -51,7 +54,8 @@
                                     </a>
                                     <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
                                 @else
-                                    <iframe src="{{ $view->video_link }}" frameborder="0"></iframe>
+                                    <iframe src="{{ 'https://www.youtube.com/embed/' . $view->video_link }}"
+                                        frameborder="0"></iframe>
                                     <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
                                 @endif
                             </div>
@@ -63,7 +67,7 @@
                                     @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/{{ $view->slug }}">{{ $view->title }}</a>
+                                    <a href="/{{ $view->slug }}">{{ $view->translation($local)->title }}</a>
                                 </div>
                                 <div class="card-footer">
                                     <a href="/{{ $view->slug }}">Read More &#8594;</a>
@@ -103,7 +107,8 @@
                                     </a>
                                     <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
                                 @else
-                                    <iframe src="{{ $late->video_link }}" frameborder="0"></iframe>
+                                    <iframe src="{{ 'https://www.youtube.com/embed/' . $late->video_link }}"
+                                        frameborder="0"></iframe>
                                     <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
                                 @endif
                             </div>
@@ -115,10 +120,10 @@
                                     @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/{{ $late->slug }}">{{ $late->title }}</a>
+                                    <a href="/{{ $late->slug }}">{{ $late->translation($local)->title }}</a>
                                 </div>
                                 <div class="card-desc">
-                                    <p>{{ $late->excerpt }}</p>
+                                    <p>{{ $late->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="/{{ $late->slug }}">Read More &#8594;</a>
@@ -188,10 +193,11 @@
                                     @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/{{ $article->slug }}" class="card-home-title">{{ $article->title }}</a>
+                                    <a href="/{{ $article->slug }}"
+                                        class="card-home-title">{{ $article->translation($local)->title }}</a>
                                 </div>
                                 <div class="card-desc">
-                                    <p>{{ $article->excerpt }}</p>
+                                    <p>{{ $article->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="/{{ $article->slug }}">Read More &#8594;</a>
@@ -224,7 +230,8 @@
                     <div class="card">
                         <div class="detail-wrapper">
                             <div class="card-image">
-                                <iframe src="{{ $article->video_link }}" title="YouTube video player" frameborder="0"
+                                <iframe src="{{ 'https://www.youtube.com/embed/' . $article->video_link }}"
+                                    title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                                 <div class="card-view"><small>&#128065; {{ $article->counts }}</small></div>
@@ -237,10 +244,11 @@
                                     @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/{{ $article->slug }}">{{ $article->title }} </a>
+                                    <a href="/{{ $article->slug }}">{{ $article->translation($local)->title }}
+                                    </a>
                                 </div>
                                 <div class="card-desc">
-                                    <p>{{ $article->excerpt }}</p>
+                                    <p>{{ $article->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="/{{ $article->slug }}">Read More &#8594;</a>

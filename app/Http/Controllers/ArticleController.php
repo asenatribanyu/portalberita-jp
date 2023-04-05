@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Article_View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class ArticleController extends Controller
 {
@@ -39,6 +41,14 @@ class ArticleController extends Controller
             'related_articles'=>$related_articles,
             'random_articles'=>$random_articles,
         ]);
+    }
+    
+    public function switch($locale)
+    {   
+    session(['locale' => $locale]); // Store the selected locale in the session
+    App::setLocale($locale); // Set the application locale to the selected locale
+    // dd(App::getLocale());
+    return redirect()->back();
     }
     
 }

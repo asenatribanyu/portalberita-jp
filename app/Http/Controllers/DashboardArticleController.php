@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\Article;
+use App\Models\ArticleTrans;
 use App\Models\Category;
 use App\Models\Type;
 use Illuminate\Support\Str;
@@ -46,14 +47,16 @@ class DashboardArticleController extends Controller
         }else {
             $validatedData = $request->validate([
                 'title' => 'required',
+                'title-jp' => 'required',
                 'type_id'=> 'required',
                 'category_id'=>'required|array',
                 'content'=> 'required',
-                'pin'   =>'nullable|string',
+                'content-jp'=> 'required',
+                'pin'   =>'string',
                 'video_link'=> 'nullable|string',
                 'thumbnail'=> 'nullable|image'
             ]);
-    
+            
             if($request->file('thumbnail')){
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
@@ -66,17 +69,36 @@ class DashboardArticleController extends Controller
                 'user_id' => auth()->user()->id,
                 'type_id'=>$validatedData['type_id'],
             ]);
+            
             if ($request->has('thumbnail')) {
                 $article->thumbnail = $validatedData['thumbnail'];
             }
             
             if ($request->has('video_link')) {
-                $article->video_link = "https://www.youtube.com/embed/" .  $validatedData['video_link'];
+                $article->video_link = $validatedData['video_link'];
             }
             if($request->has('pin')){
                 $article->pin = $validatedData['pin'];
             }
             $article->save();
+            $articleTrans = new ArticleTrans([
+                'locale' => 'id',
+                'title' => $validatedData['title'],
+                'excerpt' => Str::limit(strip_tags($request->content), 150, '...'),
+                'content' => $validatedData['content'],
+            ]);
+
+            $articleTrans->article()->associate($article);
+            $articleTrans->save();
+
+            $articleTransJP = new ArticleTrans([
+                'locale' => 'jp',
+                'title' => $validatedData['title-jp'],
+                'excerpt' => Str::limit(strip_tags($request['content-jp']), 150, '...'),
+                'content' => $validatedData['content-jp'],
+            ]);
+            $articleTransJP->article()->associate($article);
+            $articleTransJP->save();
     
             foreach ($validatedData['category_id'] as $categoryId) {
                 $category = Category::find($categoryId);
@@ -119,8 +141,9 @@ class DashboardArticleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, Article $article, ArticleTrans $articletrans)
     {
+        // dd($request);
         if ($request['tag']) {
             $validatedData = $request->validate([
                 'tag' => 'required'
@@ -131,27 +154,61 @@ class DashboardArticleController extends Controller
             $tag->save();
             return redirect('/dashboard');
         }else {
+            
             $validatedData = $request->validate([
                 'title' => 'required',
-                'category_id' => 'required|array',
-                'content' => 'required',
-                'video_link' => 'nullable|string',
-                'thumbnail' => 'nullable|image'
+                'category_id'=>'required|array',
+                'content'=> 'required',
+                'pin'   =>'string',
+                'video_link'=> 'nullable|string',
+                'thumbnail'=> 'nullable|image'
+            ]);
+            if ($request->pin != true) {
+                $validatedData['pin'] = false;
+            }
+            // dd($validatedData['pin']);
+            $trans = $request->validate([
+                'title-jp' => 'required',
+                'content-jp'=> 'required',
             ]);
             $validatedData['slug'] = SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]);
             $validatedData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
             if ($request->has('video_link')) {
-                $validatedData['video_link'] = "https://www.youtube.com/embed/" . $validatedData['video_link'];;
+                $validatedData['video_link'] = $validatedData['video_link'];;
             }
             
-            
+            $validatedData['thumbnail'] = null;
             if($request->hasFile('thumbnail')){
                 if($article->thumbnail){
                     Storage::delete($article->thumbnail);
                 };
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
-            $article->update($validatedData);
+            $trans['excerpt-jp'] = Str::limit(strip_tags($request['content-jp']), 150, '...');
+            // dd($validatedData);
+            $article->update([
+                'title' => $validatedData['title'],
+                'category_id' => $validatedData['category_id'],
+                'content' => $validatedData['content'],
+                'pin' => $validatedData['pin'],
+                'video_link' => $validatedData['video_link'],
+                'thumbnail' => $validatedData['thumbnail'],
+                'slug' => $validatedData['slug'],
+                'excerpt' => $validatedData['excerpt']
+            ]);
+
+            
+            $articletrans->where('article_id', $article->id)->where('locale', 'id')->update([
+                'title' => $validatedData['title'],
+                'excerpt' => $validatedData['excerpt'],
+                'content' => $validatedData['content']
+            ]);
+    
+            $articletrans->where('article_id', $article->id)->where('locale', 'jp')->update([
+                'title' => $trans['title-jp'],
+                'excerpt' => $trans['excerpt-jp'],
+                'content' => $trans['content-jp']
+            ]);
             $article->categories()->sync($validatedData['category_id']);
     
             return redirect('/dashboard/article/show');
@@ -163,17 +220,19 @@ class DashboardArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Article $article)
+    public function destroy( Article $article)
     {
-
         $article->categories()->detach();
+    
+    if ($article->thumbnail) {
+        Storage::delete($article->thumbnail);
+    }
 
-        if ($article->thumbnail) {
-            Storage::delete($article->thumbnail);
-        }
-        Article::destroy($article->id);
+    $article->articletrans()->delete();
+    $article->delete();
         return redirect('/dashboard');
     }
+
     public function uploadtrix(Request $request)
     {
         if($request->hasFile('file')) {

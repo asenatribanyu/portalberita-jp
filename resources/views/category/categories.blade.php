@@ -5,6 +5,7 @@
 @endpush
 
 @section('content')
+    {{ $local = session('locale') ?? ($local = config('app.locale')) }}
     <div class="main-container">
         <!-- Categories Header -->
         <div class="header">
@@ -79,7 +80,8 @@
                                     </a>
                                     <div class="card-view"><small>&#128065; {{ $article->counts }}</small></div>
                                 @else
-                                    <iframe src="{{ $article->video_link }}" frameborder="0"
+                                    <iframe src="{{ 'https://www.youtube.com/embed/' . $article->video_link }}"
+                                        frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen></iframe>
                                     <div class="card-view"><small>&#128065; {{ $article->counts }}</small></div>
@@ -92,10 +94,10 @@
                                     @endforeach
                                 </div>
                                 <div class="card-title">
-                                    <a href="/{{ $article->slug }}">{{ $article->title }}</a>
+                                    <a href="/{{ $article->slug }}">{{ $article->translation($local)->title }}</a>
                                 </div>
                                 <div class="card-desc">
-                                    <p>{{ $article->excerpt }}</p>
+                                    <p>{{ $article->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="/{{ $article->slug }}">Read More &#8594;</a>

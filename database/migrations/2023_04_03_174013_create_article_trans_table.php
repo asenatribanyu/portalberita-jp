@@ -11,18 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('article_trans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('type_id');
-            $table->foreignId('user_id');
-            $table->string('pin');
-            $table->string('slug',255)->unique();
+            $table->foreignId('article_id');
+            $table->string('locale');
             $table->string('title',255)->unique();
-            $table->text('video_link')->nullable();
-            $table->text('thumbnail')->nullable();
             $table->text('excerpt');
             $table->text('content');
-            $table->integer('counts')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('article_trans');
     }
 };

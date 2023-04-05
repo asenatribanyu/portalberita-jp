@@ -39,11 +39,10 @@ Route::get('/about', function () {
         "title" => "| About"
     ]);
 });
-
+Route::get('/switch/{locale}', [ArticleController::class, 'switch']);
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'authen']);
 Route::post('/logout',[LoginController::class,'logout']);
-Route::post('/newcategory',[CategoryController::class,'newcategory']);
 Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix']);
 Route::get('/dashboard', function () {
     return view('dashboard/view',['articles'=>Article::all(),"title" => "| Dashboard"]);
