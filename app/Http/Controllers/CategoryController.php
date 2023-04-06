@@ -11,6 +11,11 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
+        if (session('locale')) {
+            $local = session('locale');
+        }else {
+            $local = config('app.locale');
+        };
         $select_categories = 'Categories';
         $select_type = 'Type';
         $select_date = 'Date';
@@ -44,7 +49,9 @@ class CategoryController extends Controller
     }
     if ($request->filled('search')) {
         $search = $request->search;
-        $articles = $articles->where('title', 'LIKE', "%$search%");
+        $articles = $articles->whereHas('articletrans', function ($query) use ($search) {
+            $query->where('title', 'LIKE', "%$search%");
+        });
     }
 
     $title = "| Categories";

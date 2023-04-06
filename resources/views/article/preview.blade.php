@@ -68,8 +68,8 @@
                                     </a>
                                     <div class="card-view"><small>&#128065; {{ $random->counts }}</small></div>
                                 @else
-                                    <iframe src="{{ $random->video_link }}" frameborder="0" height="175px"
-                                        width="311px"></iframe>
+                                    <iframe src="{{ 'https://www.youtube.com/embed/' . $random->video_link }}"
+                                        frameborder="0" height="175px" width="311px"></iframe>
                                     <div class="card-view"><small>&#128065; {{ $random->counts }}</small></div>
                                 @endif
                             </div>
@@ -115,7 +115,8 @@
                                         <div class="sidebar-card-view"><small>&#128065; {{ $related->counts }}</small>
                                         </div>
                                     @else
-                                        <iframe src="{{ $related->video_link }}" frameborder="0"></iframe>
+                                        <iframe src="{{ 'https://www.youtube.com/embed/' . $related->video_link }}"
+                                            frameborder="0"></iframe>
                                         <div class="sidebar-card-view"><small>&#128065; {{ $related->counts }}</small>
                                         </div>
                                     @endif
