@@ -47,6 +47,4 @@ Route::get('/dashboard', function () {
 
 Route::resource('/dashboard/article',DashboardArticleController::class);
 
-
 Route::get('/{article}',[ArticleController::class,'show']);
-

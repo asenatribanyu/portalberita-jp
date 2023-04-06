@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/main-design.css') }}">
     @stack('style')
 
@@ -29,7 +30,7 @@
             <div class="menu">
                 <div class="logo-toggle">
                     <span class="logo">
-                        <a href="/">Logo.</a>
+                        <a href="/">Heiwa.</a>
                     </span>
                     <i class="bx bx-x side-close"></i>
                 </div>
@@ -74,9 +75,7 @@
     </nav>
     <!-- End of Navigation Bar -->
 
-    <div class="main">
-        @yield('content')
-    </div>
+    @yield('content')
 
     <!-- Footer -->
     <footer>
@@ -95,9 +94,18 @@
     </footer>
     <!-- End of Footer -->
 
+
     @stack('script')
     <script src="{{ asset('js/main-script.js') }}"></script>
     <script src="{{ asset('js/navbar-script.js') }}"></script>
+    {{-- <script>
+        // Preloader
+        $(window).on("load", function() {
+            $(".preloader").fadeOut(1000);
+            $(".main").fadeIn(1000);
+        });
+        // End of Preloader
+    </script> --}}
 </body>
 
 </html>
