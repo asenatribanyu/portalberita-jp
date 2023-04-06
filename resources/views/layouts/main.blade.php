@@ -12,6 +12,7 @@
         rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/main-design.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     @stack('style')
 
     <title>Heiwa {{ $title }}</title>
@@ -23,13 +24,13 @@
         <div class="navbar">
             <i class="bx bx-menu side-open"></i>
             <span class="logo navLogo">
-                <a href="/">Logo.</a>
+                <a href="/">Heiwa.</a>
             </span>
 
             <div class="menu">
                 <div class="logo-toggle">
                     <span class="logo">
-                        <a href="/">Logo.</a>
+                        <a href="/">Heiwa.</a>
                     </span>
                     <i class="bx bx-x side-close"></i>
                 </div>

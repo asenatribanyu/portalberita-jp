@@ -84,7 +84,7 @@ class DashboardArticleController extends Controller
             $articleTrans = new ArticleTrans([
                 'locale' => 'id',
                 'title' => $validatedData['title'],
-                'excerpt' => Str::limit(strip_tags($request->content), 150, '...'),
+                'excerpt' => Str::limit(strip_tags($request->content), 100, '...'),
                 'content' => $validatedData['content'],
             ]);
 
@@ -185,7 +185,7 @@ class DashboardArticleController extends Controller
                 };
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
-            $trans['excerpt-jp'] = Str::limit(strip_tags($request['content-jp']), 150, '...');
+            $trans['excerpt-jp'] = Str::limit(strip_tags($request['content-jp']), 100, '...');
             // dd($validatedData);
             $article->update($validatedData);
 

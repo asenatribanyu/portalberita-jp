@@ -27,7 +27,7 @@ Route::get('/', function () {
         'pinned'=>Article::where('pin',"1")->latest()->get(),
         'views'=>Article::with(['categories'])->withCount('views')->orderByDesc('counts')->take(3)->get(),
         'latest' => Article::with(['categories'])->latest()->take(3)->get(),
-        'articles'=>Article::where('type_id',1)->paginate(3),
+        'articles'=>Article::where('type_id',1)->paginate(9),
         'videos'=>Article::where('type_id',2)->paginate(3),
         'random_articles'=>$random_articles,
     ]);
