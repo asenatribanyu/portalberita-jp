@@ -6,6 +6,7 @@
 @endpush
 
 @section('content')
+    {{ $local = session('locale') ?? ($local = config('app.locale')) }}
     <div class="home-preloader">
         @include('preloader/preloader')
     </div>
@@ -14,63 +15,74 @@
         <div class="main-container">
             <!-- Carousel -->
             <div class="carousel">
-                @for ($i = 1; $i <= 3; $i++)
+                @foreach ($pinned as $pin)
                     <div class="carousel-slides">
-                        <img src="img/slider-{{ $i }}.jpg" alt="" />
-                        <div class="carousel-info">
-                            <div class="tag-wrapper">
-                                <a class="tag" href="/categories">Tokyo</a>
-                                <a class="tag" href="/categories">Yokohama</a>
-                                <a class="tag" href="/categories">Kyoto</a>
+                        @if ($pin->type_id == 1)
+                            <img src="{{ asset('storage/' . $pin->thumbnail) }}" alt="" />
+                            <div class="carousel-info">
+                                <div class="tag-wrapper">
+                                    @foreach ($pin->categories as $category)
+                                        <a class="tag"
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
+                                    @endforeach
+                                </div>
+                                <a class="carousel-title"
+                                    href="/{{ $pin->slug }}">{{ $pin->translation($local)->title }}</a>
+                                <small>{{ $pin->created_at->format('j/F/Y') }}</small>
                             </div>
-                            <a class="carousel-title" href="/preview">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit.</a>
-                            <small>DD/MM/YYYY</small>
-                        </div>
+                        @else
+                            <iframe src="{{ 'https://www.youtube.com/embed/' . $pin->video_link }}"
+                                frameborder="0"></iframe>
+                        @endif
                         <div class="carousel-button">
                             <i class="bx bx-chevron-left carousel-nav-left"></i>
                             <i class="bx bx-chevron-right carousel-nav-right"></i>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
             <!-- End of Carousel -->
 
             <!-- Featured Card -->
             <div class="card-wrapper">
-                @foreach ($views as $view)
-                    <div class="card">
-                        <div class="detail-wrapper">
-                            <div class="card-image">
-                                @if ($view->type_id == 1)
-                                    <a href="/{{ $view->slug }}">
-                                        <img src="{{ asset('storage/' . $view->thumbnail) }}" alt="" />
-                                    </a>
-                                    <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
-                                @else
-                                    <iframe src="{{ $view->video_link }}" frameborder="0"></iframe>
-                                    <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
-                                @endif
-                            </div>
-                            <div class="card-info">
-                                <div class="tag-wrapper">
-                                    @foreach ($view->categories as $category)
-                                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
-                                    @endforeach
+                @if ($views->isEmpty())
+                    <h1>Data Not Found</h1>
+                @else
+                    @foreach ($views as $view)
+                        <div class="card">
+                            <div class="detail-wrapper">
+                                <div class="card-image">
+                                    @if ($view->type_id == 1)
+                                        <a href="/{{ $view->slug }}">
+                                            <img src="{{ asset('storage/' . $view->thumbnail) }}" alt="" />
+                                        </a>
+                                        <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
+                                    @else
+                                        <iframe src="{{ 'https://www.youtube.com/embed/' . $view->video_link }}"
+                                            frameborder="0"></iframe>
+                                        <div class="card-view"><small>&#128065; {{ $view->counts }}</small></div>
+                                    @endif
                                 </div>
-                                <div class="card-title">
-                                    <a href="/{{ $view->slug }}">{{ $view->title }}</a>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="/{{ $view->slug }}">Read More &#8594;</a>
-                                    <small>{{ $view->created_at->format('j/F/Y') }}</small>
+                                <div class="card-info">
+                                    <div class="tag-wrapper">
+                                        @foreach ($view->categories as $category)
+                                            <a class="tag"
+                                                href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
+                                        @endforeach
+                                    </div>
+                                    <div class="card-title">
+                                        <a href="/{{ $view->slug }}">{{ $view->translation($local)->title }}</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/{{ $view->slug }}">Read More &#8594;</a>
+                                        <small>{{ $view->created_at->format('j/F/Y') }}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
+
 
             </div>
             <!-- End of Featured Card -->
@@ -81,45 +93,52 @@
 
             <div class="header header-latest">
                 <h1>LATEST ARTICLES</h1>
-                <a href="/categories">View All Articles &#8594;</a>
+                <a href="/categories?date=Latest">View All Articles &#8594;</a>
             </div>
 
             <!-- Latest Articles Card -->
             <div class="card-wrapper">
-                @foreach ($latest as $late)
-                    <div class="card">
-                        <div class="detail-wrapper">
-                            <div class="card-image">
-                                @if ($late->type_id == 1)
-                                    <a href="/{{ $late->slug }}">
-                                        <img src="{{ asset('storage/' . $late->thumbnail) }}" alt="" />
-                                    </a>
-                                    <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
-                                @else
-                                    <iframe src="{{ $late->video_link }}" frameborder="0"></iframe>
-                                    <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
-                                @endif
-                            </div>
-                            <div class="card-info">
-                                <div class="tag-wrapper">
-                                    @foreach ($late->categories as $category)
-                                        <a href="/categories">{{ $category->category_name }}</a>
-                                    @endforeach
+                @if ($latest->isEmpty())
+                    <h1>Data Not Found</h1>
+                @else
+                    @foreach ($latest as $late)
+                        <div class="card">
+                            <div class="detail-wrapper">
+                                <div class="card-image">
+                                    @if ($late->type_id == 1)
+                                        <a href="/{{ $late->slug }}">
+                                            <img src="{{ asset('storage/' . $late->thumbnail) }}" alt="" />
+                                        </a>
+                                        <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
+                                    @else
+                                        <iframe src="{{ 'https://www.youtube.com/embed/' . $late->video_link }}"
+                                            frameborder="0"></iframe>
+                                        <div class="card-view"><small>&#128065; {{ $late->counts }}</small></div>
+                                    @endif
                                 </div>
-                                <div class="card-title">
-                                    <a href="/{{ $late->slug }}">{{ $late->title }}</a>
-                                </div>
-                                <div class="card-desc">
-                                    <p>{{ $late->excerpt }}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="/{{ $late->slug }}">Read More &#8594;</a>
-                                    <small>{{ $late->created_at->format('j/F/Y') }}</small>
+                                <div class="card-info">
+                                    <div class="tag-wrapper">
+                                        @foreach ($late->categories as $category)
+                                            <a
+                                                href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
+                                        @endforeach
+                                    </div>
+                                    <div class="card-title">
+                                        <a href="/{{ $late->slug }}">{{ $late->translation($local)->title }}</a>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p>{{ $late->translation($local)->excerpt }}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/{{ $late->slug }}">Read More &#8594;</a>
+                                        <small>{{ $late->created_at->format('j/F/Y') }}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
+
             </div>
             <!-- End of Latest Articles Card -->
 
@@ -154,13 +173,15 @@
 
             <div class="header">
                 <h1>ARTICLES</h1>
-                <a href="/categories">View All Articles &#8594;</a>
+                <a href="/categories?type=1">View All Articles &#8594;</a>
             </div>
 
             <!-- Articles Card -->
             <div class="card-wrapper">
-                @foreach ($articles as $article)
-                    @if ($article->type_id == 1)
+                @if ($articles->isEmpty())
+                    <h1>Data Not Found</h1>
+                @else
+                    @foreach ($articles as $article)
                         <div class="card">
                             <div class="detail-wrapper">
                                 <div class="card-image">
@@ -171,14 +192,16 @@
                                 <div class="card-info">
                                     <div class="tag-wrapper">
                                         @foreach ($article->categories as $category)
-                                            <a href="/categories">{{ $category->category_name }}</a>
+                                            <a
+                                                href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                         @endforeach
                                     </div>
                                     <div class="card-title">
-                                        <a href="/{{ $article->slug }}" class="card-home-title">{{ $article->title }}</a>
+                                        <a href="/{{ $article->slug }}"
+                                            class="card-home-title">{{ $article->translation($local)->title }}</a>
                                     </div>
                                     <div class="card-desc">
-                                        <p>{{ $article->excerpt }}</p>
+                                        <p>{{ $article->translation($local)->excerpt }}</p>
                                     </div>
                                     <div class="card-footer">
                                         <a href="/{{ $article->slug }}">Read More &#8594;</a>
@@ -187,8 +210,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
+                    @endforeach
+                @endif
+
             </div>
             <!-- End of Articles Card -->
 
@@ -198,18 +222,20 @@
 
             <div class="header">
                 <h1>VIDEOS</h1>
-                <a href="/categories">View All Videos &#8594;</a>
+                <a href="/categories?type=2">View All Videos &#8594;</a>
             </div>
 
             <!-- Videos Card -->
             <div class="card-wrapper">
-                @foreach ($articles as $article)
-                    @if ($article->type_id == 2)
+                @if ($videos->isEmpty())
+                    <h1>Data Not Found</h1>
+                @else
+                    @foreach ($videos as $article)
                         <div class="card">
                             <div class="detail-wrapper">
                                 <div class="card-image">
-                                    <iframe src="{{ $article->video_link }}" title="YouTube video player"
-                                        frameborder="0"
+                                    <iframe src="{{ 'https://www.youtube.com/embed/' . $article->video_link }}"
+                                        title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen></iframe>
                                     <div class="card-view"><small>&#128065; {{ $article->counts }}</small></div>
@@ -217,14 +243,16 @@
                                 <div class="card-info">
                                     <div class="tag-wrapper">
                                         @foreach ($article->categories as $category)
-                                            <a href="/categories">{{ $category->category_name }}</a>
+                                            <a
+                                                href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                         @endforeach
                                     </div>
                                     <div class="card-title">
-                                        <a href="/{{ $article->slug }}">{{ $article->title }} </a>
+                                        <a href="/{{ $article->slug }}">{{ $article->translation($local)->title }}
+                                        </a>
                                     </div>
                                     <div class="card-desc">
-                                        <p>{{ $article->excerpt }}</p>
+                                        <p>{{ $article->translation($local)->excerpt }}</p>
                                     </div>
                                     <div class="card-footer">
                                         <a href="/{{ $article->slug }}">Read More &#8594;</a>
@@ -233,8 +261,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
+                    @endforeach
+                @endif
+
             </div>
             <!-- End of Videos Card -->
 
@@ -249,16 +278,16 @@
 
             <!-- Image Gallery -->
             <div class="image-gallery-wrapper">
-                @for ($i = 1; $i <= 9; $i++)
-                    <div class="image-{{ $i }}"><img src="" alt="" /></div>
-                @endfor
+                @foreach ($random_articles as $random)
+                    <div class="image-{{ $loop->iteration }}"><img src="{{ asset('storage/' . $random->thumbnail) }}"
+                            alt="" /></div>
+                @endforeach
             </div>
             <!-- End of Image Gallery -->
         </div>
-    </div>
-@endsection
+    @endsection
 
-@push('script')
-    <script src="{{ asset('js/home-script.js') }}"></script>
-    <script src="{{ asset('js/preloader-script.js') }}"></script>
-@endpush
+    @push('script')
+        <script src="{{ asset('js/home-script.js') }}"></script>
+        <script src="{{ asset('js/preloader-script.js') }}"></script>
+    @endpush

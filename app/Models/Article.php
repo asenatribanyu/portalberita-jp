@@ -28,11 +28,16 @@ class Article extends Model
         'excerpt',
         'slug',
         'counts',
+        'pin'
     ];
 
     protected $guarded=[
         'id'
     ];
+    public function articletrans()
+    {
+        return $this->hasMany(ArticleTrans::class);
+    }
 
     public function type(){
         return $this->belongsTo(Type::class);
@@ -63,5 +68,11 @@ class Article extends Model
     public function views()
     {
     return $this->hasMany(View::class);
+    }
+    public function translation($locale)
+    {
+        return $this->articletrans()
+            ->where('locale', $locale)
+            ->first();
     }
 }
