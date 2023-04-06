@@ -24,7 +24,7 @@ Route::get('/', function () {
     $random_articles = Article::inRandomOrder()->where('type_id',1)->take(9)->get();
     return view('home/home', [
         "title" => "",
-        'pinned'=>Article::where('pin',"1")->latest()->get(),
+        'pinned'=>Article::where('pin',"1")->latest()->take(3)->get(),
         'views'=>Article::with(['categories'])->withCount('views')->orderByDesc('counts')->take(3)->get(),
         'latest' => Article::with(['categories'])->latest()->take(3)->get(),
         'articles'=>Article::where('type_id',1)->paginate(9),
