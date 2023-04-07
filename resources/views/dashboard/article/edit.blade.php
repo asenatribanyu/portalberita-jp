@@ -9,6 +9,7 @@
                 <tr>
                     <th>No</th>
                     <th>Title</th>
+                    <th>Type</th>
                     <th>Date</th>
                     <th>Category</th>
                     <th>Views</th>
@@ -20,6 +21,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $article->title }}</td>
+                        <td>{{ $article->type->type_name }}</td>
                         <td>{{ $article->created_at }}</td>
                         <td>
                             @foreach ($article->categories as $category)
@@ -27,9 +29,15 @@
                             @endforeach
                         </td>
                         <td>{{ $article->counts }}</td>
-                        <td class="d-flex justify-content-center"><a class="btn-sm btn-info text-decoration-none"
-                                href="/dashboard/article/{{ $article->slug }}/edit" role="button"><i
-                                    class='bx bxs-edit'></i></a>
+                        <td class="d-flex justify-content-center">
+                            <a class="btn-sm btn-info text-decoration-none"
+                                href="/dashboard/article/{{ $article->slug }}/edit" role="button">
+                                <i class='bx bxs-edit'></i></a>
+
+                            <div class="btn-sm ms-1 text-decoration-none" style="background-color: transparent"
+                                href="/dashboard/article/{{ $article->slug }}/edit" role="button">
+                                <i class='bx bxs-pin text-danger'></i>
+                            </div>
                         </td>
                 @endforeach
 

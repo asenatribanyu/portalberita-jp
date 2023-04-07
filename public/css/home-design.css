@@ -200,6 +200,7 @@
 .card-image iframe {
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 }
 
 .card-image a {
@@ -500,7 +501,7 @@
 
     /* Carousel */
     .carousel {
-        margin: 95px auto 10px auto;
+        margin: 75px auto 10px auto;
         position: relative;
         width: 100%;
         height: 325px;
@@ -632,6 +633,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        border-radius: 10px;
     }
 
     .card-image .card-view {
@@ -1075,6 +1077,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        border-radius: 10px;
     }
 
     .card-image .card-view {

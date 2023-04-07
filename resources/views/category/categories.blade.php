@@ -66,6 +66,9 @@
                         </ul>
                     </div>
                 </div>
+                <div class="categories-reset">
+                    <a href="/categories">Reset</a>
+                </div>
             </div>
         </div>
         <!-- End of Categories Header -->
