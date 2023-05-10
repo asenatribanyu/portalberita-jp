@@ -32,14 +32,12 @@
 
                 <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
                     <label for="checkbox">Category:</label>
-                    <div x-data="{ checkedCount: 0 }" class="d-flex">
+                    <div class="d-flex">
                         <div class="checkbox-limit mt-1">
                             @foreach ($categories as $category)
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                        name="category_id[]" value={{ $category->id }}
-                                        x-on:click="checkedCount = $event.target.checked ? checkedCount + 1 : checkedCount - 1"
-                                        x-bind:disabled="checkedCount >= 3 && !$event.target.checked" />
+                                    <input class="form-check-input cat" type="checkbox" id="inlineCheckbox1"
+                                        name="category_id[]" value={{ $category->id }} />
                                     <label class="form-check-label"
                                         for="inlineCheckbox1">{{ $category->category_name }}</label>
                                 </div>
