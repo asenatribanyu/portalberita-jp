@@ -36,12 +36,16 @@
                 </div>
 
                 <ul class="navlink">
-                    <li><a class="{{ $title === '' ? 'nav-active' : '' }}" href="/">Home</a></li>
-                    <li><a class="{{ $title === '| About' ? 'nav-active' : '' }}" href="/about">About</a></li>
-                    <li><a class="{{ $title === '| Categories' ? 'nav-active' : '' }}" href="/categories">Categories</a>
+                    <li><a class="{{ $title === '' ? 'nav-active' : '' }}" href="/">{{ __('messages.Home') }}</a>
+
+                    </li>
+                    <li><a class="{{ $title === '| About' ? 'nav-active' : '' }}"
+                            href="/about">{{ __('messages.About') }}</a></li>
+                    <li><a class="{{ $title === '| Categories' ? 'nav-active' : '' }}"
+                            href="/categories">{{ __('messages.Categories') }}</a>
                     </li>
                     <li class="menu-lang">
-                        <a href="/">Languages</a>
+                        <a href="/">{{ __('messages.Languages') }}</a>
                         <ul {{ $local = session('locale') ?? ($local = config('app.locale')) }}>
 
                             <li><a class=" {{ $local === 'id' ? 'lang-active' : '' }}" href="/switch/id">Indonesia</a>
@@ -50,9 +54,10 @@
                         </ul>
                     </li>
                     @auth
-                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/dashboard">{{ __('messages.Dashboard') }}</a></li>
                     @else
-                        <li><a class="{{ $title === '| Sign In' ? 'nav-active' : '' }}" href="/login">Sign in</a></li>
+                        <li><a class="{{ $title === '| Sign In' ? 'nav-active' : '' }}"
+                                href="/login">{{ __('messages.Sign-In') }}</a></li>
                     @endauth
 
 
@@ -67,7 +72,7 @@
 
                     <div class="searchField">
                         <input type="text" name="search" value="{{ request()->input('search') }}"
-                            placeholder="Search...">
+                            placeholder="{{ __('messages.Search') }}...">
                         {{-- <input type="text" placeholder="Search..." /> --}}
                         <i class="bx bx-search search"></i>
                     </div>

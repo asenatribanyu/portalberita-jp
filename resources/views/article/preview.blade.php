@@ -53,8 +53,8 @@
 
             <!-- Other Articles & Card -->
             <div class="header header-other">
-                <h1>OTHER ARTICLES</h1>
-                <a href="/categories">View All Articles &#8594;</a>
+                <h1>{{ __('messages.Other Articles') }}</h1>
+                <a href="/categories">{{ __('messages.View All Articles') }} &#8594;</a>
             </div>
 
             <div class="card-wrapper">
@@ -86,7 +86,7 @@
                                     <p>{{ $random->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="/{{ $random->slug }}">Read More &#8594;</a>
+                                    <a href="/{{ $random->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                     <small>{{ $articles->created_at->format('j/F/Y') }}</small>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
         <!-- Sidebar -->
         <div class="sidebar-wrapper">
             <div class="sidebar">
-                <div class="sidebar-title">Read Also:</div>
+                <div class="sidebar-title">{{ __('messages.Read Also') }}</div>
                 <!-- Sidebar Card -->
                 <div class="sidebar-card-wrapper">
                     @foreach ($related_articles as $related)
@@ -131,7 +131,7 @@
                                         <a href="/{{ $related->slug }}">{{ $related->translation($local)->title }}</a>
                                     </div>
                                     <div class="sidebar-card-footer">
-                                        <a href="/{{ $related->slug }}">Read More &#8594;</a>
+                                        <a href="/{{ $related->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                         <small>{{ $related->created_at->format('j/F/Y') }}</small>
                                     </div>
                                 </div>

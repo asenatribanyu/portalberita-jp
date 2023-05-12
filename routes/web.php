@@ -8,7 +8,7 @@ use App\Http\Controllers\DashboardArticleController;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Type;
-
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,9 @@ use App\Models\Type;
 
 Route::get('/', function () {
     $random_articles = Article::inRandomOrder()->where('type_id',1)->take(9)->get();
+    if($locale = session('locale')){
+        App::setlocale($locale);
+    };
     return view('home/home', [
         "title" => "",
         'pinned'=>Article::where('pin',"1")->latest()->take(3)->get(),

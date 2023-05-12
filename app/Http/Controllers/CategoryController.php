@@ -6,19 +6,23 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class CategoryController extends Controller
 {
     public function index(Request $request)
     {
+        if($locale = session('locale')){
+            App::setlocale($locale);
+        };
         if (session('locale')) {
             $local = session('locale');
         }else {
             $local = config('app.locale');
         };
-        $select_categories = 'Categories';
-        $select_type = 'Type';
-        $select_date = 'Date';
+        $select_categories = __('messages.Categories');
+        $select_type =  __('messages.Type');
+        $select_date =  __('messages.Date');
         $articles = Article::query();
 
     if ($request->has('category')) {
@@ -33,16 +37,21 @@ class CategoryController extends Controller
     if ($request->has('type')) {
         $articles->where('type_id', $request->input('type'));
         $type = Type::where('id',$request->input('type'))->get();
-        $select_type = $type->first()->type_name;
+        if ($type->first()->type_name === 'Photos') {
+            $select_type = __('messages.Photos');
+        }else{
+            $select_type = __('messages.Videos');
+        }
+        
     }
 
     if ($request->has('date')) {
         if ($request->input('date') == 'Oldest') {
             $articles->orderBy('created_at', 'asc');
-            $select_date = $request['date'];
+            $select_date = __('messages.Oldest');
         } else {
             $articles->orderBy('created_at', 'desc');
-            $select_date = $request['date'];
+            $select_date = __('messages.Latest');
         }
     } else {
         $articles->latest();

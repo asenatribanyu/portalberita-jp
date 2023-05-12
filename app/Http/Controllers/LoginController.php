@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class LoginController extends Controller
 {
     public function index(){
+        if($locale = session('locale')){
+            App::setlocale($locale);
+        };
         return view('login/login', [
             "title" => "| Sign In"
         ]);

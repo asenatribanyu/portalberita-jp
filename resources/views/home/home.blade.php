@@ -48,7 +48,7 @@
             <!-- Featured Card -->
             <div class="card-wrapper">
                 @if ($views->isEmpty())
-                    <h1>Data Not Found</h1>
+                    <h1>{{ __('messages.Data Not Found') }}</h1>
                 @else
                     @foreach ($views as $view)
                         <div class="card">
@@ -76,7 +76,7 @@
                                         <a href="/{{ $view->slug }}">{{ $view->translation($local)->title }}</a>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="/{{ $view->slug }}">Read More &#8594;</a>
+                                        <a href="/{{ $view->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                         <small>{{ $view->created_at->format('j/F/Y') }}</small>
                                     </div>
                                 </div>
@@ -94,14 +94,14 @@
             </div>
 
             <div class="header header-latest">
-                <h1>LATEST ARTICLES</h1>
-                <a href="/categories?date=Latest">View All Articles &#8594;</a>
+                <h1>{{ __('messages.Latest Articles') }}</h1>
+                <a href="/categories?date=Latest">{{ __('messages.View All Articles') }} &#8594;</a>
             </div>
 
             <!-- Latest Articles Card -->
             <div class="card-wrapper">
                 @if ($latest->isEmpty())
-                    <h1>Data Not Found</h1>
+                    <h1>{{ __('messages.Data Not Found') }}</h1>
                 @else
                     @foreach ($latest as $late)
                         <div class="card">
@@ -132,7 +132,7 @@
                                         <p>{{ $late->translation($local)->excerpt }}</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="/{{ $late->slug }}">Read More &#8594;</a>
+                                        <a href="/{{ $late->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                         <small>{{ $late->created_at->format('j/F/Y') }}</small>
                                     </div>
                                 </div>
@@ -174,14 +174,14 @@
             </div>
 
             <div class="header">
-                <h1>ARTICLES</h1>
-                <a href="/categories?type=1">View All Articles &#8594;</a>
+                <h1>{{ __('messages.Articles') }}</h1>
+                <a href="/categories?type=1">{{ __('messages.View All Articles') }} &#8594;</a>
             </div>
 
             <!-- Articles Card -->
             <div class="card-wrapper">
                 @if ($articles->isEmpty())
-                    <h1>Data Not Found</h1>
+                    <h1>{{ __('messages.Data Not Found') }}</h1>
                 @else
                     @foreach ($articles as $article)
                         <div class="card">
@@ -206,7 +206,7 @@
                                         <p>{{ $article->translation($local)->excerpt }}</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="/{{ $article->slug }}">Read More &#8594;</a>
+                                        <a href="/{{ $article->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                         <small>{{ $article->created_at->format('j/F/Y') }}</small>
                                     </div>
                                 </div>
@@ -223,14 +223,14 @@
             </div>
 
             <div class="header">
-                <h1>VIDEOS</h1>
-                <a href="/categories?type=2">View All Videos &#8594;</a>
+                <h1>{{ __('messages.Videos') }}</h1>
+                <a href="/categories?type=2">{{ __('messages.View All Videos') }} &#8594;</a>
             </div>
 
             <!-- Videos Card -->
             <div class="card-wrapper">
                 @if ($videos->isEmpty())
-                    <h1>Data Not Found</h1>
+                    <h1>{{ __('messages.Data Not Found') }}</h1>
                 @else
                     @foreach ($videos as $article)
                         <div class="card">
@@ -257,7 +257,7 @@
                                         <p>{{ $article->translation($local)->excerpt }}</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="/{{ $article->slug }}">Read More &#8594;</a>
+                                        <a href="/{{ $article->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                         <small>{{ $article->created_at->format('j/F/Y') }}</small>
                                     </div>
                                 </div>
@@ -274,8 +274,8 @@
             </div>
 
             <div class="header">
-                <h1>PHOTOS</h1>
-                <a href="/categories">View All Photos &#8594;</a>
+                <h1>{{ __('messages.Photos') }}</h1>
+                <a href="/categories">{{ __('messages.View All Photos') }} &#8594;</a>
             </div>
 
             <!-- Image Gallery -->

@@ -9,10 +9,10 @@
     <div class="main-container">
         <!-- Categories Header -->
         <div class="header">
-            <h1>CATEGORIES</h1>
+            <h1>{{ __('messages.Categories') }}</h1>
             <div class="categories-wrapper">
                 <div class="categories-label">
-                    Filter:
+                    {{ __('messages.Filter') }}
                 </div>
                 <div class="dropdown-wrapper">
                     <div class="dropdown-categories">
@@ -39,14 +39,22 @@
                             <div class="caret-categories"></div>
                         </div>
                         <ul class="menu-categories">
-                            @foreach ($types as $type)
+                            <a
+                                href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => 1, 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">
+                                <li>{{ __('messages.Photos') }}</li>
+                            </a>
+                            <a
+                                href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => 2, 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">
+                                <li>{{ __('messages.Videos') }}</li>
+                            </a>
+                            {{-- @foreach ($types as $type)
                                 <a
                                     href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => $type->id, 'date' => request()->input('date'), 'search' => request()->input('search')]) }}">
                                     <li>
                                         {{ $type->type_name }}
                                     </li>
                                 </a>
-                            @endforeach
+                            @endforeach --}}
                         </ul>
                     </div>
                     <div class="dropdown-categories">
@@ -57,17 +65,17 @@
                         <ul class="menu-categories">
                             <a
                                 href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Latest', 'search' => request()->input('search')]) }}">
-                                <li>Latest</li>
+                                <li>{{ __('messages.Latest') }}</li>
                             </a>
                             <a
                                 href="{{ route('categories.index', ['category' => request()->input('category'), 'type' => request()->input('type'), 'date' => 'Oldest', 'search' => request()->input('search')]) }}">
-                                <li>Oldest</li>
+                                <li>{{ __('messages.Oldest') }}</li>
                             </a>
                         </ul>
                     </div>
                 </div>
                 <div class="categories-reset">
-                    <a href="/categories">Reset</a>
+                    <a href="/categories"> {{ __('messages.Reset') }}</a>
                 </div>
             </div>
         </div>
@@ -77,7 +85,7 @@
         <div class="card-wrapper">
             @if ($error)
                 <div class="no-data">
-                    Data not found
+                    {{ __('messages.Data Not Found') }}
                 </div>
             @else
                 @foreach ($articles as $article)
@@ -110,7 +118,7 @@
                                     <p>{{ $article->translation($local)->excerpt }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="/{{ $article->slug }}">Read More &#8594;</a>
+                                    <a href="/{{ $article->slug }}">{{ __('messages.Read More') }} &#8594;</a>
                                     <small>{{ $article->created_at->format('j/F/Y') }}</small>
                                 </div>
                             </div>
