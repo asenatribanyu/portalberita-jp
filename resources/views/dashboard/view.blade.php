@@ -24,8 +24,13 @@
                         <td>{{ $article->created_at }}</td>
 
                         <td>
-                            @foreach ($article->categories as $category)
+                            @foreach ($article->categories as $key => $category)
                                 {{ $category->category_name }}
+                                @if ($key !== count($article->categories) - 1)
+                                    ,
+                                @else
+                                    .
+                                @endif
                             @endforeach
                         </td>
 
