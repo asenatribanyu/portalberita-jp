@@ -32,14 +32,45 @@
                         <td class="d-flex justify-content-center">
                             <a class="btn-sm btn-info text-decoration-none"
                                 href="/dashboard/article/{{ $article->slug }}/edit" role="button">
-                                <i class='bx bxs-edit'></i></a>
+                                <i class='bx bxs-edit'></i>
+                            </a>
+
+                            <button type="button" class="btn-sm ms-2 btn-danger text-decoration-none"
+                                data-bs-toggle="modal" data-bs-target="#deleteContent">
+                                <i class='bx bx-trash'></i>
+                            </button>
+
+                            <div class="modal fade" id="deleteContent" tabindex="-1" aria-labelledby="deleteContentLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteTagLabel">
+                                                Deletion Confirmation
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure want to Delete the Content?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button class="btn btn-danger">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             @if ($article->pin)
                                 <div class="btn-sm ms-1 text-decoration-none" style="background-color: transparent">
                                     <i class='bx bxs-pin text-danger'></i>
                                 </div>
                             @endif
-
-
                         </td>
                 @endforeach
 

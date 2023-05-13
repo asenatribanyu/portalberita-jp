@@ -20,6 +20,13 @@ use Illuminate\Support\Facades\App;
 |
 */
 
+Route::get('/link', function () {
+    $targetFolder = base_path().'/storage/app/public';
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage';
+    symlink($targetFolder, $linkFolder);
+    echo 'Success';
+ });
+
 Route::get('/', function () {
     $random_articles = Article::inRandomOrder()->where('type_id',1)->take(9)->get();
     if($locale = session('locale')){
