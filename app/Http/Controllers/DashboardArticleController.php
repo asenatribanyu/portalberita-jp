@@ -50,7 +50,7 @@ class DashboardArticleController extends Controller
         }else {
             $validatedData = $request->validate([
                 'title' => 'required|unique:articles',
-                'title-jp' => 'required',
+                'title-jp' => 'required|unique:article_trans,title',
                 'type_id'=> 'required',
                 'category_id'=>'required|array',
                 'content'=> 'nullable',

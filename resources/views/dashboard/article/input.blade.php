@@ -17,27 +17,34 @@
                 <div class="form-title w-75 mt-3">
                     <div class="form-check mb-3">
                         <input type="hidden" name="pin" value="0">
-                        <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="pin">
+                        <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="pin"
+                            {{ old('pin') == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="flexCheckDefault">
                             Pin This Post
                         </label>
                     </div>
                     <label for="title">Title ID:</label>
-                    {{-- <div class="fs-6 text-white bg-danger mt-1 w-50">
+                    @error('title')
+                        <div class="fs-6 text-white bg-danger mt-1 w-50">
                             <p class="ms-2">Title has been used</p>
-                        </div> --}}
+                        </div>
+                    @enderror
 
                     <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
-                        id="title" name="title" />
+                        id="title" name="title" value="{{ old('title') }}" />
 
                     <label for="title">Title JP:</label>
 
-                    {{-- <div class="fs-6 text-white bg-danger mt-1 w-50">
-                        <p class="ms-2">Title has been used</p>
-                    </div> --}}
+                    @error('title-jp')
+                        <div class="fs-6 text-white bg-danger mt-1 w-50">
+                            <p class="ms-2">Title has been used</p>
+                        </div>
+                    @enderror
+
+
 
                     <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
-                        id="title" name="title-jp" />
+                        id="title" name="title-jp" value="{{ old('title-jp') }}" />
                 </div>
 
                 <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
@@ -47,7 +54,8 @@
                             @foreach ($categories as $category)
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input cat" type="checkbox" id="inlineCheckbox1"
-                                        name="category_id[]" value={{ $category->id }} />
+                                        name="category_id[]" value="{{ $category->id }}"
+                                        {{ is_array(old('category_id')) && in_array($category->id, old('category_id')) ? 'checked' : '' }} />
                                     <label class="form-check-label"
                                         for="inlineCheckbox1">{{ $category->category_name }}</label>
                                 </div>
@@ -77,14 +85,15 @@
                 <div x-bind:class="{ 'active-thumbnail': selectedOption === '2' }" class="form-thumbnail-video w-25 mt-3">
                     <label for="video-link">Video Link:</label>
                     <input x-bind:disabled="selectedOption === '1'" class="form-control mt-1" type="text"
-                        placeholder="https://youtu.be/URL" id="video-link" name="video_link" />
+                        placeholder="https://youtu.be/URL" id="video-link" name="video_link"
+                        value="{{ old('video_link') }}" />
                 </div>
                 <div class="form-description mt-3">ID
-                    <input id="desc" type="hidden" name="content" />
+                    <input id="desc" type="hidden" name="content" value="{{ old('content') }}" />
                     <trix-editor input="desc" class="trix-content"></trix-editor>
                 </div>
                 <div class="form-description mt-3">JP
-                    <input id="descp" type="hidden" name="content-jp" />
+                    <input id="descp" type="hidden" name="content-jp" value="{{ old('content-jp') }}" />
                     <trix-editor input="descp" class="trix-content"></trix-editor>
                 </div>
 
