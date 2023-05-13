@@ -33,11 +33,13 @@
                             <a class="btn-sm btn-info text-decoration-none"
                                 href="/dashboard/article/{{ $article->slug }}/edit" role="button">
                                 <i class='bx bxs-edit'></i></a>
+                            @if ($article->pin)
+                                <div class="btn-sm ms-1 text-decoration-none" style="background-color: transparent">
+                                    <i class='bx bxs-pin text-danger'></i>
+                                </div>
+                            @endif
 
-                            <div class="btn-sm ms-1 text-decoration-none" style="background-color: transparent"
-                                href="/dashboard/article/{{ $article->slug }}/edit" role="button">
-                                <i class='bx bxs-pin text-danger'></i>
-                            </div>
+
                         </td>
                 @endforeach
 

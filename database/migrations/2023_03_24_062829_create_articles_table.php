@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('title',255)->unique();
             $table->text('video_link')->nullable();
             $table->text('thumbnail')->nullable();
-            $table->text('excerpt');
-            $table->text('content');
+            $table->text('excerpt')->nullable();
+            $table->text('content')->nullable();
             $table->integer('counts')->default(0);
             $table->timestamps();
         });

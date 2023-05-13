@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('article_id');
             $table->string('locale');
             $table->string('title',255)->unique();
-            $table->text('excerpt');
-            $table->text('content');
+            $table->text('excerpt')->nullable();
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

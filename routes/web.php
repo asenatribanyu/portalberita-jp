@@ -52,11 +52,9 @@ Route::post('/login',[LoginController::class,'authen']);
 
 Route::post('/logout',[LoginController::class,'logout']);
 
-Route::get('/dashboard/article/tag', function(){
-    return view('dashboard/article/tag',[
-        "title" => "| Add Tag"
-    ]);
-});
+Route::get('/dashboard/article/tag',[DashboardArticleController::class,'tag']);
+
+Route::delete('/dashboard/article/controltag',[DashboardArticleController::class,'controltag']);
 
 Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix']);
 

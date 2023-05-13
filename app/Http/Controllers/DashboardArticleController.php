@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Storage;
 
 class DashboardArticleController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      */
+    
     public function index()
     {
     }
@@ -29,6 +31,7 @@ class DashboardArticleController extends Controller
          
 
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -46,12 +49,12 @@ class DashboardArticleController extends Controller
             return redirect('/dashboard/article/create');
         }else {
             $validatedData = $request->validate([
-                'title' => 'required',
+                'title' => 'required|unique:articles',
                 'title-jp' => 'required',
                 'type_id'=> 'required',
                 'category_id'=>'required|array',
-                'content'=> 'required',
-                'content-jp'=> 'required',
+                'content'=> 'nullable',
+                'content-jp'=> 'nullable',
                 'pin'   =>'string',
                 'video_link'=> 'nullable|string',
                 'thumbnail'=> 'nullable|image'
@@ -140,7 +143,7 @@ class DashboardArticleController extends Controller
      */
     public function update(Request $request, Article $article, ArticleTrans $articletrans)
     {
-        // dd($request);
+        
         if ($request['tag']) {
             $validatedData = $request->validate([
                 'tag' => 'required'
@@ -163,7 +166,7 @@ class DashboardArticleController extends Controller
             if ($request->pin != true) {
                 $validatedData['pin'] = false;
             }
-            // dd($validatedData['pin']);
+
             $trans = $request->validate([
                 'title-jp' => 'required',
                 'content-jp'=> 'required',
@@ -183,7 +186,6 @@ class DashboardArticleController extends Controller
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
             $trans['excerpt-jp'] = Str::limit(strip_tags($request['content-jp']), 100, '...');
-            // dd($validatedData);
             $article->update($validatedData);
 
             
@@ -200,7 +202,7 @@ class DashboardArticleController extends Controller
             ]);
             $article->categories()->sync($validatedData['category_id']);
     
-            return redirect('/dashboard/article/show');
+            return redirect('/dashboard/article/edit');
         }
         
         
@@ -248,4 +250,40 @@ class DashboardArticleController extends Controller
         }
     }
     
+    public function tag()
+    {
+        return view('dashboard/article/tag',[
+            'categories'=>Category::all(),
+            "title" => "| Add Tag"
+        ]);
+    }
+    public function controltag(Request $request)
+    {
+        if ($request['tag']) {
+            $validatedData = $request->validate([
+                'tag' => 'required'
+            ]);
+            $tag = new Category([
+                'category_name' => $validatedData['tag']
+            ]);
+            $tag->save();
+            return redirect('/dashboard/article/tag');
+        }else {
+        $validatedData = $request->validate([
+            'category_id'=>'required|array',
+        ]);
+        foreach ($validatedData['category_id'] as $categoryId) {
+            $category = Category::find($categoryId);
+                if ($category->articles->count() > 0) {
+                    // category has articles associated with it, cannot delete
+                    return redirect('/dashboard/article/tag')->with('error','Cannot delete category with associated articles.');
+                    
+                } else {
+                    // no articles associated with category, delete category
+                    $category->delete();
+                }
+            }
+            return redirect('/dashboard/article/tag');
+        }
+    }
 }

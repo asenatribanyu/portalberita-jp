@@ -23,10 +23,9 @@
                         </label>
                     </div>
                     <label for="title">Title ID:</label>
-
                     {{-- <div class="fs-6 text-white bg-danger mt-1 w-50">
-                        <p class="ms-2">Title has been used</p>
-                    </div> --}}
+                            <p class="ms-2">Title has been used</p>
+                        </div> --}}
 
                     <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
                         id="title" name="title" />
