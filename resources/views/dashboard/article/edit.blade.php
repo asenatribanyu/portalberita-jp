@@ -58,9 +58,13 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 Close
                                             </button>
-                                            <button class="btn btn-danger">
-                                                Delete
-                                            </button>
+                                            <form action="/dashboard/article/{{ $article->slug }}" method="post">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-danger">
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

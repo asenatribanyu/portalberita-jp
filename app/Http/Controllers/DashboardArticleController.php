@@ -221,7 +221,7 @@ class DashboardArticleController extends Controller
 
     $article->articletrans()->delete();
     $article->delete();
-        return redirect('/dashboard');
+        return redirect('/dashboard/article/edit');
     }
 
     public function uploadtrix(Request $request)
