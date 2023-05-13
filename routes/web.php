@@ -37,22 +37,34 @@ Route::get('/', function () {
   });
 
 Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
+
 Route::get('/about', function () {
     return view('about/about', [
         "title" => "| About"
     ]);
 });
+
 Route::get('/switch/{locale}', [ArticleController::class, 'switch']);
+
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
+
 Route::post('/login',[LoginController::class,'authen']);
+
 Route::post('/logout',[LoginController::class,'logout']);
+
+Route::get('/dashboard/article/tag', function(){
+    return view('dashboard/article/tag',[
+        "title" => "| Add Tag"
+    ]);
+});
+
 Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix']);
+
 Route::get('/dashboard', function () {
     return view('dashboard/view',['articles'=>Article::all(),"title" => "| Dashboard"]);
  })->middleware('auth');
 
 Route::resource('/dashboard/article',DashboardArticleController::class);
-
 
 Route::get('/{article}',[ArticleController::class,'show']);
 

@@ -104,10 +104,7 @@ class DashboardArticleController extends Controller
                 $category = Category::find($categoryId);
                  $category->articles()->attach($article->id);
             }
-            
-            
-            
-                    
+                        
             return redirect('/dashboard');
         }
         

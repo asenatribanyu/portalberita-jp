@@ -62,6 +62,13 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/dashboard/article/tag"
+                            class="nav-item {{ $title === '| Add Tag' ? 'nav-active' : '' }}">
+                            <i class="bx bx-tag navlink-icon"></i>
+                            <span>Tag</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/dashboard/article/create"
                             class="nav-item {{ $title === '| Add Content' ? 'nav-active' : '' }}">
                             <i class="bx bx-plus-circle navlink-icon"></i>

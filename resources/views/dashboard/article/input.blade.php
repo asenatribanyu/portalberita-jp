@@ -47,36 +47,6 @@
                             <button x-on:click="isOpen2 = !isOpen2" type="button" class="btn btn-sm btn-success">
                                 <i class="bx bx-plus"></i>
                             </button>
-                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#deleteTag">
-                                <i class="bx bx-x"></i>
-                            </button>
-
-                            <div class="modal fade" id="deleteTag" tabindex="-1" aria-labelledby="deleteTagLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteTagLabel">
-                                                Deletion Confirmation
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Are you sure want to Delete the Tag?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-danger">
-                                                Delete
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="tag-control mt-1 d-flex">
@@ -139,13 +109,13 @@
                             </div>
                         </div>
                     </div>
-
                     <a class="btn btn-secondary mt-3" href="/dashboard" role="button">Cancel</a>
                 </div>
             </div>
         </div>
     </form>
 @endsection
+
 @push('script')
     <script src="{{ asset('js/dashboard-script.js') }}"></script>
 @endpush

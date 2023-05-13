@@ -1,4 +1,4 @@
-//old photo
+//Old Photo
 function PreviewImage() {
     const image = document.querySelector("#formFile");
     const imgpreview = document.querySelector(".img-preview");
@@ -9,8 +9,9 @@ function PreviewImage() {
         imgPreview.src = oFREvent.target.result;
     };
 }
+//End of Old Photo
 
-// Checkbox
+//Checkbox
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxes = document.querySelectorAll(".form-check-input.cat");
 
