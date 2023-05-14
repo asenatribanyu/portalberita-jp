@@ -140,16 +140,17 @@
 .carousel-button .carousel-nav-left:hover,
 .carousel-button .carousel-nav-right:hover {
     background-color: rgba(0, 0, 0, 1);
+    scale: 1.5;
 }
 
 .carousel-button .carousel-nav-left {
     bottom: 140px;
-    left: 10px;
+    left: 15px;
 }
 
 .carousel-button .carousel-nav-right {
     bottom: 140px;
-    right: 10px;
+    right: 15px;
 }
 /* End of Carousel */
 
