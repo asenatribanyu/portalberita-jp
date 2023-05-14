@@ -36,7 +36,7 @@
                             </a>
 
                             <button type="button" class="btn-sm ms-1 btn-danger text-decoration-none"
-                                data-bs-toggle="modal" data-bs-target="#deleteContent">
+                                data-bs-toggle="modal" data-bs-target="#deleteContent" style="border: none">
                                 <i class='bx bx-trash'></i>
                             </button>
 
@@ -106,7 +106,7 @@
                                 </div>
                             @else
                                 <button type="button" class="btn-sm ms-1 btn-success text-decoration-none"
-                                    data-bs-toggle="modal" data-bs-target="#pinPost">
+                                    data-bs-toggle="modal" data-bs-target="#pinPost" style="border: none">
                                     <i class='bx bx-pin'></i>
                                 </button>
 

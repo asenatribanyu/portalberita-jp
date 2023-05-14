@@ -108,7 +108,7 @@
                                     target="_blank"><i class='bx bxl-instagram'></i>D3 Bahasa Jepang</a>
                             </div>
                             <div><a class="wrap" href="https://www.instagram.com/himatifutama/" target="_blank"><i
-                                        class='bx bxl-instagram'></i>S1 Teknik Informatika</a></div>
+                                        class='bx bxl-instagram'></i>Teknik Informatika</a></div>
                         </div>
                         <div class="group-yt">
                             <div><a class="wrap" href="https://www.youtube.com/@s1bahasajepanguniversitasw895"
