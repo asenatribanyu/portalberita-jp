@@ -35,7 +35,7 @@
                                 <i class='bx bxs-edit'></i>
                             </a>
 
-                            <button type="button" class="btn-sm ms-2 btn-danger text-decoration-none"
+                            <button type="button" class="btn-sm ms-1 btn-danger text-decoration-none"
                                 data-bs-toggle="modal" data-bs-target="#deleteContent">
                                 <i class='bx bx-trash'></i>
                             </button>
@@ -52,7 +52,7 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Are you sure want to Delete the Content?
+                                            Are you sure want to Delete this Content?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -71,8 +71,71 @@
                             </div>
 
                             @if ($article->pin)
-                                <div class="btn-sm ms-1 text-decoration-none" style="background-color: transparent">
+                                <button type="button" class="btn-sm ms-1 btn-secondary text-decoration-none"
+                                    style="background-color: transparent; border-style: none" data-bs-toggle="modal"
+                                    data-bs-target="#unpinPost">
                                     <i class='bx bxs-pin text-danger'></i>
+                                </button>
+
+                                <div class="modal fade" id="unpinPost" tabindex="-1" aria-labelledby="unpinPostLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteTagLabel">
+                                                    Unpin Confirmation
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure want to Unpin this Content?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <form action="/dashboard/article/{{ $article->slug }}" method="post">
+                                                    <button class="btn btn-danger">
+                                                        Unpin
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @else
+                                <button type="button" class="btn-sm ms-1 btn-success text-decoration-none"
+                                    data-bs-toggle="modal" data-bs-target="#pinPost">
+                                    <i class='bx bx-pin'></i>
+                                </button>
+
+                                <div class="modal fade" id="pinPost" tabindex="-1" aria-labelledby="unpinPostLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteTagLabel">
+                                                    Pin Confirmation
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure want to Pin this Content?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <form action="/dashboard/article/{{ $article->slug }}" method="post">
+                                                    <button class="btn btn-primary">
+                                                        Pin
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             @endif
                         </td>
