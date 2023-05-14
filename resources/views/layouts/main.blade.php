@@ -24,20 +24,17 @@
         <div class="navbar">
             <i class="bx bx-menu side-open"></i>
             <span class="logo navLogo">
-                <a href="/">Heiwa.</a>
+                <a href="/">Heiwa</a>
             </span>
-
             <div class="menu">
                 <div class="logo-toggle">
                     <span class="logo">
-                        <a href="/">Heiwa.</a>
+                        <a href="/">Heiwa</a>
                     </span>
                     <i class="bx bx-x side-close"></i>
                 </div>
-
                 <ul class="navlink">
                     <li><a class="{{ $title === '' ? 'nav-active' : '' }}" href="/">{{ __('messages.Home') }}</a>
-
                     </li>
                     <li><a class="{{ $title === '| About' ? 'nav-active' : '' }}"
                             href="/about">{{ __('messages.About') }}</a></li>
@@ -45,9 +42,9 @@
                             href="/categories">{{ __('messages.Categories') }}</a>
                     </li>
                     <li class="menu-lang">
-                        <a href="/">{{ __('messages.Languages') }}</a>
-                        <ul {{ $local = session('locale') ?? ($local = config('app.locale')) }}>
-
+                        <a style="cursor: default">{{ __('messages.Languages') }}</a>
+                        <ul class="{{ $local = session('locale') ?? ($local = config('app.locale')) }}"
+                            {{ $local = session('locale') ?? ($local = config('app.locale')) }}>
                             <li><a class=" {{ $local === 'id' ? 'lang-active' : '' }}" href="/switch/id">Indonesia</a>
                             </li>
                             <li><a class="{{ $local === 'jp' ? 'lang-active' : '' }}" href="/switch/jp">日本語</a></li>
@@ -59,8 +56,6 @@
                         <li><a class="{{ $title === '| Sign In' ? 'nav-active' : '' }}"
                                 href="/login">{{ __('messages.Sign-In') }}</a></li>
                     @endauth
-
-
                 </ul>
             </div>
             <form method="GET" action="{{ route('categories.index') }}">
@@ -69,7 +64,6 @@
                         <i class="bx bx-x cancel"></i>
                         <i class="bx bx-search search"></i>
                     </div>
-
                     <div class="searchField">
                         <input type="text" name="search" value="{{ request()->input('search') }}"
                             placeholder="{{ __('messages.Search') }}...">

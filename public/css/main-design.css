@@ -257,13 +257,20 @@ footer {
 .navlink .menu-lang ul {
     position: absolute;
     top: 35px;
-    width: 100%;
+    width: 100px;
     display: none;
     opacity: 0;
 }
 
-.navlink .menu-lang ul li {
+.navlink .menu-lang ul.id li {
     position: relative;
+    height: 30px;
+    background-color: #e6e6e6;
+}
+
+.navlink .menu-lang ul.jp li {
+    position: relative;
+    right: 20px;
     height: 30px;
     background-color: #e6e6e6;
 }
