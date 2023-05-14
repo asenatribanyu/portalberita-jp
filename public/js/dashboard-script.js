@@ -13,12 +13,14 @@ function PreviewImage() {
 
 //Checkbox
 document.addEventListener("DOMContentLoaded", function () {
-    const checkboxes = document.querySelectorAll(".form-check-input.cat");
+    const checkboxes = document.querySelectorAll(
+        ".form-check-input.cat#checkTag"
+    );
 
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("click", (event) => {
             let checkedBoxes = document.querySelectorAll(
-                "input[type=checkbox]:checked"
+                "input.form-check-input.cat#checkTag:checked"
             );
             if (checkedBoxes.length >= 3) {
                 checkboxes.forEach((cb) => {

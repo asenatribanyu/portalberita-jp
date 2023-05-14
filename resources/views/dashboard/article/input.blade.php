@@ -17,9 +17,9 @@
                 <div class="form-title w-75 mt-3">
                     <div class="form-check mb-3">
                         <input type="hidden" name="pin" value="0">
-                        <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="pin"
+                        <input class="form-check-input" type="checkbox" value="1" id="checkPin" name="pin"
                             {{ old('pin') == 1 ? 'checked' : '' }}>
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label" for="checkPin">
                             Pin This Post
                         </label>
                     </div>
@@ -41,8 +41,6 @@
                         </div>
                     @enderror
 
-
-
                     <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
                         id="title" name="title-jp" value="{{ old('title-jp') }}" />
                 </div>
@@ -53,11 +51,10 @@
                         <div class="checkbox-limit mt-1">
                             @foreach ($categories as $category)
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input cat" type="checkbox" id="inlineCheckbox1"
-                                        name="category_id[]" value="{{ $category->id }}"
+                                    <input class="form-check-input cat" type="checkbox" id="checkTag" name="category_id[]"
+                                        value="{{ $category->id }}"
                                         {{ is_array(old('category_id')) && in_array($category->id, old('category_id')) ? 'checked' : '' }} />
-                                    <label class="form-check-label"
-                                        for="inlineCheckbox1">{{ $category->category_name }}</label>
+                                    <label class="form-check-label" for="checkTag">{{ $category->category_name }}</label>
                                 </div>
                             @endforeach
                         </div>
