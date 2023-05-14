@@ -29,7 +29,7 @@ return[
 	'Date'			=> '日付',
 	'Latest'			=> '最新',
 	'Oldest'			=> '最初',
-	'Welcome'		=> 'ようこそいらっしゃいませ',
+	'Welcome'		=> 'ようこそ',
 	'Username'		=> 'ユーザー名',
 	'Password'		=> 'パスワード',
 	'Enter your username'	=>  'ユーザー名を入力してください',

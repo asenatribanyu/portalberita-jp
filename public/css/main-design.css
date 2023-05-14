@@ -260,6 +260,7 @@ footer {
     width: 100px;
     display: none;
     opacity: 0;
+    z-index: 1;
 }
 
 .navlink .menu-lang ul.id li {
@@ -416,13 +417,24 @@ footer {
         opacity: 0;
     }
 
-    .navlink .menu-lang ul li {
+    .navlink .menu-lang ul.id li {
         display: flex;
         justify-content: center;
         justify-items: center;
         align-items: center;
         position: relative;
         height: auto;
+        background-color: inherit;
+    }
+
+    .navlink .menu-lang ul.jp li {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        height: auto;
+        right: 0;
         background-color: inherit;
     }
 
@@ -515,13 +527,20 @@ footer {
     .navlink .menu-lang ul {
         position: absolute;
         top: 35px;
-        width: 100%;
+        width: 100px;
         display: none;
         opacity: 0;
     }
 
-    .navlink .menu-lang ul li {
+    .navlink .menu-lang ul.id li {
         position: relative;
+        height: 30px;
+        background-color: #e6e6e6;
+    }
+
+    .navlink .menu-lang ul.jp li {
+        position: relative;
+        right: 20px;
         height: 30px;
         background-color: #e6e6e6;
     }
