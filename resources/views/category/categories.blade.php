@@ -126,6 +126,7 @@
                     </div>
                 @endforeach
             @endif
+
         </div>
         <!-- End of Categories Card -->
 

@@ -59,17 +59,19 @@ Route::post('/login',[LoginController::class,'authen']);
 
 Route::post('/logout',[LoginController::class,'logout']);
 
-Route::get('/dashboard/article/tag',[DashboardArticleController::class,'tag']);
+Route::put('/dashboard/article/{article}/pinned',[DashboardArticleController::class,'pinned'])->middleware('auth');
 
-Route::delete('/dashboard/article/controltag',[DashboardArticleController::class,'controltag']);
+Route::get('/dashboard/article/tag',[DashboardArticleController::class,'tag'])->middleware('auth');
 
-Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix']);
+Route::delete('/dashboard/article/controltag',[DashboardArticleController::class,'controltag'])->middleware('auth');
+
+Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard/view',['articles'=>Article::all(),"title" => "| Dashboard"]);
  })->middleware('auth');
 
-Route::resource('/dashboard/article',DashboardArticleController::class);
+Route::resource('/dashboard/article',DashboardArticleController::class)->middleware('auth');
 
 Route::get('/{article}',[ArticleController::class,'show']);
 

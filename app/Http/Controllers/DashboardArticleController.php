@@ -63,12 +63,13 @@ class DashboardArticleController extends Controller
             if($request->file('thumbnail')){
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
-            
+            $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
+            $withoutCaptionsjp = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request['content-jp']);
             $article = new Article([
                 'title' => $validatedData['title'],
                 'slug' => SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]),
                 'content' => $validatedData['content'],
-                'excerpt' => Str::limit(strip_tags($request->content), 150, '...'),
+                'excerpt' => Str::limit(strip_tags($withoutCaptions), 150, '...'),
                 'user_id' => auth()->user()->id,
                 'type_id'=>$validatedData['type_id'],
             ]);
@@ -87,7 +88,7 @@ class DashboardArticleController extends Controller
             $articleTrans = new ArticleTrans([
                 'locale' => 'id',
                 'title' => $validatedData['title'],
-                'excerpt' => Str::limit(strip_tags($request->content), 100, '...'),
+                'excerpt' => Str::limit(strip_tags($withoutCaptions), 100, '...'),
                 'content' => $validatedData['content'],
             ]);
 
@@ -97,7 +98,7 @@ class DashboardArticleController extends Controller
             $articleTransJP = new ArticleTrans([
                 'locale' => 'jp',
                 'title' => $validatedData['title-jp'],
-                'excerpt' => Str::limit(strip_tags($request['content-jp']), 150, '...'),
+                'excerpt' => Str::limit(strip_tags($withoutCaptionsjp), 150, '...'),
                 'content' => $validatedData['content-jp'],
             ]);
             $articleTransJP->article()->associate($article);
@@ -143,7 +144,6 @@ class DashboardArticleController extends Controller
      */
     public function update(Request $request, Article $article, ArticleTrans $articletrans)
     {
-        
         if ($request['tag']) {
             $validatedData = $request->validate([
                 'tag' => 'required'
@@ -171,8 +171,10 @@ class DashboardArticleController extends Controller
                 'title-jp' => 'required',
                 'content-jp'=> 'required',
             ]);
+            $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
+            $withoutCaptionsjp = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request['content-jp']);
             $validatedData['slug'] = SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]);
-            $validatedData['excerpt'] = Str::limit(strip_tags($request->content), 150, '...');
+            $validatedData['excerpt'] = Str::limit(strip_tags($withoutCaptions), 150, '...');
             
             if ($request->has('video_link')) {
                 $validatedData['video_link'] = $validatedData['video_link'];;
@@ -185,7 +187,7 @@ class DashboardArticleController extends Controller
                 };
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
-            $trans['excerpt-jp'] = Str::limit(strip_tags($request['content-jp']), 100, '...');
+            $trans['excerpt-jp'] = Str::limit(strip_tags($withoutCaptionsjp), 100, '...');
             $article->update($validatedData);
 
             
@@ -285,5 +287,19 @@ class DashboardArticleController extends Controller
             }
             return redirect('/dashboard/article/tag');
         }
+    }
+    public function pinned(Request $request, Article $article)
+    {
+        $validatedData = $request->validate([
+            'pin'   =>'string',
+        ]);
+        if ($request->pin != true) {
+            $validatedData['pin'] = false;
+        }else{
+            $validatedData['pin'] = true;
+        }
+
+        $article->update($validatedData);
+        return redirect()->back();
     }
 }

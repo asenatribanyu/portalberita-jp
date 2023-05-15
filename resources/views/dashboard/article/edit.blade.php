@@ -36,12 +36,13 @@
                             </a>
 
                             <button type="button" class="btn-sm ms-1 btn-danger text-decoration-none"
-                                data-bs-toggle="modal" data-bs-target="#deleteContent" style="border: none">
+                                data-bs-toggle="modal" data-bs-target="#deleteContent-{{ $article->slug }}"
+                                style="border: none">
                                 <i class='bx bx-trash'></i>
                             </button>
 
-                            <div class="modal fade" id="deleteContent" tabindex="-1" aria-labelledby="deleteContentLabel"
-                                aria-hidden="true">
+                            <div class="modal fade" id="deleteContent-{{ $article->slug }}" tabindex="-1"
+                                aria-labelledby="deleteContentLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -73,12 +74,12 @@
                             @if ($article->pin)
                                 <button type="button" class="btn-sm ms-1 btn-secondary text-decoration-none"
                                     style="background-color: transparent; border-style: none" data-bs-toggle="modal"
-                                    data-bs-target="#unpinPost">
+                                    data-bs-target="#unpinPost-{{ $article->slug }}">
                                     <i class='bx bxs-pin text-danger'></i>
                                 </button>
 
-                                <div class="modal fade" id="unpinPost" tabindex="-1" aria-labelledby="unpinPostLabel"
-                                    aria-hidden="true">
+                                <div class="modal fade" id="unpinPost-{{ $article->slug }}" tabindex="-1"
+                                    aria-labelledby="unpinPostLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -95,7 +96,11 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <form action="/dashboard/article/{{ $article->slug }}" method="post">
+                                                <form action="/dashboard/article/{{ $article->slug }}/pinned"
+                                                    method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                    <input type="hidden" name="pin" value="0">
                                                     <button class="btn btn-danger">
                                                         Unpin
                                                     </button>
@@ -106,12 +111,13 @@
                                 </div>
                             @else
                                 <button type="button" class="btn-sm ms-1 btn-success text-decoration-none"
-                                    data-bs-toggle="modal" data-bs-target="#pinPost" style="border: none">
+                                    data-bs-toggle="modal" data-bs-target="#pinPost-{{ $article->slug }}"
+                                    style="border: none">
                                     <i class='bx bx-pin'></i>
                                 </button>
 
-                                <div class="modal fade" id="pinPost" tabindex="-1" aria-labelledby="unpinPostLabel"
-                                    aria-hidden="true">
+                                <div class="modal fade" id="pinPost-{{ $article->slug }}" tabindex="-1"
+                                    aria-labelledby="unpinPostLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -128,7 +134,11 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <form action="/dashboard/article/{{ $article->slug }}" method="post">
+                                                <form action="/dashboard/article/{{ $article->slug }}/pinned"
+                                                    method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                    <input type="hidden" name="pin" value="1">
                                                     <button class="btn btn-primary">
                                                         Pin
                                                     </button>

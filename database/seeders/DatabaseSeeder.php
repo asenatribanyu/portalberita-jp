@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         User::create([
             'name' => 'poh',
-            'username'=>'12345',
-            'password'=>bcrypt('admin'),
+            'username'=>'poh',
+            'password'=>bcrypt('12345'),
         ]);
 
         Type::create([
