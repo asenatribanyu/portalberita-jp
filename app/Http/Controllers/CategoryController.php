@@ -66,7 +66,7 @@ class CategoryController extends Controller
     $title = "| Categories";
     $categories = Category::all();
     $types = Type::all();
-    $articles = $articles->paginate(3);
+    $articles = $articles->paginate(9);
     $error =false;
     if ($articles->isEmpty()) {
         $error = true;
