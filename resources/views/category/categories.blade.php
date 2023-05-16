@@ -132,12 +132,7 @@
 
         <!-- Pagination -->
         <div class="show-more-wrapper">
-            <div class="show-more">
-                <p>Show More</p>
-                <button class="arrow-button">
-                    <i class='bx bx-chevron-down'></i>
-                </button>
-            </div>
+            {{ $articles->links() }}
         </div>
         <!-- Pagination -->
     </div>

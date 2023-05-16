@@ -20,7 +20,7 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav>
+    <nav class="navbars">
         <div class="navbar">
             <i class="bx bx-menu side-open"></i>
             <span class="logo navLogo">

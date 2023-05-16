@@ -13,7 +13,7 @@ body {
 }
 
 /* Navigation Bar */
-nav {
+nav.navbars {
     position: fixed;
     top: 0;
     left: 0;
@@ -33,7 +33,7 @@ nav {
     color: #3b71ca;
 }
 
-nav .navbar {
+nav.navbars .navbar {
     position: relative;
     height: 100%;
     max-width: 1250px;
@@ -46,7 +46,7 @@ nav .navbar {
     justify-content: flex-end;
 }
 
-nav .navbar .side-open {
+nav.navbars .navbar .side-open {
     color: black;
     font-size: 25px;
     padding: 5px;
@@ -54,11 +54,11 @@ nav .navbar .side-open {
     display: none;
 }
 
-nav .navbar .logo {
+nav.navbars .navbar .logo {
     margin-right: auto;
 }
 
-nav .navbar .logo a {
+nav.navbars .navbar .logo a {
     font-size: 25px;
     font-weight: 500;
     color: black;
@@ -360,15 +360,15 @@ footer {
         padding-bottom: 450px;
     }
 
-    nav .navbar {
+    nav.navbars .navbar {
         justify-content: space-between;
     }
 
-    nav .navbar .logo {
+    nav.navbars .navbar .logo {
         margin-right: 0;
     }
 
-    nav .navbar .side-open {
+    nav.navbars .navbar .side-open {
         display: block;
     }
 
@@ -384,11 +384,11 @@ footer {
         transition: all 0.4s ease;
     }
 
-    nav.active .menu {
+    nav.navbars.active .menu {
         left: -0%;
     }
 
-    nav.active .navbar .navLogo a {
+    nav.navbars.active .navbar .navLogo a {
         opacity: 0;
         transition: all 0.3s ease;
     }
