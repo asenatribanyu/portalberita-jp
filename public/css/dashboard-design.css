@@ -153,6 +153,22 @@ body {
 }
 /* End of Dashboard Input */
 
+/* Flexbox Image */
+figcaption {
+    display: none;
+}
+
+.attachment-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.attachment-gallery figure {
+    width: 49.5%;
+}
+/* End of Flexbox Image */
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .main-container {

@@ -472,6 +472,29 @@
 }
 /* End of Sidebar Card */
 
+/* Flexbox Image */
+figcaption {
+    display: none;
+}
+
+.content-body figure {
+    height: 300px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+.attachment-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.attachment-gallery figure {
+    width: 49.5%;
+    height: 230px;
+}
+/* End of Flexbox Image */
+
 /* Responsive */
 @media screen and (max-width: 767px) {
     /* General */
