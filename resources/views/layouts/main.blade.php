@@ -25,12 +25,12 @@
         <div class="navbar">
             <i class="bx bx-menu side-open"></i>
             <span class="logo navLogo">
-                <a href="/">Heiwa</a>
+                <a href="/">{{ __('messages.Heiwa') }}</a>
             </span>
             <div class="menu">
                 <div class="logo-toggle">
                     <span class="logo">
-                        <a href="/">Heiwa</a>
+                        <a href="/">{{ __('messages.Heiwa') }}</a>
                     </span>
                     <i class="bx bx-x side-close"></i>
                 </div>
@@ -87,19 +87,19 @@
             <div class="footer-wrapper">
                 <div class="footer-desc">
                     <a href="/">
-                        <h1>HEIWA</h1>
+                        <h1>{{ __('messages.Heiwa') }}</h1>
                     </a>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
                 </div>
                 <div class="footer-contact">
-                    <h1>CONTACT</h1>
+                    <h1>{{ __('messages.Contact') }}</h1>
                     <p>Universitas Widyatama Jl. Cikutra no 204 A Bandung Jawa Barat, Indonesia 40124.</p>
                     <p>Phone : +62-22-7275855 ext 228</p>
                     <p>Fax : +62-22-720299</p>
                 </div>
                 <div class="footer-links">
-                    <h1>QUICK LINKS</h1>
+                    <h1>{{ __('messages.Quick Links') }}</h1>
                     <div class="links-group">
                         <div class="group-ig">
                             <div><a class="wrap" href="https://www.instagram.com/jepangs1_widyatama"

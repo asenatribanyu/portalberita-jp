@@ -37,8 +37,8 @@ Route::get('/', function () {
         'pinned'=>Article::where('pin',"1")->latest()->take(3)->get(),
         'views'=>Article::with(['categories'])->withCount('views')->orderByDesc('counts')->take(3)->get(),
         'latest' => Article::with(['categories'])->latest()->take(3)->get(),
-        'articles'=>Article::where('type_id',1)->paginate(9),
-        'videos'=>Article::where('type_id',2)->paginate(3),
+        'articles'=>Article::where('type_id',1)->take(6)->get(),
+        'videos'=>Article::where('type_id',2)->take(3)->get(),
         'random_articles'=>$random_articles,
     ]);
   });

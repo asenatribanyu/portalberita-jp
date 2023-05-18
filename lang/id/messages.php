@@ -35,6 +35,10 @@ return[
 	'Enter your username'	=>  'Enter your username',
 	'Enter your password'	=>  'Enter your password',
 	'Please sign into your account'	=>  'Please sign into your account',
+	'Contact' => 'Contact',
+	'Quick Links' => 'Quick Links',
+	'Heiwa' => 'Heiwa',
+	'Learn More' => 'Learn More'
 
 
 ];
