@@ -35,5 +35,9 @@ return[
 	'Enter your username'	=>  'ユーザー名を入力してください',
 	'Enter your password'	=>  'パスワードを入力してください',
 	'Please sign into your account'	=>  'アカウントにサインインしてください',
+	'Contact' => 'お問い合わせ',
+	'Quick Links' => '関連リンク',
+	'Heiwa' => '平和',
+	'Learn More' => '詳細はこちら'
 
 ];
