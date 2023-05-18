@@ -104,3 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return "";
     }
 })();
+
+// Reset File Form
+function resetFileInput() {
+    document.getElementById("formFile").value = "";
+    document.getElementById("video-link").value = "";
+}
+// End of Reset File Form

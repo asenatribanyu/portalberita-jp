@@ -5,7 +5,8 @@
         @csrf
         <div x-data="{ isOpen: false, selectedOption: 'default' }" class="main-form">
             <h1>Add Content</h1>
-            <select x-model="selectedOption" x-on:change="selectedOption !== 'default' ? isOpen = true : isOpen = false"
+            <select x-model="selectedOption"
+                x-on:change="selectedOption !== 'default' ? isOpen = true : isOpen = false;  if (selectedOption !== '1') { resetFileInput(); }; if (selectedOption !== '2') { resetFileInput(); }"
                 class="form-select w-25 mt-3" aria-label="Type Select" name="type_id">
                 <option value="default" selected>Choose Content Type</option>
                 @foreach ($types as $type)
@@ -85,6 +86,7 @@
                         placeholder="https://youtu.be/URL" id="video-link" name="video_link"
                         value="{{ old('video_link') }}" />
                 </div>
+
                 <div class="form-description mt-3">ID
                     <input id="desc" type="hidden" name="content" value="{{ old('content') }}" />
                     <trix-editor input="desc" class="trix-content"></trix-editor>
