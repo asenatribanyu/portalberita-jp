@@ -65,10 +65,13 @@ class DashboardArticleController extends Controller
             }
             $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
             $withoutCaptionsjp = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request['content-jp']);
+            $withoutlinkimage = preg_replace('/(<figure\b[^>]*>)\s*<a\b[^>]*>(.*?)<\/a>\s*(<\/figure>)/s', '$1$2$3', $request->content);
+            $withoutlinkimagejp = preg_replace('/(<figure\b[^>]*>)\s*<a\b[^>]*>(.*?)<\/a>\s*(<\/figure>)/s', '$1$2$3', $request['content-jp']);
+            
             $article = new Article([
                 'title' => $validatedData['title'],
                 'slug' => SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]),
-                'content' => $validatedData['content'],
+                'content' => $withoutlinkimage,
                 'excerpt' => Str::limit(strip_tags($withoutCaptions), 150, '...'),
                 'user_id' => auth()->user()->id,
                 'type_id'=>$validatedData['type_id'],
@@ -89,7 +92,7 @@ class DashboardArticleController extends Controller
                 'locale' => 'id',
                 'title' => $validatedData['title'],
                 'excerpt' => Str::limit(strip_tags($withoutCaptions), 100, '...'),
-                'content' => $validatedData['content'],
+                'content' => $withoutlinkimage,
             ]);
 
             $articleTrans->article()->associate($article);
@@ -99,7 +102,7 @@ class DashboardArticleController extends Controller
                 'locale' => 'jp',
                 'title' => $validatedData['title-jp'],
                 'excerpt' => Str::limit(strip_tags($withoutCaptionsjp), 150, '...'),
-                'content' => $validatedData['content-jp'],
+                'content' => $withoutlinkimagejp,
             ]);
             $articleTransJP->article()->associate($article);
             $articleTransJP->save();
@@ -173,6 +176,8 @@ class DashboardArticleController extends Controller
             ]);
             $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
             $withoutCaptionsjp = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request['content-jp']);
+            $withoutlinkimage = preg_replace('/(<figure\b[^>]*>)\s*<a\b[^>]*>(.*?)<\/a>\s*(<\/figure>)/s', '$1$2$3', $request->content);
+            $withoutlinkimagejp = preg_replace('/(<figure\b[^>]*>)\s*<a\b[^>]*>(.*?)<\/a>\s*(<\/figure>)/s', '$1$2$3', $request['content-jp']);
             $validatedData['slug'] = SlugService::createSlug(Article::class, 'slug', $validatedData['title'], ['unique' => false]);
             $validatedData['excerpt'] = Str::limit(strip_tags($withoutCaptions), 150, '...');
             
@@ -194,13 +199,13 @@ class DashboardArticleController extends Controller
             $articletrans->where('article_id', $article->id)->where('locale', 'id')->update([
                 'title' => $validatedData['title'],
                 'excerpt' => $validatedData['excerpt'],
-                'content' => $validatedData['content']
+                'content' => $withoutlinkimage
             ]);
     
             $articletrans->where('article_id', $article->id)->where('locale', 'jp')->update([
                 'title' => $trans['title-jp'],
                 'excerpt' => $trans['excerpt-jp'],
-                'content' => $trans['content-jp']
+                'content' => $withoutlinkimagejp
             ]);
             $article->categories()->sync($validatedData['category_id']);
     
