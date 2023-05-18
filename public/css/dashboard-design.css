@@ -169,6 +169,16 @@ figcaption {
 }
 /* End of Flexbox Image */
 
+/* Data Tables */
+tbody tr.odd td,
+tbody tr.even td {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* End of Data Tables */
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .main-container {
