@@ -28,7 +28,6 @@ Route::get('/link', function () {
  });
 
 Route::get('/', function () {
-    $random_articles = Article::inRandomOrder()->where('type_id',1)->take(9)->get();
     if($locale = session('locale')){
         App::setlocale($locale);
     };
@@ -39,13 +38,16 @@ Route::get('/', function () {
         'latest' => Article::with(['categories'])->latest()->take(3)->get(),
         'articles'=>Article::where('type_id',1)->take(6)->get(),
         'videos'=>Article::where('type_id',2)->take(3)->get(),
-        'random_articles'=>$random_articles,
+        'random_articles'=>Article::inRandomOrder()->where('type_id',1)->take(9)->get(),
     ]);
   });
 
 Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
 
 Route::get('/about', function () {
+    if($locale = session('locale')){
+        App::setlocale($locale);
+    };
     return view('about/about', [
         "title" => "| About"
     ]);

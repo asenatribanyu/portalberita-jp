@@ -108,7 +108,8 @@
                             <div class="card-info">
                                 <div class="tag-wrapper">
                                     @foreach ($article->categories as $category)
-                                        <a href="/categories">{{ $category->category_name }}</a>
+                                        <a
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                     @endforeach
                                 </div>
                                 <div class="card-title">

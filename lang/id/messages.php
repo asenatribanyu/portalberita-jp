@@ -3,6 +3,7 @@
 return[
     'Home' => 'Home',
     'About'			=> 'About',
+	'About Us' => 'About Us',
 	'Categories'		=> 'Categories',
 	'Languages'		=> 'Languages',
 	'Dashboard'		=> 'Dashboard',
@@ -37,7 +38,7 @@ return[
 	'Please sign into your account'	=>  'Please sign into your account',
 	'Contact' => 'Contact',
 	'Quick Links' => 'Quick Links',
-	'Heiwa' => 'Heiwa',
+	'Heiwa' => 'Heiwa Program',
 	'Learn More' => 'Learn More'
 
 

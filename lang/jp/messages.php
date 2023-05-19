@@ -2,7 +2,8 @@
 
 return[
     'Home' => 'ホーム',
-	'About'			=> 'About',
+	'About'			=> 'だいたい',
+	'About Us' => '平和プログラムについて',
 	'Categories'		=> 'カテゴリー',
 	'Languages'		=> '言語',
 	'Dashboard'		=> 'ダッシュボード',

@@ -101,7 +101,7 @@ class DashboardArticleController extends Controller
             $articleTransJP = new ArticleTrans([
                 'locale' => 'jp',
                 'title' => $validatedData['title-jp'],
-                'excerpt' => Str::limit(strip_tags($withoutCaptionsjp), 150, '...'),
+                'excerpt' => Str::limit(strip_tags($withoutCaptionsjp), 60, '...'),
                 'content' => $withoutlinkimagejp,
             ]);
             $articleTransJP->article()->associate($article);
@@ -192,7 +192,7 @@ class DashboardArticleController extends Controller
                 };
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
             }
-            $trans['excerpt-jp'] = Str::limit(strip_tags($withoutCaptionsjp), 100, '...');
+            $trans['excerpt-jp'] = Str::limit(strip_tags($withoutCaptionsjp), 60, '...');
             $article->update($validatedData);
 
             

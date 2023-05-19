@@ -15,7 +15,8 @@
                 </h1>
                 <div class="tag-wrapper">
                     @foreach ($articles->categories as $category)
-                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                        <a class="tag"
+                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                     @endforeach
                 </div>
 
@@ -76,7 +77,8 @@
                             <div class="card-info">
                                 <div class="tag-wrapper">
                                     @foreach ($random->categories as $category)
-                                        <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                        <a class="tag"
+                                            href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                     @endforeach
                                 </div>
                                 <div class="card-title">
@@ -124,7 +126,8 @@
                                 <div class="sidebar-card-info">
                                     <div class="sidebar-tag-wrapper">
                                         @foreach ($related->categories as $category)
-                                            <a class="tag" href="/categories">{{ $category->category_name }}</a>
+                                            <a class="tag"
+                                                href="/categories?category={{ $category->category_name }}">{{ $category->category_name }}</a>
                                         @endforeach
                                     </div>
                                     <div class="sidebar-card-title">
