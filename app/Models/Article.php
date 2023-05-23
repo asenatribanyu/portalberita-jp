@@ -28,7 +28,8 @@ class Article extends Model
         'excerpt',
         'slug',
         'counts',
-        'pin'
+        'pin',
+        'po'
     ];
 
     protected $guarded=[

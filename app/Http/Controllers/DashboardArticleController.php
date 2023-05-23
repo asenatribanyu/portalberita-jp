@@ -50,6 +50,10 @@ class DashboardArticleController extends Controller
             $tag->save();
             return redirect('/dashboard/article/create');
         }else {
+            if ($request['po'] == 1) {
+                $request['title-jp'] = Str::random(32); 
+                $request['title'] = Str::random(32);
+            }
             $validatedData = $request->validate([
                 'title' => 'required|unique:articles',
                 'title-jp' => 'required|unique:article_trans,title',
@@ -74,6 +78,7 @@ class DashboardArticleController extends Controller
                 'excerpt' => Str::limit(strip_tags($withoutCaptions), 150, '...'),
                 'user_id' => auth()->user()->id,
                 'type_id'=>$validatedData['type_id'],
+                'po'=>$request['po']
             ]);
             if ($request->has('thumbnail')) {
                 $thumbnail = $request->file('thumbnail')->store('thumbnails');
@@ -129,7 +134,7 @@ class DashboardArticleController extends Controller
         return view('dashboard/article/edit', [
             'types'=>Type::all(),'categories'=>Category::all(),
             "title" => "| Edit Content",
-            'articles'=>Article::all(),
+            'articles'=>Article::all()->where('po',false),
     ]);
     }
 
@@ -310,12 +315,5 @@ class DashboardArticleController extends Controller
 
         $article->update($validatedData);
         return redirect()->back();
-    }
-
-    public function photosonly(){ 
-        return view('/dashboard/article/photos',[
-            "title" => '| Add Photos',
-            'categories'=>Category::all()
-        ]);
     }
 }

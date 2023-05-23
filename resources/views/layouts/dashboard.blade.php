@@ -78,13 +78,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/dashboard/article/photos"
-                            class="nav-item {{ $title === '| Add Photos' ? 'nav-active' : '' }}">
-                            <i class='bx bx-photo-album navlink-icon'></i>
-                            <span>Add Photos</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="/dashboard/article/show"
                             class="nav-item {{ $title === '| Edit Content' ? 'nav-active' : '' }}">
                             <i class="bx bxs-edit navlink-icon"></i>
