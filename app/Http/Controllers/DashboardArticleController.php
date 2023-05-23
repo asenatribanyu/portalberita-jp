@@ -188,12 +188,13 @@ class DashboardArticleController extends Controller
                 $validatedData['video_link'] = $validatedData['video_link'];;
             }
             
-            
             if($request->hasFile('thumbnail')){
                 if($article->thumbnail){
                     Storage::delete($article->thumbnail);
                 };
-                $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
+                $thumbnail = $request->file('thumbnail')->store('thumbnails');
+                Image::make('storage/' . $thumbnail)->save(null,0,'webp');
+                $validatedData['thumbnail'] = $thumbnail;
             }
             $trans['excerpt-jp'] = Str::limit(strip_tags($withoutCaptionsjp), 60, '...');
             $article->update($validatedData);
