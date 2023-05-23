@@ -94,7 +94,8 @@
                 </div>
                 <div class="footer-contact">
                     <h1>{{ __('messages.Contact') }}</h1>
-                    <p>Universitas Widyatama Jl. Cikutra no 204 A Bandung Jawa Barat, Indonesia 40124.</p>
+                    <p>Gedung B Lt.2, Universitas Widyatama Jl. Cikutra no 204 A Bandung Jawa Barat, Indonesia 40124.
+                    </p>
                     <p>Phone : +62-22-7275855 ext 228</p>
                     <p>Fax : +62-22-720299</p>
                 </div>

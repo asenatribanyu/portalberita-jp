@@ -310,4 +310,11 @@ class DashboardArticleController extends Controller
         $article->update($validatedData);
         return redirect()->back();
     }
+
+    public function photosonly(){ 
+        return view('/dashboard/article/photos',[
+            "title" => '| Add Photos',
+            'categories'=>Category::all()
+        ]);
+    }
 }

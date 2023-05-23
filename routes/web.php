@@ -69,6 +69,8 @@ Route::delete('/dashboard/article/controltag',[DashboardArticleController::class
 
 Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix'])->middleware('auth');
 
+Route::get('/dashboard/article/photos', [DashboardArticleController::class,'photosonly'])->middleware('auth');
+
 Route::get('/dashboard', function () {
     return view('dashboard/view',['articles'=>Article::all(),"title" => "| Dashboard"]);
  })->middleware('auth');

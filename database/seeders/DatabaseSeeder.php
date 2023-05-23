@@ -22,24 +22,24 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::create([
-            'name' => 'poh',
-            'username'=>'poh',
-            'password'=>bcrypt('12345'),
-        ]);
+        // User::create([
+        //     'name' => 'poh',
+        //     'username'=>'poh',
+        //     'password'=>bcrypt('12345'),
+        // ]);
 
-        Type::create([
-            'type_name' => 'Photos',
-        ]);
+        // Type::create([
+        //     'type_name' => 'Photos',
+        // ]);
 
-        Type::create([
-            'type_name' => 'Videos',
-        ]);
-        Category::create([
-            'category_name' =>'Tokyo',
-        ]);
-        Category::create([
-            'category_name' =>'Kyoto',
-        ]);
+        // Type::create([
+        //     'type_name' => 'Videos',
+        // ]);
+        // Category::create([
+        //     'category_name' =>'Tokyo',
+        // ]);
+        // Category::create([
+        //     'category_name' =>'Kyoto',
+        // ]);
     }
 }
