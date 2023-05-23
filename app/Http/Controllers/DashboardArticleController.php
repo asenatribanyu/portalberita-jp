@@ -9,6 +9,8 @@ use App\Models\Type;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Facades\Image;
 
 
 class DashboardArticleController extends Controller
@@ -60,9 +62,6 @@ class DashboardArticleController extends Controller
                 'thumbnail'=> 'nullable|image'
             ]);
             
-            if($request->file('thumbnail')){
-                $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
-            }
             $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
             $withoutCaptionsjp = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request['content-jp']);
             $withoutlinkimage = preg_replace('/(<figure\b[^>]*>)\s*<a\b[^>]*>(.*?)<\/a>\s*(<\/figure>)/s', '$1$2$3', $request->content);
@@ -76,10 +75,14 @@ class DashboardArticleController extends Controller
                 'user_id' => auth()->user()->id,
                 'type_id'=>$validatedData['type_id'],
             ]);
-            
             if ($request->has('thumbnail')) {
-                $article->thumbnail = $validatedData['thumbnail'];
+                $thumbnail = $request->file('thumbnail')->store('thumbnails');
+                Image::make('storage/' . $thumbnail)->save(null,0,'webp');
+                $article->thumbnail =$thumbnail;
             }
+            // if ($request->has('thumbnail')) {
+            //     $article->thumbnail = $request->file('thumbnail')->store('thumbnails');
+            // }
             
             if ($request->has('video_link')) {
                 $article->video_link = $validatedData['video_link'];
