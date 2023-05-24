@@ -50,7 +50,7 @@ class DashboardArticleController extends Controller
             $tag->save();
             return redirect('/dashboard/article/create');
         }else {
-            if ($request['po'] == 1) {
+            if ($request['photosonly'] == 1) {
                 $request['title-jp'] = Str::random(32); 
                 $request['title'] = Str::random(32);
             }
@@ -63,7 +63,8 @@ class DashboardArticleController extends Controller
                 'content-jp'=> 'nullable',
                 'pin'   =>'string',
                 'video_link'=> 'nullable|string',
-                'thumbnail'=> 'nullable|image'
+                'thumbnail'=> 'nullable|image',
+                'caption' => 'nullable|string'
             ]);
             
             $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
@@ -78,7 +79,8 @@ class DashboardArticleController extends Controller
                 'excerpt' => Str::limit(strip_tags($withoutCaptions), 150, '...'),
                 'user_id' => auth()->user()->id,
                 'type_id'=>$validatedData['type_id'],
-                'po'=>$request['po']
+                'photosonly'=>$request['photosonly'],
+                'caption'=> $validatedData['caption']
             ]);
             if ($request->has('thumbnail')) {
                 $thumbnail = $request->file('thumbnail')->store('thumbnails');
@@ -134,7 +136,7 @@ class DashboardArticleController extends Controller
         return view('dashboard/article/edit', [
             'types'=>Type::all(),'categories'=>Category::all(),
             "title" => "| Edit Content",
-            'articles'=>Article::all()->where('po',false),
+            'articles'=>Article::all()->where('photosonly',false),
     ]);
     }
 

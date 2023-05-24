@@ -29,7 +29,8 @@ class Article extends Model
         'slug',
         'counts',
         'pin',
-        'po'
+        'photosonly',
+        'caption'
     ];
 
     protected $guarded=[
@@ -72,8 +73,6 @@ class Article extends Model
     }
     public function translation($locale)
     {
-        return $this->articletrans()
-            ->where('locale', $locale)
-            ->first();
+        return $this->articletrans()->where('locale', $locale)->first();
     }
 }

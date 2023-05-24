@@ -163,7 +163,7 @@
                             yang dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh
                             dunia agar peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi.
                         </p>
-                        <a href="/about">LEARN MORE</a>
+                        <a href="/about">{{ __('messages.Learn More') }}</a>
                     </div>
                 </div>
             </div>

@@ -26,11 +26,11 @@
                         </label>
                     </div>
                     <div class="form-check mb-2">
-                        <input type="hidden" name="po" value="0">
+                        <input type="hidden" name="photosonly" value="0">
                         <input
                             x-bind:disabled="photosOnlyChecked === 'true' || selectedOption === 'default' || selectedOption === '2'"
                             x-model="photosOnlyChecked" class="form-check-input" type="checkbox" value="1"
-                            id="checkpo" name="po" {{ old('po') == 1 ? 'checked' : '' }}>
+                            id="checkpo" name="photosonly" {{ old('photosonly') == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="checkpo">
                             Photos Only
                         </label>

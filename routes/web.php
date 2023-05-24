@@ -34,11 +34,11 @@ Route::get('/', function () {
     return view('home/home', [
         "title" => "",
         'pinned'=>Article::where('pin',"1")->latest()->take(3)->get(),
-        'views'=>Article::with(['categories'])->withCount('views')->where('po',false)->orderByDesc('counts')->take(3)->get(),
-        'latest' => Article::with(['categories'])->where('po',false)->latest()->take(3)->get(),
-        'articles'=>Article::where('type_id',1)->where('po',false)->take(6)->get(),
+        'views'=>Article::with(['categories','type','articletrans'])->withCount('views')->where('photosonly',false)->orderByDesc('counts')->take(3)->get(),
+        'latest' => Article::where('photosonly',false)->latest()->take(3)->get(),
+        'articles'=>Article::where('type_id',1)->where('photosonly',false)->take(6)->get(),
         'videos'=>Article::where('type_id',2)->take(3)->get(),
-        'random_articles'=>Article::inRandomOrder()->where('type_id',1)->take(9)->get(),
+        'random_articles'=>Article::inRandomOrder()->where('type_id',1)->wherenotnull('thumbnail')->take(9)->get(),
     ]);
   });
 
@@ -49,7 +49,8 @@ Route::get('/about', function () {
         App::setlocale($locale);
     };
     return view('about/about', [
-        "title" => "| About"
+        "title" => "| About",
+        'photos'=> Article::inRandomOrder()->where('type_id',1)->wherenotnull('thumbnail')->take(9)->get()
     ]);
 });
 
@@ -76,7 +77,7 @@ Route::delete('/dashboard/article/controltag',[DashboardArticleController::class
 Route::post('/dashboard/article/uploadtrix',[DashboardArticleController::class,'uploadtrix'])->middleware('auth');
 
 Route::get('/dashboard', function () {
-    return view('dashboard/view',['articles'=>Article::all()->where('po',false),"title" => "| Dashboard"]);
+    return view('dashboard/view',['articles'=>Article::all()->where('photosonly',false),"title" => "| Dashboard"]);
  })->middleware('auth');
 
 Route::resource('/dashboard/article',DashboardArticleController::class)->middleware('auth');

@@ -23,7 +23,8 @@ class CategoryController extends Controller
         $select_categories = __('messages.Categories');
         $select_type =  __('messages.Type');
         $select_date =  __('messages.Date');
-        $articles = Article::query();
+        $articles = Article::with(['categories','type','articletrans'])->where('photosonly',false);
+
 
     if ($request->has('category')) {
         $category = $request['category'];
@@ -70,7 +71,7 @@ class CategoryController extends Controller
     $error =false;
     if ($articles->isEmpty()) {
         $error = true;
-        return view('category/categories',  compact('categories', 'types', 'error','title','select_categories','select_type','select_date'));
+        return view('category/categories',  compact('categories', 'articles','types', 'error','title','select_categories','select_type','select_date'));
     }
     
         return view('category/categories', compact('categories', 'types', 'articles','error','title','select_categories','select_type','select_date'));

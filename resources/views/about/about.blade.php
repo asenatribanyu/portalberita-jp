@@ -109,15 +109,15 @@
 
         <div class="photos">
             <div class="photos-wrapper">
-                @for ($i = 1; $i <= 3; $i++)
+                @foreach ($photos as $photo)
                     <div class="photos-slider">
-                        <img src="img/slider-{{ $i }}.jpg" alt="" />
+                        <img src={{ asset('storage/' . $photo->thumbnail) }} alt="" />
                         <div class="photos-button">
                             <i class="bx bx-chevron-left photos-nav-left"></i>
                             <i class="bx bx-chevron-right photos-nav-right"></i>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
             <div class="photos-info-wrapper">
                 <div class="photos-info">
