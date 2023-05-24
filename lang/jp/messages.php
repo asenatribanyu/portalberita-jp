@@ -39,6 +39,6 @@ return[
 	'Contact' => 'お問い合わせ',
 	'Quick Links' => '関連リンク',
 	'Heiwa' => '平和',
-	'Learn More' => '詳細はこちら'
-
+	'Learn More' => '詳細はこちら',
+	'Gallery' => 'ギャラリー'
 ];

@@ -13,13 +13,13 @@
                     <img src="img/about.jpg" alt="" />
                 </div> --}}
                 <div class="img-about pos-2">
-                    <img src="img/about.jpg" alt="" />
+                    <img src="img/about.png" alt="" />
                 </div>
             </div>
             <div class="about-info-wrapper">
                 <div class="about-info">
                     <div class="title title-1">{{ __('messages.About Us') }}</div>
-                    <p>
+                    <p style="text-indent: 50px">
                         Heiwa Program merupakan program inisiasi dari komunitas di Jepang yaitu Shounan Asia. Yayasan yang
                         dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh dunia agar
                         peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi. Melihat ke belakang pada 7-8
@@ -94,7 +94,7 @@
 
         <!-- Documentation -->
         <div class="header">
-            <div class="header-title">DOCUMENTATION</div>
+            <div class="header-title">{{ __('messages.Documentation') }}</div>
         </div>
 
         <div class="hero">
@@ -121,24 +121,7 @@
             </div>
             <div class="photos-info-wrapper">
                 <div class="photos-info">
-                    <div class="title">PHOTOS</div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Commodo ullamcorper a lacus
-                        vestibulum sed arcu non odio euismod. Interdum
-                        posuere lorem ipsum dolor sit amet consectetur
-                        adipiscing elit. Nunc sed id semper risus in
-                        hendrerit gravida rutrum quisque. Urna neque viverra
-                        justo nec ultrices dui sapien eget mi. Vel fringilla
-                        est ullamcorper eget nulla facilisi etiam dignissim.
-                        Quis viverra nibh cras pulvinar mattis nunc sed
-                        blandit. Habitant morbi tristique senectus et netus
-                        et malesuada. Facilisis mauris sit amet massa vitae
-                        tortor condimentum lacinia. Pulvinar etiam non quam
-                        lacus. Cursus vitae congue mauris rhoncus aenean vel
-                        elit scelerisque.
-                    </p>
+                    <div class="title">{{ __('messages.Photos') }}</div>
                 </div>
             </div>
         </div>

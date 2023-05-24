@@ -1,0 +1,15 @@
+/* General */
+.main-container {
+    width: 1250px;
+    margin: auto;
+    padding-top: 95px;
+}
+/* End of General */
+
+/* Gallery */
+.gallery-wrapper {
+    width: 100%;
+    height: 500px;
+    background-color: salmon;
+}
+/* End of Gallery */

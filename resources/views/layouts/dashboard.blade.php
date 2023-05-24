@@ -45,7 +45,7 @@
         <div class="sidebar">
             <div class="sidebar-logo">
                 <i class="bx bx-menu menu-icon"></i>
-                <a href="/">Heiwa.</a>
+                <a href="/">Heiwa Program</a>
                 {{-- <i class="bx bx-x side-close"></i> --}}
             </div>
 

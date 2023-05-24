@@ -53,6 +53,12 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/gallery', function () {
+    return view('gallery/gallery', [
+        "title" => "| Gallery"
+    ]);
+});
+
 Route::get('/switch/{locale}', [ArticleController::class, 'switch']);
 
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
@@ -76,4 +82,3 @@ Route::get('/dashboard', function () {
 Route::resource('/dashboard/article',DashboardArticleController::class)->middleware('auth');
 
 Route::get('/{article}',[ArticleController::class,'show']);
-

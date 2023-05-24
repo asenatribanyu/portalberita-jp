@@ -156,10 +156,12 @@
                 <div class="hero-info">
                     <div class="hero-desc">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Metus dictum at tempor commodo
-                            ullamcorper a lacus vestibulum.
+                            <i><b style="font-weight: 500">Heiwa Program</b></i> merupakan program inisiasi dari komunitas
+                            di
+                            Jepang yaitu Shounan Asia.
+                            Yayasan
+                            yang dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh
+                            dunia agar peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi.
                         </p>
                         <a href="/about">LEARN MORE</a>
                     </div>

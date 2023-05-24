@@ -3,7 +3,7 @@
 @section('content')
     <form action="/dashboard/article" method="post" enctype="multipart/form-data">
         @csrf
-        <div x-data="{ isOpen: false, selectedOption: 'default' }" class="main-form">
+        <div x-data="{ isOpen: false, selectedOption: 'default', photosOnlyChecked: false }" class="main-form">
             <h1>Add Content</h1>
             <select x-model="selectedOption"
                 x-on:change="selectedOption !== 'default' ? isOpen = true : isOpen = false;  if (selectedOption !== '1') { resetFileInput(); }; if (selectedOption !== '2') { resetFileInput(); }"
@@ -18,20 +18,28 @@
                 <div class="form-title w-75 mt-3">
                     <div class="form-check mb-1">
                         <input type="hidden" name="pin" value="0">
-                        <input class="form-check-input" type="checkbox" value="1" id="checkPin" name="pin"
+                        <input x-bind:disabled="photosOnlyChecked || selectedOption === 'default'" class="form-check-input"
+                            type="checkbox" value="1" id="checkPin" name="pin"
                             {{ old('pin') == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="checkPin">
                             Pin This Post
                         </label>
                     </div>
-                    <div class="form-check mb-3">
+                    <div class="form-check mb-2">
                         <input type="hidden" name="po" value="0">
-                        <input class="form-check-input" type="checkbox" value="1" id="checkpo" name="po"
-                            {{ old('po') == 1 ? 'checked' : '' }}>
+                        <input
+                            x-bind:disabled="photosOnlyChecked === 'true' || selectedOption === 'default' || selectedOption === '2'"
+                            x-model="photosOnlyChecked" class="form-check-input" type="checkbox" value="1"
+                            id="checkpo" name="po" {{ old('po') == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="checkpo">
                             Photos Only
                         </label>
                     </div>
+
+                    <label x-show="photosOnlyChecked" for="caption">Caption:</label>
+                    <input x-show="photosOnlyChecked" class="form-control mb-1" type="text" placeholder="Caption"
+                        aria-label="Title Input" id="title" name="caption" value="" />
+
                     <label for="title">Title ID:</label>
                     @error('title')
                         <div class="fs-6 text-white bg-danger mt-1 w-50">
@@ -39,8 +47,9 @@
                         </div>
                     @enderror
 
-                    <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
-                        id="title" name="title" value="{{ old('title') }}" />
+                    <input x-bind:disabled="photosOnlyChecked || selectedOption === 'default'" class="form-control mt-1"
+                        type="text" placeholder="Content Title" aria-label="Title Input" id="title" name="title"
+                        value="{{ old('title') }}" />
 
                     <label for="title">Title JP:</label>
 
@@ -50,14 +59,15 @@
                         </div>
                     @enderror
 
-                    <input class="form-control mt-1" type="text" placeholder="Content Title" aria-label="Title Input"
-                        id="title" name="title-jp" value="{{ old('title-jp') }}" />
+                    <input x-bind:disabled="photosOnlyChecked || selectedOption === 'default'" class="form-control mt-1"
+                        type="text" placeholder="Content Title" aria-label="Title Input" id="title" name="title-jp"
+                        value="{{ old('title-jp') }}" />
                 </div>
 
                 <div x-data="{ isOpen2: false }" class="form-tag w-100 mt-3">
                     <label for="checkbox">Category:</label>
                     <div class="d-flex">
-                        <div class="checkbox-limit mt-1">
+                        <div class="checkbox-limit mt-1 w-50">
                             @foreach ($categories as $category)
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input cat" type="checkbox" id="checkTag" name="category_id[]"
@@ -95,11 +105,11 @@
                         value="{{ old('video_link') }}" />
                 </div>
 
-                <div class="form-description mt-3">ID
+                <div x-show="!photosOnlyChecked" class="form-description mt-3">ID
                     <input id="desc" type="hidden" name="content" value="{{ old('content') }}" />
                     <trix-editor input="desc" class="trix-content"></trix-editor>
                 </div>
-                <div class="form-description mt-3">JP
+                <div x-show="!photosOnlyChecked" class="form-description mt-3">JP
                     <input id="descp" type="hidden" name="content-jp" value="{{ old('content-jp') }}" />
                     <trix-editor input="descp" class="trix-content"></trix-editor>
                 </div>

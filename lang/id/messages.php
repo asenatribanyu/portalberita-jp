@@ -39,7 +39,6 @@ return[
 	'Contact' => 'Contact',
 	'Quick Links' => 'Quick Links',
 	'Heiwa' => 'Heiwa Program',
-	'Learn More' => 'Learn More'
-
-
+	'Learn More' => 'Learn More',
+	'Gallery' => 'Gallery'
 ];

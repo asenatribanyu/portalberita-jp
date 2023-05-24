@@ -27,7 +27,7 @@
             <div x-data="{ isOpen: false }" class="form-tag w-100 mt-3">
                 <label for="checkbox">Category:</label>
                 <div x-data="{ checkedCount: 0 }" class="d-flex">
-                    <div class="checkbox-limit mt-1">
+                    <div class="checkbox-limit mt-1 w-50">
                         @foreach ($categories as $category)
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="category_id[]"

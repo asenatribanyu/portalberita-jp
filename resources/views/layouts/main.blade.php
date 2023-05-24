@@ -51,6 +51,9 @@
                             <li><a class="{{ $local === 'jp' ? 'lang-active' : '' }}" href="/switch/jp">日本語</a></li>
                         </ul>
                     </li>
+                    <li><a class="{{ $title === '| Gallery' ? 'nav-active' : '' }}"
+                            href="/gallery">{{ __('messages.Gallery') }}</a>
+                    </li>
                     @auth
                         <li><a href="/dashboard">{{ __('messages.Dashboard') }}</a></li>
                     @else
@@ -89,12 +92,14 @@
                     <a href="/">
                         <h1>{{ __('messages.Heiwa') }}</h1>
                     </a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                    <p>Heiwa Program merupakan program inisiasi dari komunitas di Jepang yaitu Shounan Asia. Yayasan
+                        yang
+                        dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh dunia.
+                    </p>
                 </div>
                 <div class="footer-contact">
                     <h1>{{ __('messages.Contact') }}</h1>
-                    <p>Gedung B Lt.2, Universitas Widyatama Jl. Cikutra no 204 A Bandung Jawa Barat, Indonesia 40124.
+                    <p>Gedung B Lt.2, Universitas Widyatama Jl.Cikutra no 204 A Bandung Jawa Barat, Indonesia 40124.
                     </p>
                     <p>Phone : +62-22-7275855 ext 228</p>
                     <p>Fax : +62-22-720299</p>

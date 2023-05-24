@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         User::create([
-            'name' => 'poh',
-            'username'=>'poh',
-            'password'=>bcrypt('12345'),
+            'name' => 'Admin',
+            'username'=>'admin',
+            'password'=>bcrypt('admin'),
         ]);
 
         Type::create([
@@ -35,9 +35,11 @@ class DatabaseSeeder extends Seeder
         Type::create([
             'type_name' => 'Videos',
         ]);
+        
         Category::create([
             'category_name' =>'Tokyo',
         ]);
+
         Category::create([
             'category_name' =>'Kyoto',
         ]);

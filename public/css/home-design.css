@@ -363,7 +363,7 @@
 }
 
 .hero-desc p {
-    width: 800px;
+    width: 850px;
     height: 100px;
     font-size: 24px;
     color: white;
@@ -380,6 +380,7 @@
     font-size: 20px;
     color: black;
     background-color: white;
+    margin-top: 25px;
     transition: all 0.2s ease-in-out;
 }
 
