@@ -18,6 +18,7 @@ const popupImage = imgPopup.querySelector("img");
 const popupCaption = imgPopup.querySelector(".popup-caption p");
 const visitButton = imgPopup.querySelector(".visit");
 const deleteButton = imgPopup.querySelector(".delete");
+const form = document.getElementById("myForm");
 
 imgList.forEach((img) => {
     img.addEventListener("click", () => {
@@ -26,11 +27,14 @@ imgList.forEach((img) => {
         const caption = img.getAttribute("data-caption");
         const slug = img.getAttribute("data-slug");
         const deleted = img.getAttribute("data-delete");
+        
 
-        // Update the image source, caption, and slug in the popup
         popupImage.src = src;
         popupCaption.textContent = caption;
         visitButton.href = `/categories${slug}`;
+        currentDeletedSlug = deleted;
+        form.action = `/dashboard/article/${currentDeletedSlug}`;
+
 
         imgPopup.classList.add("active");
     });

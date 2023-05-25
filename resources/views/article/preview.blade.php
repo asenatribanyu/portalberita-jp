@@ -32,12 +32,16 @@
                     <div class="image-thumbnail">
                         <img src="{{ asset('storage/' . $articles->thumbnail) }}" alt="" />
                     </div>
-                @else
+                @elseif($articles->video_link)
                     <iframe src="{{ 'https://www.youtube.com/embed/' . $articles->video_link }}"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
+                @else
+                    <div class="image-thumbnail">
+                        <img src="{{ asset('storage/' . $articles->thumbnail) }}" alt="" />
+                    </div>
                 @endif
             </div>
 
