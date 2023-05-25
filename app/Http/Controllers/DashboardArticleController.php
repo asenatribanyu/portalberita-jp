@@ -262,6 +262,8 @@ class DashboardArticleController extends Controller
      
             // you can save image path below in database
             $path = asset('storage/trix/'.$filenametostore);
+            
+            Image::make('storage/trix/' . $filenametostore)->save(null,0,'webp');
      
             echo $path;
             exit;
