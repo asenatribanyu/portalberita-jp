@@ -55,6 +55,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/gallery', function () {
+    if($locale = session('locale')){
+        App::setlocale($locale);
+    };
     return view('gallery/gallery', [
         "title" => "| Gallery",
         'photos' => Article::with(['categories'])->where('type_id',1)->wherenotnull('thumbnail')->get()
