@@ -8,5 +8,3 @@ imagesLoaded(grid, function () {
         percentPosition: true,
     });
 });
-
-console.log("ini ada ga test");
