@@ -3,7 +3,7 @@
 @section('content')
     <form action="/dashboard/article" method="post" enctype="multipart/form-data">
         @csrf
-        <div x-data="{ isOpen: false, selectedOption: 'default', photosOnlyChecked: false }" class="main-form">
+        <div x-data="{ isOpen: false, selectedOption: 'default', photosOnlyChecked: false, pinCheck: false }" class="main-form">
             <h1>Add Content</h1>
             <select x-model="selectedOption"
                 x-on:change="selectedOption !== 'default' ? isOpen = true : isOpen = false;  if (selectedOption !== '1') { resetFileInput(); }; if (selectedOption !== '2') { resetFileInput(); }"
@@ -19,7 +19,7 @@
                     <div class="form-check mb-1">
                         <input type="hidden" name="pin" value="0">
                         <input x-bind:disabled="photosOnlyChecked || selectedOption === 'default'" class="form-check-input"
-                            type="checkbox" value="1" id="checkPin" name="pin"
+                            x-model="pinCheck" type="checkbox" value="1" id="checkPin" name="pin"
                             {{ old('pin') == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="checkPin">
                             Pin This Post
@@ -27,10 +27,9 @@
                     </div>
                     <div class="form-check mb-2">
                         <input type="hidden" name="photosonly" value="0">
-                        <input
-                            x-bind:disabled="photosOnlyChecked === 'true' || selectedOption === 'default' || selectedOption === '2'"
-                            x-model="photosOnlyChecked" class="form-check-input" type="checkbox" value="1"
-                            id="checkpo" name="photosonly" {{ old('photosonly') == 1 ? 'checked' : '' }}>
+                        <input x-bind:disabled="selectedOption === '2' || pinCheck" x-model="photosOnlyChecked"
+                            class="form-check-input" type="checkbox" value="1" id="checkpo" name="photosonly"
+                            {{ old('photosonly') == 1 ? 'checked' : '' }}>
                         <label class="form-check-label" for="checkpo">
                             Photos Only
                         </label>

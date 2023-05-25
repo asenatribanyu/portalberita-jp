@@ -1,4 +1,8 @@
 /* General */
+* {
+    box-sizing: border-box;
+}
+
 .main-container {
     width: 1250px;
     margin: auto;
@@ -7,9 +11,27 @@
 /* End of General */
 
 /* Gallery */
-.gallery-wrapper {
-    width: 100%;
-    height: 500px;
-    background-color: salmon;
+.grid {
+    background: #fafafa;
+}
+
+.grid:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.grid-sizer,
+.grid-item {
+    width: 33.333%;
+}
+
+.grid-item {
+    float: left;
+}
+
+.grid-item img {
+    display: block;
+    max-width: 100%;
 }
 /* End of Gallery */
