@@ -56,7 +56,8 @@ Route::get('/about', function () {
 
 Route::get('/gallery', function () {
     return view('gallery/gallery', [
-        "title" => "| Gallery"
+        "title" => "| Gallery",
+        'photos' => Article::with(['categories'])->where('type_id',1)->wherenotnull('thumbnail')->get()
     ]);
 });
 
