@@ -217,9 +217,9 @@
     transition: 0.5s all ease-in-out;
 }
 
-.card-image a img:hover {
+/* .card-image a img:hover {
     scale: 1.15;
-}
+} */
 
 .card-info .tag-wrapper {
     width: 100%;
@@ -411,9 +411,9 @@
     transition: 0.5s all ease-in-out;
 }
 
-.image-gallery-wrapper img:hover {
+/* .image-gallery-wrapper img:hover {
     scale: 1.15;
-}
+} */
 
 .image-1 {
     width: 150px;

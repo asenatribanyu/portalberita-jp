@@ -10,10 +10,29 @@
             <div class="grid-sizer"></div>
             @foreach ($photos as $photo)
                 <div class="grid-item">
-                    <img src={{ asset('storage/' . $photo->thumbnail) }} />
+                    <img class="img-list" src={{ asset('storage/' . $photo->thumbnail) }} />
                 </div>
             @endforeach
         </div>
+    </div>
+    <div class="img-popup">
+        <div class="popup-container">
+            <div class="popup-wrapper">
+                <div class="img-wrapper">
+                    <img src={{ asset('storage/' . $photo->thumbnail) }} alt="">
+                </div>
+                <div class="action">
+                    <div class="popup-caption">
+                        <p>Ini Caption</p>
+                    </div>
+                    <div class="popup-action">
+                        <button class="visit">Visit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 @endsection
 

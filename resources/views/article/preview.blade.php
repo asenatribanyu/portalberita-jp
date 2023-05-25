@@ -39,9 +39,6 @@
                         allowfullscreen>
                     </iframe>
                 @endif
-
-
-
             </div>
 
             <div class="content-body">

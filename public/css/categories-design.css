@@ -203,9 +203,9 @@
     transition: 0.5s all ease-in-out;
 }
 
-.card-image a img:hover {
+/* .card-image a img:hover {
     scale: 1.15;
-}
+} */
 
 .card-info .tag-wrapper {
     width: 100%;
@@ -288,13 +288,14 @@
 /* End of Card */
 
 /* Show More Button */
-nav ul{
+nav ul {
     display: flex;
     list-style: none;
     gap: 10px;
 }
 
-nav ul li a, nav ul li span{
+nav ul li a,
+nav ul li span {
     font-size: 20px;
     text-decoration: none;
     color: black;
