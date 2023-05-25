@@ -105,10 +105,6 @@
                 </div>
             @endif
 
-
-
-
-
             <div class="form-description mt-3">
                 <input id="desc" type="hidden" name="content" value="{{ old('content', $articles->content) }}" />
                 <trix-editor input="desc"></trix-editor>
@@ -123,7 +119,7 @@
                 <div class="submit-cancel">
                     <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
                         data-bs-target="#submit-edit">
-                        Submit
+                        Save
                     </button>
 
                     <div class="modal fade" id="submit-edit" tabindex="-1" aria-labelledby="submit-editLabel"
@@ -141,7 +137,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
                             </div>
                         </div>

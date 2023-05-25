@@ -1,26 +1,20 @@
-// Navigation Bar
-const nav = document.querySelector("nav");
-const body = document.querySelector("body");
-const searchToggle = document.querySelector(".searchToggle");
-const sidebarC = document.querySelector(".side-close");
-const sidebarO = document.querySelector(".side-open");
+//Image Popup
+const images = document.querySelectorAll("figure img");
+const pop = document.querySelector(".popup");
 
-searchToggle.addEventListener("click", () => {
-    searchToggle.classList.toggle("active");
+images.forEach((img) => {
+    img.addEventListener("click", () => {
+        img.classList.add("active");
+        pop.classList.add("active");
+    });
 });
 
-sidebarO.addEventListener("click", () => {
-    nav.classList.add("active");
-});
-
-body.addEventListener("click", (e) => {
-    let clicked = e.target;
-
-    if (
-        !clicked.classList.contains("side-open") &&
-        !clicked.classList.contains("menu")
-    ) {
-        nav.classList.remove("active");
+document.addEventListener("click", (event) => {
+    if (!event.target.closest("figure")) {
+        images.forEach((img) => {
+            img.classList.remove("active");
+            pop.classList.remove("active");
+        });
     }
 });
-// End of Navigation Bar
+//End of Image Popup
