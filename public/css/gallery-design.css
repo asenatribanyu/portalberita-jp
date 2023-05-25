@@ -47,22 +47,14 @@
     padding: 100px 250px;
     background-color: rgba(0, 0, 0, 85%);
     z-index: 9999;
-    display: none;
+    visibility: hidden;
     opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
 .img-popup.active {
-    display: block;
-    animation: fade-in 0.4s ease-in-out forwards;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    visibility: visible;
+    opacity: 1;
 }
 
 .popup-container {

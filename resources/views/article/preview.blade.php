@@ -144,6 +144,7 @@
         </div>
         <!-- End of Sidebar -->
     </div>
+    <div class="popup"></div>
 @endsection
 
 @push('script')

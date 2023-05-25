@@ -154,10 +154,6 @@ body {
 /* End of Dashboard Input */
 
 /* Flexbox Image */
-figcaption {
-    display: none;
-}
-
 .attachment-gallery {
     display: flex;
     flex-wrap: wrap;
