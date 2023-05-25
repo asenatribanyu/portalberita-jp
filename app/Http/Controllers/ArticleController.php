@@ -23,19 +23,18 @@ class ArticleController extends Controller
 
     $related_articles = Article::whereHas('categories', function ($query) use ($categories) {
     $query->whereIn('category_name', $categories);
-    })
-    ->where('id', '<>', $article->id)
-    ->take(5)
-    ->get();
+    })->where('id', '<>', $article->id)->where('photosonly',false)->take(5)->get();
 
     if ($related_articles->isEmpty()) {
     $related_articles = Article::inRandomOrder()
         ->where('id', '<>', $article->id)
+        ->where('photosonly',false)
         ->take(5)
         ->get();
     }
     $random_articles = Article::inRandomOrder()
     ->where('id', '<>', $article->id)
+    ->where('photosonly',false)
     ->take(5)
     ->get();
         return view('article/preview', [
