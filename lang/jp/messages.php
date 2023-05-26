@@ -41,5 +41,6 @@ return[
 	'Heiwa' => '平和',
 	'Learn More' => '詳細はこちら',
 	'Gallery' => 'ギャラリー',
-	'Visit' => '訪問'
+	'Visit' => '訪問',
+	'H E I W A' => '平和'
 ];

@@ -41,5 +41,6 @@ return[
 	'Heiwa' => 'Heiwa Program',
 	'Learn More' => 'Learn More',
 	'Gallery' => 'Gallery',
-	'Visit' => 'Visit'
+	'Visit' => 'Visit',
+	'H E I W A' => 'H E I W A'
 ];

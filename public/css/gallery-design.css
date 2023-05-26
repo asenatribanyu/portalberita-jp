@@ -90,6 +90,11 @@
     border-radius: 10px;
 }
 
+.popup-action {
+    display: flex;
+    gap: 10px;
+}
+
 .popup-action button {
     width: 100px;
     height: 25px;

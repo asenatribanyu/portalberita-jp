@@ -1,5 +1,5 @@
 <div class="preloader">
     <div class="text-container">
-        <span>H E I W A</span>
+        <span>{{ __('messages.H E I W A') }}</span>
     </div>
 </div>
