@@ -171,7 +171,7 @@ class DashboardArticleController extends Controller
             $validatedData = $request->validate([
                 'title' => 'required',
                 'category_id'=>'required|array',
-                'content'=> 'required',
+                'content'=> 'nullable',
                 'pin'   =>'string',
                 'video_link'=> 'nullable|string',
                 'thumbnail'=> 'nullable|image'
@@ -182,7 +182,7 @@ class DashboardArticleController extends Controller
 
             $trans = $request->validate([
                 'title-jp' => 'required',
-                'content-jp'=> 'required',
+                'content-jp'=> 'nullable',
             ]);
             $withoutCaptions = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request->content);
             $withoutCaptionsjp = preg_replace('/<figcaption\b[^>]*>.*<\/figcaption>/s', '', $request['content-jp']);
@@ -263,7 +263,7 @@ class DashboardArticleController extends Controller
             // you can save image path below in database
             $path = asset('storage/trix/'.$filenametostore);
             
-            Image::make('storage/trix/' . $filenametostore)->save(null,0,'webp');
+            Image::make('storage/trix/' . $filenametostore)->save(null,50,'jpeg');
      
             echo $path;
             exit;
