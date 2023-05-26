@@ -123,7 +123,7 @@
 
     /* Image Popup */
     .img-popup {
-        visibility: hidden;
+        display: none;
     }
     /* End of Image Popup */
 }
@@ -138,7 +138,7 @@
 
     /* Image Popup */
     .img-popup {
-        visibility: hidden;
+        display: none;
     }
     /* End of Image Popup */
 }

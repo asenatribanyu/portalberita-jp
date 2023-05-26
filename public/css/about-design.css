@@ -204,16 +204,17 @@ iframe:hover {
 .photos-button .photos-nav-left:hover,
 .photos-button .photos-nav-right:hover {
     background-color: rgba(0, 0, 0, 1);
+    scale: 1.5;
 }
 
 .photos-button .photos-nav-left {
     bottom: 145px;
-    left: 10px;
+    left: 15px;
 }
 
 .photos-button .photos-nav-right {
     bottom: 145px;
-    right: 10px;
+    right: 15px;
 }
 
 .photos-info-wrapper {
