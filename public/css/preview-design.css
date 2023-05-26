@@ -492,16 +492,17 @@ figcaption {
     margin-block-end: 5px;
 }
 
-.content-body figure img {
+.content-body figure {
     transition: all 0.3s ease-in-out;
 }
 
-.content-body figure img.active {
+.content-body figure.active {
     scale: 1.7;
     position: relative;
     margin: auto;
     transform: translate(95px, 0);
     z-index: 1;
+    height: 100%;
 }
 
 .popup {

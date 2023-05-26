@@ -1,5 +1,5 @@
 //Image Popup
-const images = document.querySelectorAll("figure img");
+const images = document.querySelectorAll("figure");
 const pop = document.querySelector(".popup");
 
 images.forEach((img) => {
