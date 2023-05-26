@@ -2,10 +2,20 @@
 const images = document.querySelectorAll("figure");
 const pop = document.querySelector(".popup");
 
+function isMobileOrTablet() {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const tabletQuery = window.matchMedia(
+        "(min-width: 768px) and (max-width: 1024px)"
+    );
+    return mobileQuery.matches || tabletQuery.matches;
+}
+
 images.forEach((img) => {
     img.addEventListener("click", () => {
-        img.classList.add("active");
-        pop.classList.add("active");
+        if (!isMobileOrTablet()) {
+            img.classList.add("active");
+            pop.classList.add("active");
+        }
     });
 });
 
