@@ -37,8 +37,9 @@ class ArticleController extends Controller
     ->where('photosonly',false)
     ->take(5)
     ->get();
+    $title = $article->translation($locale)->title;
         return view('article/preview', [
-            "title" => "| Preview",
+            "title" => "| $title ",
             'articles'=> $article,
             'related_articles'=>$related_articles,
             'random_articles'=>$random_articles,
