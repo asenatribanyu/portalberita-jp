@@ -14,6 +14,8 @@ class ArticleController extends Controller
     {
         if($locale = session('locale')){
             App::setlocale($locale);
+        }else{
+            $locale = 'id';
         };
         $ip = request()->ip();
     if (!$article->hasViewed($ip)) {
