@@ -38,7 +38,7 @@ return[
 	'Please sign into your account'	=>  'アカウントにサインインしてください',
 	'Contact' => 'お問い合わせ',
 	'Quick Links' => '関連リンク',
-	'Heiwa' => '平和',
+	'Heiwa' => '平和プログラム',
 	'Learn More' => '詳細はこちら',
 	'Gallery' => 'ギャラリー',
 	'Visit' => '訪問',

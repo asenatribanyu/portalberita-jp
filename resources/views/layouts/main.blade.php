@@ -38,7 +38,7 @@
                     <li><a class="{{ $title === '' ? 'nav-active' : '' }}" href="/">{{ __('messages.Home') }}</a>
                     </li>
                     <li><a class="{{ $title === '| About' ? 'nav-active' : '' }}"
-                            href="/about">{{ __('messages.About') }}</a></li>
+                            href="/about">{{ __('messages.About Us') }}</a></li>
                     <li><a class="{{ $title === '| Categories' ? 'nav-active' : '' }}"
                             href="/categories">{{ __('messages.Categories') }}</a>
                     </li>
