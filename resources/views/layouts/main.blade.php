@@ -56,9 +56,6 @@
                     </li>
                     @auth
                         <li><a href="/dashboard">{{ __('messages.Dashboard') }}</a></li>
-                    @else
-                        <li><a class="{{ $title === '| Sign In' ? 'nav-active' : '' }}"
-                                href="/login">{{ __('messages.Sign-In') }}</a></li>
                     @endauth
                 </ul>
             </div>
