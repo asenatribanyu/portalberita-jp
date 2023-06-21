@@ -30,9 +30,21 @@ return[
 	'Dashboard'		=> 'Dashboard',
 	'Sign-In'	=> 'Sign-In',
 	'Sign-Out'		=> 'Sign-Out',
+	'Footer'		=>'Heiwa Program merupakan program inisiasi dari komunitas
+	di
+	Jepang yaitu Shounan Asia.
+	Yayasan
+	yang dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh
+	dunia agar peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi.',
 	'Search'			=> 'Search',
 	'Read More'		=> 'Read More',
     'Read Also'     => 'Read Also',
+	'Hero'			=> 'merupakan program inisiasi dari komunitas
+	di
+	Jepang yaitu Shounan Asia.
+	Yayasan
+	yang dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh
+	dunia agar peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi.',
     'Other Articles' => 'Other Articles',
 	'Articles'		=> 'Articles',
 	'Videos'			=> 'Videos',
@@ -63,5 +75,5 @@ return[
 	'Learn More' => 'Learn More',
 	'Gallery' => 'Gallery',
 	'Visit' => 'Visit',
-	'H E I W A' => 'H E I W A'
+	'H E I W A' => 'HEIWA PROGRAM'
 ];

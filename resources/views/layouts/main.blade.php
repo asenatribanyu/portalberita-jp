@@ -89,9 +89,7 @@
                     <a href="/">
                         <h1>{{ __('messages.Heiwa') }}</h1>
                     </a>
-                    <p>Heiwa Program merupakan program inisiasi dari komunitas di Jepang yaitu Shounan Asia. Yayasan
-                        yang
-                        dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh dunia.
+                    <p>{{__('messages.Footer')}}
                     </p>
                 </div>
                 <div class="footer-contact">
