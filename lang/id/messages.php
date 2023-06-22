@@ -4,7 +4,7 @@ return[
     'Home' => 'Home',
     'About'			=> 'Heiwa Program merupakan program inisiasi dari komunitas di Jepang yaitu Shounan Asia. Yayasan yang
 	dimotori oleh Mr. Wagai Minoru ini memiliki tujuan untuk menyebarkan kedamaian ke seluruh dunia agar
-	peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi. Melihat ke belakang pada 7-8
+	peperangan terutama menggunakan bom atom/ nuklir tidak terjadi lagi. Melihat ke belakang pada 6-9
 	Agustus 1945 tentara sekutu menjatuhkan bom atom di Hiroshima dan Nagasaki. Puluhan ribu korban jiwa
 	berjatuhan. Efek dari bom maha dahsyat ini sangat luar biasa. Bahkan salah satu penyintas bom atom
 	yang masih hidup sampai saat ini, menjalani hidup dengan menyandang penyakit kanker. Atas dasar hal
