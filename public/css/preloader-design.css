@@ -30,8 +30,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 50px;
-        font-weight: 300;
+        font-size: 40px;
+        font-weight: 400;
         overflow: hidden;
         color: black;
     }
@@ -42,7 +42,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 100px;
+        font-size: 90px;
         font-weight: 300;
         overflow: hidden;
         color: black;

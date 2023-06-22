@@ -357,7 +357,7 @@ footer {
 /* Responsive */
 @media screen and (max-width: 768px) {
     body {
-        padding-bottom: 500px;
+        padding-bottom: 625px;
     }
 
     nav.navbars .navbar {
@@ -593,6 +593,10 @@ footer {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        padding-bottom: 325px;
+    }
+
     /* Footer */
     footer {
         position: absolute;
