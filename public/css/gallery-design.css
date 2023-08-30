@@ -1,0 +1,144 @@
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 1250px;
+    margin: auto;
+    padding-top: 95px;
+}
+/* End of General */
+
+/* Gallery */
+.grid {
+    background: #fafafa;
+}
+
+.grid:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.grid-sizer,
+.grid-item {
+    width: 33.333%;
+}
+
+.grid-item {
+    float: left;
+}
+
+.grid-item img {
+    display: block;
+    max-width: 100%;
+}
+/* End of Gallery */
+
+/* Image Popup */
+.img-popup {
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px 250px;
+    background-color: rgba(0, 0, 0, 85%);
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-popup.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-container {
+    width: 1000px;
+}
+
+.action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.popup-wrapper {
+    width: 100%;
+}
+
+.popup-caption {
+    color: white;
+    font-size: 20px;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 500px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.popup-action {
+    display: flex;
+    gap: 10px;
+}
+
+.popup-action button {
+    width: 100px;
+    height: 25px;
+    border: none;
+    font-size: 15px;
+}
+
+.popup-action button.visit {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.popup-action button.delete {
+    background-color: red;
+    color: white;
+}
+/* End of Image Popup */
+
+@media screen and (max-width: 768px) {
+    /* General */
+    .main-container {
+        width: 95%;
+        margin: auto;
+    }
+    /* End of General */
+
+    /* Image Popup */
+    .img-popup {
+        display: none;
+    }
+    /* End of Image Popup */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* General */
+    .main-container {
+        width: 95%;
+        margin: auto;
+    }
+    /* End of General */
+
+    /* Image Popup */
+    .img-popup {
+        display: none;
+    }
+    /* End of Image Popup */
+}

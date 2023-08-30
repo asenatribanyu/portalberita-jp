@@ -1,0 +1,325 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background: #fafafa;
+}
+
+.main-container {
+    width: 100%;
+    margin: auto;
+    padding-top: 8px;
+}
+/* End of General */
+
+/* Navigation Bar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 260px;
+    background-color: white;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.sidebar-logo {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.sidebar-logo .menu-icon {
+    display: none;
+    font-size: 24px;
+    margin-right: 14px;
+    color: black;
+}
+
+.sidebar-logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+.menu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+
+.menu .navlink {
+    margin-top: 20px;
+    margin-left: -12px;
+}
+
+.navlink li {
+    list-style: none;
+}
+
+.navlink .nav-logout {
+    width: 220px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-left: 50px;
+    border: none;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.navlink .nav-item {
+    width: 220px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-left: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-item span,
+.nav-logout span {
+    margin-left: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+
+.nav-item .navlink-icon,
+.nav-logout .navlink-icon {
+    font-size: 20px;
+    color: black;
+}
+
+.navlink .nav-item:hover {
+    background-color: #4070f4;
+}
+
+.navlink .nav-home:hover {
+    background-color: #198754;
+}
+
+.navlink .nav-logout:hover {
+    background-color: red;
+}
+
+.nav-item:hover i,
+.nav-item:hover span,
+.nav-logout:hover i,
+.nav-logout:hover span {
+    color: white;
+}
+
+.nav-active .navlink-icon,
+.nav-active span {
+    color: white;
+}
+
+.nav-active {
+    background-color: #4070f4;
+}
+
+.navhome:hover {
+    background-color: #198754;
+}
+/* End of Navigation Bar */
+
+/* Dashboard Input */
+.main-form {
+    width: 70%;
+    margin: auto auto auto 23.5%;
+    padding: 20px;
+}
+/* End of Dashboard Input */
+
+/* Flexbox Image */
+.attachment-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.attachment-gallery figure {
+    width: 49.5%;
+}
+/* End of Flexbox Image */
+
+/* Data Tables */
+tbody tr.odd td,
+tbody tr.even td {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* End of Data Tables */
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 100%;
+        margin: auto;
+        padding-top: 8px;
+    }
+    /* End of General */
+
+    /* Navigation Bar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 75px;
+        background-color: white;
+        box-shadow: 0 5px 1px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
+    .sidebar-logo {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        margin-left: 14px;
+        margin-top: 20px;
+    }
+
+    .sidebar-logo a {
+        display: none;
+        font-size: 25px;
+        font-weight: 500;
+        color: black;
+        text-decoration: none;
+        letter-spacing: normal;
+    }
+
+    .menu {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+
+    .menu .navlink {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .navlink li {
+        list-style: none;
+    }
+
+    .navlink .nav-logout {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 50px;
+        margin-top: 10px;
+        padding-left: 0;
+        border: none;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .navlink .nav-item {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 50px;
+        margin-top: 10px;
+        padding-left: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .nav-item span,
+    .nav-logout span {
+        display: none;
+        margin-left: 14px;
+        font-size: 16px;
+        font-weight: 400;
+        color: black;
+    }
+
+    .nav-item .navlink-icon,
+    .nav-logout .navlink-icon {
+        font-size: 20px;
+        color: black;
+    }
+
+    .navlink .nav-item:hover {
+        background-color: #4070f4;
+    }
+
+    .navlink .nav-home:hover {
+        background-color: #198754;
+    }
+
+    .navlink .nav-logout:hover {
+        background-color: red;
+    }
+
+    .nav-item:hover i,
+    .nav-item:hover span,
+    .nav-logout:hover i,
+    .nav-logout:hover span {
+        color: white;
+    }
+
+    .nav-active .navlink-icon,
+    .nav-active span {
+        color: white;
+    }
+
+    .nav-active {
+        background-color: #4070f4;
+    }
+
+    .navhome:hover {
+        background-color: #198754;
+    }
+    /* End of Navigation Bar */
+
+    /* Dashboard Input */
+    .main-form {
+        width: 70%;
+        margin: auto auto auto 23.5%;
+        padding: 20px;
+    }
+    /* End of Dashboard Input */
+}
+/* End of Responsive */

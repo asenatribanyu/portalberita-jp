@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Models\Category;
+use App\Models\Type;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +22,26 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        User::create([
+            'name' => 'Admin',
+            'username'=>'admin',
+            'password'=>bcrypt('admin'),
+        ]);
+
+        Type::create([
+            'type_name' => 'Photos',
+        ]);
+
+        Type::create([
+            'type_name' => 'Videos',
+        ]);
+        
+        Category::create([
+            'category_name' =>'Tokyo',
+        ]);
+
+        Category::create([
+            'category_name' =>'Kyoto',
+        ]);
     }
 }
