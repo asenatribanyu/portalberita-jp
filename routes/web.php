@@ -66,7 +66,7 @@ Route::get('/gallery', function () {
 
 Route::get('/switch/{locale}', [ArticleController::class, 'switch']);
 
-Route::get('/heiwa-login',[LoginController::class,'index'])->name('login')->middleware('guest');
+Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 
 Route::post('/login',[LoginController::class,'authen']);
 
